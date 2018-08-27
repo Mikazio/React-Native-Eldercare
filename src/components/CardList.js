@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView } from 'react-native';
+import CardDetails from './CardDetails';
 
 class CardList extends Component {
   render() {
     return (
       <ScrollView style={styles.viewContainerStyle}>
-        <Text>Some Text</Text>
+        <CardDetails />
       </ScrollView>
     );
   }

@@ -1,12 +1,13 @@
 /** @format */
 import React from 'react';
 import { AppRegistry, View } from 'react-native';
-import Home from './src/screens/Home';
-
+import Header from './src/components/Header';
+import CardList from './src/components/CardList';
 
 const App = () => (
   <View>
-    <Home />
+    <Header headerText={'Eldercare'} />
+    <CardList />
   </View>
 );
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { ScrollView, Text } from 'react-native';
 
-const CardDetails = () => (
+const CardDetails = ({ data }) => (
     <ScrollView>
-      <Text>This is Card Details Section</Text>
+      <Text>{data.DeviceId}</Text>
     </ScrollView>
   );
 

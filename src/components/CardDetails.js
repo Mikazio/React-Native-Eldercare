@@ -16,7 +16,7 @@ const CardDetails = ({ data }) => {
           } = data.data;
 
     return (
-    <Card>
+    <Card title={DeviceId}>
         <Text>Xmag= {XMag}</Text>
         <Text>Ymag= {YMag}</Text>
         <Text>Zmag= {ZMag}</Text>
@@ -26,7 +26,6 @@ const CardDetails = ({ data }) => {
         <Text>XAxis= {XAxis}</Text>
         <Text>YAxis= {YAxis}</Text>
         <Text>ZAxis= {ZAxis}</Text>
-        <Text>DeviceId= {DeviceId}</Text>
         <Text>timestamp= {timestamp}</Text>
     </Card>
   );

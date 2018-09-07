@@ -1,8 +1,8 @@
 /** @format */
 import React from 'react';
 import { AppRegistry, ScrollView } from 'react-native';
-import CardList from './src/components/CardList';
-import Header from './src/components/Header';
+import CardList from './src/component/CardList';
+import Header from './src/component/Header';
 
 const App = () => (
   <ScrollView>

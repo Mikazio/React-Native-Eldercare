@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { AddButton } from './common/AddButton.js';
-import { CardDetails } from './CardDetails.js';
-import { Header } from './Header.js';
+import { AddButton } from '../component/common/AddButton.js';
+import { CardDetails } from '../component/CardDetails.js';
+import { Header } from '../component/Header.js';
 
 class HomeScreen extends Component {
   render() {

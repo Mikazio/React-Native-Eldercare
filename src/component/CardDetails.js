@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { Card } from 'react-native-elements';
+import { Card } from 'native-base';
 
 const CardDetails = ({ data }) => {
     const { DeviceId, timestamp } = data;
@@ -16,7 +16,8 @@ const CardDetails = ({ data }) => {
           } = data.data;
 
     return (
-    <Card title={DeviceId}>
+    <Card>
+        <Text>DeviceId= {DeviceId}</Text>
         <Text>Xmag= {XMag}</Text>
         <Text>Ymag= {YMag}</Text>
         <Text>Zmag= {ZMag}</Text>

@@ -1,14 +1,4 @@
-/** @format */
-import React from 'react';
-import { AppRegistry, ScrollView } from 'react-native';
-import CardList from './src/component/CardList';
-import Header from './src/component/Header';
-
-const App = () => (
-  <ScrollView>
-    <Header headerText={'Eldercare'} />
-    <CardList />
-  </ScrollView>
-);
+import { AppRegistry } from 'react-native';
+import App from './src/index';
 
 AppRegistry.registerComponent('Eldercare', () => App);

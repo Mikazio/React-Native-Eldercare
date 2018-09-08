@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image, Platform, Button, Alert, TextInput } from 'react-native';
+import { View, StyleSheet, Image, Button, Alert, TextInput } from 'react-native';
 
 export default class Register extends Component {
   constructor(props) {

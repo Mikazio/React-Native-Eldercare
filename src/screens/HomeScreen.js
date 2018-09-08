@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { AddButton } from '../component/common/AddButton.js';
-import { CardDetails } from '../component/CardDetails.js';
-import { Header } from '../component/Header.js';
+import { View, Text } from 'react-native';
+import AddButton from '../component/common/AddButton.js';
 
 class HomeScreen extends Component {
   render() {
     return (
       <View>
-        <Header headerText={'Home'} />
-        <CardDetails />
+        <Text>HomeScreen</Text>
         <View style={styles.layoutButtom}>
           <AddButton />
         </View>

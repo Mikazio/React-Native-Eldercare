@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 import { Container, Content, Form, Item, Input, Label, Button, Text, Footer } from 'native-base';
 
 export default class Login extends Component {
+
+  static navigationOptions = {
+    title: 'Login',
+  };
+
   render() {
     return (
       <Container>

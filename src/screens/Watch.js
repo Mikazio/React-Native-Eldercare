@@ -4,6 +4,11 @@ import Dashboard from './Dashboard.js';
 import Profile from './Profile.js';
 
 export default class Watch extends Component {
+
+  static navigationOptions = {
+    title: 'Watch',
+  };
+
   render() {
     return (
       <Container>

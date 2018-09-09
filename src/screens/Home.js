@@ -3,6 +3,9 @@ import { View } from 'react-native';
 import { Container, Button, Text } from 'native-base';
 
 export default class Home extends Component {
+  static navigationOptions = {
+    title: 'Home',
+  };
   render() {
     return (
       <View style={{ flex: 1 }}>

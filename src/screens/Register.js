@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Image, Button, Alert, TextInput } from 'react-native';
 
 export default class Register extends Component {
+
+  static navigationOptions = {
+    title: 'Register',
+  };
+  
   constructor(props) {
     super(props);
     this.state = {

@@ -6,7 +6,7 @@ import Profile from './Profile.js';
 export default class Watch extends Component {
 
   static navigationOptions = {
-    title: 'Watch',
+    header: null,
   };
 
   render() {

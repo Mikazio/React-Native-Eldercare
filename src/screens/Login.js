@@ -26,7 +26,10 @@ export default class Login extends Component {
           <Button transparent info>
             <Text>Forget Password?</Text>
           </Button>
-          <Button block bordered onPress={() => this.props.navigation.navigate('Home')}>
+          <Button
+            block bordered 
+            onPress={() => this.props.navigation.navigate('Home')}
+          >
             <Text>Login</Text>
           </Button>
           <Text>OR</Text>

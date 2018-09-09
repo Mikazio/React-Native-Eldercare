@@ -6,7 +6,7 @@ export default class Register extends Component {
   static navigationOptions = {
     title: 'Register',
   };
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -31,7 +31,7 @@ export default class Register extends Component {
       <View style={styles.container}>
         <View style={styles.photo_container}>
           <Image
-            source={{ uri: '' }}
+            source={{ uri: 'https://images-na.ssl-images-amazon.com/images/I/71f-PFbeSRL._SX425_.jpg' }}
             style={styles.photo}
           />
         </View>
@@ -89,12 +89,14 @@ export default class Register extends Component {
           <View style={styles.btn_layout}>
             <Button
               color="#BBBBBB" title="BACK"
+              onPress={() => this.props.navigation.goBack()}
             />
           </View>
 
           <View style={styles.btn_layout}>
             <Button
               color="#BBBBBB" title="SUBMIT"
+              onPress={() => this.props.navigation.navigate('Home')}
             />
           </View>
 

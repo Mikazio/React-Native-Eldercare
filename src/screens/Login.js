@@ -32,7 +32,10 @@ export default class Login extends Component {
         <Content>
           <Footer style={{ backgroundColor: '#ddd' }}>
             <Text>Do not have an account? </Text>
-            <Button transparent small info onPress={() => this.props.navigation.navigate('Register')}>
+            <Button
+              transparent small info
+              onPress={() => this.props.navigation.navigate('Register')}
+            >
               <Text>Register.</Text>
             </Button>
           </Footer>

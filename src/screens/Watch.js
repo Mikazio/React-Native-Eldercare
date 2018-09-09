@@ -3,7 +3,7 @@ import { Container, Header, Tab, Tabs, TabHeading, Text } from 'native-base';
 import Dashboard from './Dashboard.js';
 import Profile from './Profile.js';
 
-export default class WatchScreen extends Component {
+export default class Watch extends Component {
   render() {
     return (
       <Container>

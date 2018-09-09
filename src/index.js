@@ -1,14 +1,16 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import HomeScreen from './screens/HomeScreen';
-import Header from './component/Header';
+import { createStackNavigator } from 'react-navigation';
+import Home from '../src/screens/Home';
+import Register from '../src/screens/Register';
+import Login from '../src/screens/Login';
+import Nav from './config/Router';
 
 
-const App = () => (
-  <ScrollView>
-    <Header headerText={'Eldercare'} />
-    <HomeScreen />
-  </ScrollView>
-);
-
-export default App;
+export default class App extends React.Component {
+  render() {
+    return (
+      <Nav />
+    );
+  }
+}

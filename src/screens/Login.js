@@ -21,7 +21,7 @@ export default class Login extends Component {
           <Button transparent info>
             <Text>Forget Password?</Text>
           </Button>
-          <Button block bordered>
+          <Button block bordered onPress={() => this.props.navigation.navigate('Home')}>
             <Text>Login</Text>
           </Button>
           <Text>OR</Text>
@@ -32,7 +32,7 @@ export default class Login extends Component {
         <Content>
           <Footer style={{ backgroundColor: '#ddd' }}>
             <Text>Do not have an account? </Text>
-            <Button transparent small info>
+            <Button transparent small info onPress={() => this.props.navigation.navigate('Register')}>
               <Text>Register.</Text>
             </Button>
           </Footer>

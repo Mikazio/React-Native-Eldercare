@@ -14,7 +14,6 @@ export default class RegisterWearer extends Component {
       <Container>
         <Content>
           <Form>
-          <Calender />
             <Item floatingLabel>
               <Label>Name</Label>
               <Input />
@@ -31,6 +30,7 @@ export default class RegisterWearer extends Component {
               <Label>Disease</Label>
               <Input />
             </Item>
+            <Calender />
           </Form>
           <Button transparent info>
             <Text>Back</Text>

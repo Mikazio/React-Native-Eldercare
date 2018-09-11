@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import { View } from 'react-native';
-import { Container, Content, Form, Item, Input, Label, Button, Text, DatePicker } from 'native-base';
+import { Container, Content, Form, Item, Input, Label, Button, Text } from 'native-base';
+import Calender from '../component/DatePicker';
 
 export default class RegisterWearer extends Component {
 
@@ -11,9 +12,9 @@ export default class RegisterWearer extends Component {
   render() {
     return (
       <Container>
-
         <Content>
           <Form>
+          <Calender />
             <Item floatingLabel>
               <Label>Name</Label>
               <Input />
@@ -21,26 +22,6 @@ export default class RegisterWearer extends Component {
             <Item floatingLabel>
               <Label>Lastname</Label>
               <Input />
-            </Item>
-            <Item>
-              <Label>Date of brind</Label>
-              <DatePicker
-              defaultDate={new Date(2018, 7, 11)}
-              minimumDate={new Date(2018, 1, 1)}
-              maximumDate={new Date(1818, 12, 31)}
-              locale={'en'}
-              timeZoneOffsetInMinutes={undefined}
-              modalTransparent={false}
-              animationType={'fade'}
-              androidMode={'default'}
-              placeHolderText="Select date"
-              textStyle={{ color: 'green' }}
-              placeHolderTextStyle={{ color: '#d3d3d3' }}
-              onDateChange={this.setDate}
-              />
-              <Text>
-                Date: {this.state.chosenDate.toString().substr(4, 12)}
-              </Text>
             </Item>
             <Item floatingLabel>
               <Label>gender</Label>

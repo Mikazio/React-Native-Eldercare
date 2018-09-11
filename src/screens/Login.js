@@ -27,14 +27,17 @@ export default class Login extends Component {
             <Text>Forget Password?</Text>
           </Button>
           <Button
-            block bordered 
+            block
             onPress={() => this.props.navigation.navigate('Home')}
           >
             <Text>Login</Text>
           </Button>
           <Text>OR</Text>
-          <Button block>
-            <Text>Login with Facebook</Text>
+          <Button
+            block bordered
+            onPress={() => this.props.navigation.navigate('RegisterWearer')}
+          >
+            <Text>Register of device</Text>
           </Button>
         </Content>
         <Content>

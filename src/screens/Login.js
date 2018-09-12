@@ -40,7 +40,7 @@ export default class Login extends Component {
             <Text>Register of device</Text>
           </Button>
         </Content>
-        <Content>
+
           <Footer style={{ backgroundColor: '#ddd' }}>
             <Text>Do not have an account? </Text>
             <Button
@@ -50,7 +50,6 @@ export default class Login extends Component {
               <Text>Register.</Text>
             </Button>
           </Footer>
-        </Content>
       </Container>
     );
   }

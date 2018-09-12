@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import { View } from 'react-native';
 import { Container, Content, Form, Item, Input, Label, Button, Text, Footer } from 'native-base';
 
 export default class Login extends Component {

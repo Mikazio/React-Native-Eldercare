@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import { View } from 'react-native';
 import { Container, Content, Form, Item, Input, Label, Button, Text } from 'native-base';
 import Calender from '../component/DatePicker';
 

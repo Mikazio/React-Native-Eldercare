@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Container, Content, Card, CardItem, Body, Text } from 'native-base';
-
+import { Container, Content, Card, CardItem, Body } from 'native-base';
+import CardDetails from '../component/CardDetails';
+import CardList from '../component/CardList';
 
 export default class Dashboard extends Component {
-  
+
   static navigationOptions = {
     title: 'Dashboard',
   };
@@ -15,9 +16,9 @@ export default class Dashboard extends Component {
           <Card>
             <CardItem>
               <Body>
-                <Text>
-                   Dashboard
-                </Text>
+                <CardList>
+                  <CardDetails />
+                </CardList>  
               </Body>
             </CardItem>
           </Card>

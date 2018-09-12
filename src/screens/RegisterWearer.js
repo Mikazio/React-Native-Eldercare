@@ -30,8 +30,10 @@ export default class RegisterWearer extends Component {
               <Label>Disease</Label>
               <Input />
             </Item>
-            <Calender />
+            <Label>Date of Birth</Label>
+              <Calender />
           </Form>
+
           <Button transparent info>
             <Text>Back</Text>
           </Button>

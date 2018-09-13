@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 import { Text, Card, CardItem, Body } from 'native-base';
 
 export default class CardWearer extends Component {

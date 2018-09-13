@@ -13,10 +13,15 @@ export default class Home extends Component {
     return (
       <View style={{ flex: 1 }}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Watch')}>
               <CardWearer />
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Watch')}>
               <CardWearer />
             </TouchableOpacity>
+
         </View>
         </View>
     );

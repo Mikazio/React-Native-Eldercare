@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Image, Button, Alert, TextInput } from 'react-native';
+import Amplify, { Auth } from 'aws-amplify';
+import aws from '../config/aws-exports';
+
+Amplify.configure(aws);
 
 export default class Register extends Component {
 

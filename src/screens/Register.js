@@ -12,8 +12,7 @@ export default class Register extends Component {
   };
 
     state = {
-        username: '',
-        name: '',
+        firstname: '',
         lastname: '',
         email: '',
         password: '',
@@ -32,7 +31,7 @@ export default class Register extends Component {
         username: this.state.username,
         password: this.state.password,
         attributes: {
-          name: this.state.name,
+          firstname: this.state.firstname,
           lastname: this.state.lastname,
           email: this.state.email,
           phone: this.state.phone
@@ -67,7 +66,7 @@ export default class Register extends Component {
                 style={styles.text_layout}
                 placeor="Name"
                 value={this.state.name}
-                onChangeText={value => this.setState({ name: value })}
+                onChangeText={value => this.setState({ firstname: value })}
               />
 
               <TextInput
@@ -122,7 +121,7 @@ export default class Register extends Component {
           <View style={styles.btn_layout}>
             <Button
               color="#BBBBBB" title="SUBMIT"
-              onPress={() => this.props.navigation.navigate('Home')}
+              onPress={() => console.log(this.state)}
             />
           </View>
 

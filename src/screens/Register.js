@@ -16,7 +16,6 @@ export default class Register extends Component {
         lastname: '',
         email: '',
         password: '',
-        reEnter: '',
         phone_number: ''
     };
 
@@ -34,7 +33,7 @@ export default class Register extends Component {
           name: this.state.firstname,
           lastname: this.state.lastname,
           email: this.state.email,
-          phone: this.state.phone
+          phone_number: this.state.phone_number
         }
     })
     .then(() => console.log('Success'))
@@ -63,8 +62,23 @@ export default class Register extends Component {
         <View style={styles.textInput_container}>
 
               <TextInput
+              style={styles.text_layout}
+              placeholder="Email"
+              value={this.state.email}
+              onChangeText={value => this.setState({ email: value })}
+              />
+
+              <TextInput
+              secureTextEntry
+              style={styles.text_layout}
+              placeholder="Password"
+              value={this.state.password}
+              onChangeText={value => this.setState({ password: value })}
+              />
+
+              <TextInput
                 style={styles.text_layout}
-                placeor="Name"
+                placeholder="Name"
                 value={this.state.name}
                 onChangeText={value => this.setState({ name: value })}
               />
@@ -76,33 +90,11 @@ export default class Register extends Component {
                 onChangeText={value => this.setState({ lastname: value })}
               />
 
-              <TextInput
-                style={styles.text_layout}
-                placeholder="Email"
-                value={this.state.email}
-                onChangeText={value => this.setState({ email: value })}
-              />
-
-              <TextInput
-                secureTextEntry
-                style={styles.text_layout}
-                placeholder="Password"
-                value={this.state.password}
-                onChangeText={value => this.setState({ password: value })}
-              />
-
-              <TextInput
-                secureTextEntry
-                style={styles.text_layout}
-                placeholder="Re-enter password"
-                value={this.state.reEnter}
-                onChangeText={value => this.setState({ reEnter: value })}
-              />
 
               <TextInput
                 style={styles.text_layout}
                 placeholder="Phone"
-                value={this.state.phone}
+                value={this.state.phone_number}
                 onChangeText={value => this.setState({ phone_number: value })}
               />
 

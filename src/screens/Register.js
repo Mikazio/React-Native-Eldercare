@@ -11,16 +11,38 @@ export default class Register extends Component {
     title: 'Register',
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      lastname: '',
-      email: '',
-      password: '',
-      reEnter: '',
-      phone: ''
+    state = {
+        username: '',
+        name: '',
+        lastname: '',
+        email: '',
+        password: '',
+        reEnter: '',
+        phone: ''
     };
+
+    onChangeText(key, value) {
+      this.setState({
+        [key]: value
+      });
+    }
+
+  signUp() {
+    Auth.singUp({
+        username: this.state.username,
+        password: this.state.password,
+        attributes: {
+          name: this.state.name,
+          lastname: this.state.lastname,
+          email: this.state.email,
+          phone: this.state.phone
+        }
+    })
+    .then(() => console.log('Success'))
+    .catch(err => console.log('Error in signinf up', err));
+  }
+  confirmSignUp() {
+    Auth.confirmSignUp();
   }
 
   _handleButtonSubmit = () => {
@@ -45,21 +67,21 @@ export default class Register extends Component {
                 style={styles.text_layout}
                 placeor="Name"
                 value={this.state.name}
-                onChangeText={(text) => this.setState({ name: text })}
+                onChangeText={value => this.setState({ name: value })}
               />
 
               <TextInput
                 style={styles.text_layout}
                 placeholder="Lastname"
                 value={this.state.lastname}
-                onChangeText={(text) => this.setState({ lastname: text })}
+                onChangeText={value => this.setState({ lastname: value })}
               />
 
               <TextInput
                 style={styles.text_layout}
                 placeholder="Email"
                 value={this.state.email}
-                onChangeText={(text) => this.setState({ email: text })}
+                onChangeText={value => this.setState({ email: value })}
               />
 
               <TextInput
@@ -67,7 +89,7 @@ export default class Register extends Component {
                 style={styles.text_layout}
                 placeholder="Password"
                 value={this.state.password}
-                onChangeText={(text) => this.setState({ password: text })}
+                onChangeText={value => this.setState({ password: value })}
               />
 
               <TextInput
@@ -75,14 +97,14 @@ export default class Register extends Component {
                 style={styles.text_layout}
                 placeholder="Re-enter password"
                 value={this.state.reEnter}
-                onChangeText={(text) => this.setState({ reEnter: text })}
+                onChangeText={value => this.setState({ reEnter: value })}
               />
 
               <TextInput
                 style={styles.text_layout}
                 placeholder="Phone"
                 value={this.state.phone}
-                onChangeText={(text) => this.setState({ phone: text })}
+                onChangeText={value => this.setState({ phone: value })}
               />
 
         </View>

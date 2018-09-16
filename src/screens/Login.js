@@ -26,22 +26,34 @@ export default class Login extends Component {
               <Input />
             </Item>
           </Form>
+
           <Button transparent info>
             <Text>Forget Password?</Text>
           </Button>
+
           <Button
             block
             onPress={() => this.props.navigation.navigate('Home')}
           >
             <Text>Login</Text>
           </Button>
+
           <Text>OR</Text>
+
           <Button
             block bordered
             onPress={() => this.props.navigation.navigate('RegisterWearer')}
           >
-            <Text>Register of device</Text>
+            <Text>Register device</Text>
           </Button>
+
+            <Button
+              block bordered
+              onPress={() => this.props.navigation.navigate('SearchWearer')}
+            >
+              <Text>To SearchWearer</Text>
+            </Button>
+
         </Content>
 
           <Footer style={{ backgroundColor: '#ddd' }}>

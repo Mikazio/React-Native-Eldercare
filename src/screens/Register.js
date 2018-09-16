@@ -12,12 +12,12 @@ export default class Register extends Component {
   };
 
     state = {
-        firstname: '',
+        name: '',
         lastname: '',
         email: '',
         password: '',
         reEnter: '',
-        phone: ''
+        phone_number: ''
     };
 
     onChangeText(key, value) {
@@ -27,18 +27,18 @@ export default class Register extends Component {
     }
 
   signUp() {
-    Auth.singUp({
-        username: this.state.username,
+    Auth.signUp({
+        username: this.state.email,
         password: this.state.password,
         attributes: {
-          firstname: this.state.firstname,
+          name: this.state.firstname,
           lastname: this.state.lastname,
           email: this.state.email,
           phone: this.state.phone
         }
     })
     .then(() => console.log('Success'))
-    .catch(err => console.log('Error in signinf up', err));
+    .catch(err => console.log('Error in signing up', err));
   }
   confirmSignUp() {
     Auth.confirmSignUp();
@@ -66,7 +66,7 @@ export default class Register extends Component {
                 style={styles.text_layout}
                 placeor="Name"
                 value={this.state.name}
-                onChangeText={value => this.setState({ firstname: value })}
+                onChangeText={value => this.setState({ name: value })}
               />
 
               <TextInput
@@ -103,7 +103,7 @@ export default class Register extends Component {
                 style={styles.text_layout}
                 placeholder="Phone"
                 value={this.state.phone}
-                onChangeText={value => this.setState({ phone: value })}
+                onChangeText={value => this.setState({ phone_number: value })}
               />
 
         </View>
@@ -121,7 +121,7 @@ export default class Register extends Component {
           <View style={styles.btn_layout}>
             <Button
               color="#BBBBBB" title="SUBMIT"
-              onPress={() => console.log(this.state)}
+              onPress={this.signUp.bind(this)}
             />
           </View>
 

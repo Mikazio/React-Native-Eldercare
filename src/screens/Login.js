@@ -42,7 +42,7 @@ export default class Login extends Component {
 
           <Button
             block bordered
-            onPress={() => this.props.navigation.navigate('RegisterWearer')}
+            onPress={() => this.props.navigation.navigate('SearchWearer')}
           >
             <Text>Register device</Text>
           </Button>
@@ -60,7 +60,7 @@ export default class Login extends Component {
             <Text>Do not have an account? </Text>
             <Button
               transparent small info
-              onPress={() => this.props.navigation.navigate('Register')}
+              onPress={() => this.props.navigation.navigate('RegisterWatcher')}
             >
               <Text>Register.</Text>
             </Button>

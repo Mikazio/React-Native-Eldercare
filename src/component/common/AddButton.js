@@ -1,13 +1,11 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
-import { Icon } from 'native-base';
+//import { View, TouchableOpacity } from 'react-native';
+import { Icon, Button } from 'native-base';
 
 const AddButton = () => (
-    <TouchableOpacity>
-      <View style={{ backgroundColor: 'blue', borderRadius: 100 }}>
+      <Button style={{ backgroundColor: 'blue', borderRadius: 100 }}>
         <Icon name='plus' />
-      </View>
-    </TouchableOpacity>
+      </Button>
   );
 
 export default AddButton;

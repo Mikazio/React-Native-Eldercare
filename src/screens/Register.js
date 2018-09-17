@@ -30,9 +30,8 @@ export default class Register extends Component {
         username: this.state.email,
         password: this.state.password,
         attributes: {
-          name: this.state.firstname,
-          lastname: this.state.lastname,
-          email: this.state.email,
+          name: this.state.name,
+          'custom:lastname': this.state.lastname,
           phone_number: this.state.phone_number
         }
     })

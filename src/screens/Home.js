@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { TouchableOpacity } from 'react-native';
-import { Container, Content } from 'native-base';
+import { TouchableOpacity, View } from 'react-native';
+import { Container } from 'native-base';
 import CardWearer from '../component/CardWearer';
 import AddButton from '../component/common/AddButton';
 
@@ -13,7 +13,7 @@ export default class Home extends Component {
   render() {
     return (
       <Container style={styles.container}>
-        <Content style={styles.layout_card}>
+        <View style={styles.layout_card}>
 
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Watch')}>
               <CardWearer />
@@ -23,20 +23,26 @@ export default class Home extends Component {
               <CardWearer />
             </TouchableOpacity>
 
-        </Content>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Watch')}>
+              <CardWearer />
+            </TouchableOpacity>
+
+        </View>
         <AddButton />
       </Container>
     );
   }
 }
+
 const styles = {
   container: {
-    flex: 1
+    flex: 1,
+    padding: 3
   },
   layout_card: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'flex-start',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   }
 };

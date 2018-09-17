@@ -47,13 +47,6 @@ export default class Login extends Component {
             <Text>Register device</Text>
           </Button>
 
-            <Button
-              block bordered
-              onPress={() => this.props.navigation.navigate('SearchWearer')}
-            >
-              <Text>To SearchWearer</Text>
-            </Button>
-
         </Content>
 
           <Footer style={{ backgroundColor: '#ddd' }}>

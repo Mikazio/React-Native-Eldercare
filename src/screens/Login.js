@@ -53,7 +53,7 @@ export default class Login extends Component {
             <Text>Do not have an account? </Text>
             <Button
               transparent small info
-              onPress={() => this.props.navigation.navigate('RegisterWatcher')}
+              onPress={() => this.props.navigation.navigate('Register')}
             >
               <Text>Register.</Text>
             </Button>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Alert } from 'react-native';
+import { Image, Alert, Text } from 'react-native';
 import { Container, Content, Form, Item, Input, Label, Button } from 'native-base';
 import Amplify, { Auth } from 'aws-amplify';
 import aws from '../config/aws-exports';
@@ -32,8 +32,7 @@ export default class RegisterWatcher extends Component {
         password: this.state.password,
         attributes: {
           name: this.state.firstname,
-          lastname: this.state.lastname,
-          email: this.state.email,
+          'custom:lastname': this.state.lastname,
           phone_number: this.state.phone_number
         }
     })
@@ -57,7 +56,7 @@ export default class RegisterWatcher extends Component {
       <Container>
         <Content style={styles.photo_container}>
         <Image
-          source={{ uri: 'https://images-na.ssl-images-amazon.com/images/I/71f-PFbeSRL._SX425_.jpg' }}
+          source={{ uri: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/10406994_854632824607247_2048936579886851496_n.jpg?_nc_cat=111&oh=3b759dad66550d6680db530e9ca5bc65&oe=5C34B546' }}
           style={styles.photo}
         />
         </Content>
@@ -100,16 +99,24 @@ export default class RegisterWatcher extends Component {
             </Item>
           </Form>
         </Content>
+
         <Content>
           <Button
-            color="#BBBBBB" title="BACK"
+            block bordered
             onPress={() => this.props.navigation.goBack()}
-          />
+          >
+            <Text>Back</Text>
+          </Button>
+
           <Button
-            color="#BBBBBB" title="SUBMIT"
+            block
+            color={'red'}
             onPress={this.signUp.bind(this)}
-          />
+          >
+            <Text>Submit</Text>
+          </Button>
         </Content>
+
       </Container>
     );
   }

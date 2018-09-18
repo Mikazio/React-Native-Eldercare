@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
 import { Container, Content, Form, Item, Input, Label, Button, Text, Footer } from 'native-base';
-import Amplify, { Auth } from 'aws-amplify';
-import aws from '../config/aws-exports';
-
-Amplify.configure(aws);
+import { Auth } from 'aws-amplify';
 
 export default class Login extends Component {
 
   static navigationOptions = {
     title: 'Login',
   };
+
+  state = {
+    username: '',
+    password: '',
+    user: {}
+  }
+
+  signIn() {
+    const { username, password } = this.state;
+    Auth.signIn(username, password)
+    .then(user => {
+      this.setState({ user });
+      console.log('sucess sign in');
+    })
+    .catch(err => console.log('err signing in: ', err));
+  }
 
   render() {
     return (
@@ -19,11 +32,18 @@ export default class Login extends Component {
           <Form>
             <Item floatingLabel>
               <Label>Username</Label>
-              <Input />
+              <Input
+                value={this.state.username}
+                onChangeText={value => this.setState({ username: value })}
+              />
             </Item>
+
             <Item floatingLabel>
               <Label>Password</Label>
-              <Input />
+              <Input
+              value={this.state.password}
+              onChangeText={value => this.setState({ password: value })}
+              />
             </Item>
           </Form>
 
@@ -33,7 +53,7 @@ export default class Login extends Component {
 
           <Button
             block
-            onPress={() => this.props.navigation.navigate('Home')}
+            onPress={this.signIn.bind(this)}
           >
             <Text>Login</Text>
           </Button>

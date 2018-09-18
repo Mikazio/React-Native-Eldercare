@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Image } from 'react-native';
-import { Container, Content, Form, Item, Input, Label, Button, Text, Card, CardItem } from 'native-base';
+import { Image, View } from 'react-native';
+import { Container, Item, Input, Label, Button, Text, Card, CardItem } from 'native-base';
 
 export default class SearchWearer extends Component {
 
@@ -10,21 +10,23 @@ export default class SearchWearer extends Component {
 
   render() {
     return (
-      <Container>
-        <Content>
-          <Form>
+      <Container style={{ alignItems: 'center' }}>
+        <View style={{ width: 320 }}>
+          <View style={{ paddingBottom: 10, paddingTop: 10 }}>
             <Item floatingLabel>
               <Label>Device ID</Label>
               <Input />
             </Item>
+          </View>
             <Button
               block
-            />
-          </Form>
-        </Content>
-        <Content>
-        <Card style={{ height: 228, width: 172 }} >
-          <CardItem>
+            >
+              <Text>Check DeviceID</Text>
+            </Button>
+        </View>
+        <View style={{ paddingTop: 50 }}>
+        <Card style={{ height: 280, width: 220, alignItems: 'center' }} >
+          <CardItem header>
             <Text>DeviceID 58130500026</Text>
           </CardItem>
           <CardItem style={{ paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0 }}>
@@ -44,7 +46,7 @@ export default class SearchWearer extends Component {
             </Button>
           </CardItem>
         </Card>
-        </Content>
+        </View>
       </Container>
     );
   }

@@ -110,7 +110,6 @@ export default class RegisterWatcher extends Component {
 
           <Button
             block
-            color={'red'}
             onPress={this.signUp.bind(this)}
           >
             <Text>Submit</Text>
@@ -132,6 +131,7 @@ const styles = {
   photo: {
     alignItems: 'center',
     height: 100,
-    width: 100
+    width: 100,
+    borderRadius: 100
   }
 };

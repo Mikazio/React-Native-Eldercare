@@ -11,7 +11,17 @@ export default class Login extends Component {
   state = {
     username: '',
     password: '',
-    user: {}
+    user: {},
+    userAttributes: {}
+  }
+
+  getUserInfo() {
+    Auth.currentUserInfo()
+    .then(userAttributes => {
+      this.setState({ userAttributes });
+      console.log('get user data: ', userAttributes);
+    })
+    .catch(err => console.log('err set data: ', err));
   }
 
   signIn() {
@@ -19,7 +29,9 @@ export default class Login extends Component {
     Auth.signIn(username, password)
     .then(user => {
       this.setState({ user });
-      console.log('sucess sign in');
+      console.log(user);
+      this.getUserInfo();
+      this.props.navigation.navigate('Home', { userdata: this.userAttributes });
     })
     .catch(err => console.log('err signing in: ', err));
   }

@@ -6,7 +6,7 @@ const AddButton = () => (
       <Button
         style={{ backgroundColor: 'blue', borderRadius: 100 }}
       >
-        <Icon type='Feather' name='plus' />
+        <Icon type='EvilIcons' name='plus' />
       </Button>
   );
 

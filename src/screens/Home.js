@@ -28,7 +28,9 @@ export default class Home extends Component {
             </TouchableOpacity>
 
         </View>
-        <AddButton />
+        <AddButton
+          onPress={() => this.props.navigation.navigate('SearchWearer')}
+        />
       </Container>
     );
   }

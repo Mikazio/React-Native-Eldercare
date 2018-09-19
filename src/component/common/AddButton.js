@@ -3,7 +3,10 @@ import React from 'react';
 import { Icon, Button } from 'native-base';
 
 const AddButton = () => (
-      <Button style={{ backgroundColor: 'blue', borderRadius: 100 }}>
+      <Button
+        style={{ backgroundColor: 'blue', borderRadius: 100 }}
+        onPress={() => this.props.navigation.navigate('SearchWearer')}
+      >
         <Icon name='plus' />
       </Button>
   );

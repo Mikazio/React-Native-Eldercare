@@ -7,6 +7,8 @@ import Watch from '../screens/Watch';
 import Dashboard from '../screens/Dashboard';
 import RegisterWearer from '../screens/RegisterWearer';
 import SearchWearer from '../screens/SearchWearer';
+import ForgetPassword from '../screens/ForgetPassword';
+import ResetPassword from '../screens/ResetPassword';
 
 const Nav = createStackNavigator({
   Login: { screen: Login },
@@ -17,6 +19,8 @@ const Nav = createStackNavigator({
   Dashboard: { screen: Dashboard },
   RegisterWearer: { screen: RegisterWearer },
   SearchWearer: { screen: SearchWearer },
+  ForgetPassword: { screen: ForgetPassword },
+  ResetPassword: { screen: ResetPassword },
 });
 
 export default Nav;

@@ -59,7 +59,10 @@ export default class Login extends Component {
             </Item>
           </Form>
 
-          <Button transparent info>
+          <Button
+            transparent info
+            onPress={() => this.props.navigation.navigate('ForgetPassword')}
+          >
             <Text>Forget Password?</Text>
           </Button>
 

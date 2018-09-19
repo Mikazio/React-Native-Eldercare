@@ -12,7 +12,7 @@ export default class SearchWearer extends Component {
     return (
       <Container style={{ alignItems: 'center' }}>
         <View style={{ width: 320 }}>
-          <View style={{ paddingBottom: 10, paddingTop: 10 }}>
+          <View style={{ paddingBottom: 16, paddingTop: 16 }}>
             <Item floatingLabel>
               <Label>Device ID</Label>
               <Input />
@@ -40,7 +40,7 @@ export default class SearchWearer extends Component {
           </CardItem>
           <CardItem>
             <Button
-              onPress={() => this.props.navigation.navigate('RegisterWearer')}
+              onPress={() => this.props.navigation.navigate('Home')}
             >
               <Text>Add</Text>
             </Button>

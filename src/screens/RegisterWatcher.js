@@ -17,7 +17,8 @@ export default class RegisterWatcher extends Component {
         lastname: '',
         email: '',
         password: '',
-        phone_number: ''
+        phone_number: '',
+        confirmCode: ''
     };
 
     onChangeText(key, value) {
@@ -26,21 +27,24 @@ export default class RegisterWatcher extends Component {
       });
     }
 
-  signUp() {
+    confirmSignUp() {
+      Auth.confirmSignUp(this.state.email, this.state.confirmCode)
+      .then(() => console.log('Sucessful confirm sign Up'))
+      .catch(err => console.log('error confirm sing Up! ', err));
+    }
+
+    signUp() {
     Auth.signUp({
         username: this.state.email,
         password: this.state.password,
         attributes: {
-          name: this.state.firstname,
+          name: this.state.name,
           'custom:lastname': this.state.lastname,
           phone_number: this.state.phone_number
         }
     })
     .then(() => console.log('Success'))
     .catch(err => console.log('Error in signing up', err));
-  }
-  confirmSignUp() {
-    Auth.confirmSignUp();
   }
 
   _handleButtonSubmit = () => {
@@ -114,6 +118,19 @@ export default class RegisterWatcher extends Component {
           >
             <Text>Submit</Text>
           </Button>
+
+          <Input
+            value={this.state.confirmCode}
+            onChangeText={value => this.setState({ confirmCode: value })}
+          />
+
+          <Button
+            block
+            onPress={this.confirmSignUp.bind(this)}
+          >
+            <Text>confirmSignUp</Text>
+          </Button>
+
         </Content>
 
       </Container>

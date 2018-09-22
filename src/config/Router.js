@@ -10,6 +10,7 @@ import SearchWearer from '../screens/SearchWearer';
 import ForgetPassword from '../screens/ForgetPassword';
 import ResetPassword from '../screens/ResetPassword';
 import LoginDevice from '../screens/LoginDevice';
+import ConfirmSignUp from '../screens/ConfirmSignUp';
 
 const Nav = createStackNavigator({
   Login: { screen: Login },
@@ -23,6 +24,7 @@ const Nav = createStackNavigator({
   ForgetPassword: { screen: ForgetPassword },
   ResetPassword: { screen: ResetPassword },
   LoginDevice: { screen: LoginDevice },
+  ConfirmSignUp: { screen: ConfirmSignUp },
 });
 
 export default Nav;

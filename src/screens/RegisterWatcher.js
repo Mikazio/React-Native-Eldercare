@@ -77,6 +77,7 @@ export default class RegisterWatcher extends Component {
             <Item floatingLabel last>
               <Label>Password</Label>
               <Input
+                secureTextEntry
                 value={this.state.password}
                 onChangeText={value => this.setState({ password: value })}
               />

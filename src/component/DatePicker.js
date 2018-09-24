@@ -14,7 +14,7 @@ export default class Calendar extends Component {
     return (
           <DatePicker
             defaultDate={new Date(2018, 4, 4)}
-            minimumDate={new Date(2018, 1, 1)}
+            minimumDate={new Date(1900, 1, 1)}
             maximumDate={new Date(2018, 12, 31)}
             locale={'en'}
             timeZoneOffsetInMinutes={undefined}

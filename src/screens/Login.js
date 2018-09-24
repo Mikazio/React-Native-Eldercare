@@ -76,7 +76,7 @@ export default class Login extends Component {
 
           <Button
             block bordered
-            onPress={() => this.props.navigation.navigate('SearchWearer')}
+            onPress={() => this.props.navigation.navigate('RegisterWearer')}
           >
             <Text>Register device</Text>
           </Button>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Alert, Text } from 'react-native';
+import { Image, Alert, Text, View } from 'react-native';
 import { Container, Content, Form, Item, Input, Label, Button } from 'native-base';
 import Amplify, { Auth } from 'aws-amplify';
 import aws from '../config/aws-exports';
@@ -57,44 +57,45 @@ export default class RegisterWatcher extends Component {
 
   render() {
     return (
-      <Container>
-        <Content style={styles.photo_container}>
-        <Image
-          source={{ uri: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/10406994_854632824607247_2048936579886851496_n.jpg?_nc_cat=111&oh=3b759dad66550d6680db530e9ca5bc65&oe=5C34B546' }}
-          style={styles.photo}
-        />
-        </Content>
-        <Content>
+      <Container style={{ alignItems: 'center' }}>
+        <Content style={{ width: '90%' }}>
+          <Container style={styles.photo_container}>
+          <Image
+            source={{ uri: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/10406994_854632824607247_2048936579886851496_n.jpg?_nc_cat=111&oh=3b759dad66550d6680db530e9ca5bc65&oe=5C34B546' }}
+            style={styles.photo}
+          />
+          </Container>
+          <View style={{ paddingBottom: 16 }}>
           <Form>
-            <Item floatingLabel>
+            <Item floatingLabel last >
               <Label>Email</Label>
               <Input
                 value={this.state.email}
                 onChangeText={value => this.setState({ email: value })}
               />
             </Item>
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>Password</Label>
               <Input
                 value={this.state.password}
                 onChangeText={value => this.setState({ password: value })}
               />
             </Item>
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>Name</Label>
               <Input
                 value={this.state.name}
                 onChangeText={value => this.setState({ name: value })}
               />
             </Item>
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>Lastname</Label>
               <Input
                 value={this.state.lastname}
                 onChangeText={value => this.setState({ lastname: value })}
               />
             </Item>
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>Phone</Label>
               <Input
                 value={this.state.phone_number}
@@ -102,16 +103,7 @@ export default class RegisterWatcher extends Component {
               />
             </Item>
           </Form>
-        </Content>
-
-        <Content>
-          <Button
-            block bordered
-            onPress={() => this.props.navigation.goBack()}
-          >
-            <Text>Back</Text>
-          </Button>
-
+          </View>
           <Button
             block
             onPress={this.signUp.bind(this)}
@@ -130,7 +122,6 @@ export default class RegisterWatcher extends Component {
           >
             <Text>confirmSignUp</Text>
           </Button>
-
         </Content>
 
       </Container>
@@ -139,10 +130,11 @@ export default class RegisterWatcher extends Component {
 }
 const styles = {
   photo_container: {
+    alignItems: 'center',
     height: 110,
-    width: 110,
-    marginTop: 30,
-    marginBottom: 30,
+    width: null,
+    marginTop: 16,
+
   },
 
   photo: {

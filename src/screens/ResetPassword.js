@@ -10,17 +10,17 @@ export default class ResetPassword extends Component {
   render() {
     return (
       <Container style={{ alignItems: 'center' }}>
-        <Container style={{ width: 320 }}>
+        <Container style={{ width: '90%' }}>
           <Form>
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>OTP code</Label>
               <Input />
             </Item>
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>New Password</Label>
               <Input />
             </Item>
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>Confirm Password</Label>
               <Input />
             </Item>

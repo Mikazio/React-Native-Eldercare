@@ -13,19 +13,19 @@ export default class RegisterWearer extends Component {
       <Container>
         <Content>
           <Form>
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>Name</Label>
               <Input />
             </Item>
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>Lastname</Label>
               <Input />
             </Item>
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>gender</Label>
               <Input />
             </Item>
-            <Item floatingLabel>
+            <Item floatingLabellast>
               <Label>Disease</Label>
               <Input />
             </Item>

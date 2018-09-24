@@ -19,7 +19,7 @@ export default class LoginDevice extends Component {
 
         <Content>
           <Form>
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>DeviceID</Label>
               <Input
                 value={this.state.deviceId}
@@ -27,7 +27,7 @@ export default class LoginDevice extends Component {
               />
             </Item>
 
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>Password</Label>
               <Input
               value={this.state.password}

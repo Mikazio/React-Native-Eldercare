@@ -38,11 +38,10 @@ export default class Login extends Component {
 
   render() {
     return (
-      <Container>
-
-        <Content>
+      <Container style={{ alignItems: 'center' }}>
+        <Content style={{ width: '90%' }}>
           <Form>
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>Username</Label>
               <Input
                 value={this.state.username}
@@ -50,7 +49,7 @@ export default class Login extends Component {
               />
             </Item>
 
-            <Item floatingLabel>
+            <Item floatingLabel last>
               <Label>Password</Label>
               <Input
               value={this.state.password}
@@ -58,7 +57,6 @@ export default class Login extends Component {
               />
             </Item>
           </Form>
-
           <Button
             transparent info
             onPress={() => this.props.navigation.navigate('ForgetPassword')}
@@ -84,7 +82,7 @@ export default class Login extends Component {
 
         </Content>
 
-          <Footer style={{ backgroundColor: '#ddd' }}>
+          <Footer style={{ backgroundColor: '#ddd', width: '100%' }}>
             <Text>Do not have an account? </Text>
             <Button
               transparent small info
@@ -93,6 +91,7 @@ export default class Login extends Component {
               <Text>Register.</Text>
             </Button>
           </Footer>
+
       </Container>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Container, Item, Text, Button, Input, Label } from 'native-base';
+import { Container, Item, Text, Button, Input, Label, Form } from 'native-base';
 
 export default class ForgetPassword extends Component {
 
@@ -11,12 +11,14 @@ export default class ForgetPassword extends Component {
   render() {
     return (
       <Container style={{ alignItems: 'center' }}>
-        <Container style={{ width: 320 }}>
+        <View style={{ width: '90%' }}>
             <View style={{ paddingBottom: 16, paddingTop: 16 }}>
-              <Item floatingLabel>
-                <Label>Enter your email address</Label>
-                <Input />
-              </Item>
+              <Form>
+                <Item floatingLabel last>
+                  <Label>Enter your email address</Label>
+                  <Input />
+                </Item>
+              </Form>
             </View>
             <View>
               <Button
@@ -26,7 +28,7 @@ export default class ForgetPassword extends Component {
                 <Text>Send Login Link</Text>
               </Button>
             </View>
-        </Container>
+        </View>
       </Container>
     );
   }

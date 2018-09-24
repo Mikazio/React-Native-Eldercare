@@ -8,6 +8,14 @@ export default class RegisterWearer extends Component {
     title: 'RegisterWearer',
   };
 
+  state = {
+      name: '',
+      lastname: '',
+      congenital_disease: '',
+      gender: '',
+      DOB: ''
+  };
+
   render() {
     return (
       <Container>
@@ -15,19 +23,31 @@ export default class RegisterWearer extends Component {
           <Form>
             <Item floatingLabel last>
               <Label>Name</Label>
-              <Input />
+              <Input
+                value={this.state.name}
+                onChangeText={value => this.setState({ name: value })}
+              />
             </Item>
             <Item floatingLabel last>
               <Label>Lastname</Label>
-              <Input />
+              <Input
+                value={this.state.lastname}
+                onChangeText={value => this.setState({ lastname: value })}
+              />
             </Item>
             <Item floatingLabel last>
               <Label>gender</Label>
-              <Input />
+              <Input
+                value={this.state.gender}
+                onChangeText={value => this.setState({ gender: value })}
+              />
             </Item>
             <Item floatingLabellast>
-              <Label>Disease</Label>
-              <Input />
+              <Label>congenital disease</Label>
+              <Input 
+                value={this.state.DOB}
+                onChangeText={value => this.setState({ DOB: value })}
+              />
             </Item>
             <Label>Date of Birth</Label>
               <Calender />

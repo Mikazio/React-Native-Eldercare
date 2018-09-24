@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
-import { Container, Content, Form, Item, Input, Label, Button, Text } from 'native-base';
-import Calender from '../component/DatePicker';
+import { Container,
+        Content,
+        Form,
+        Item,
+        Input,
+        Label,
+        Button,
+        Text,
+        DatePicker }
+        from 'native-base';
 
 export default class RegisterWearer extends Component {
 
@@ -15,6 +23,10 @@ export default class RegisterWearer extends Component {
       gender: '',
       DOB: ''
   };
+
+  setDate(newDate) {
+    this.setState({ DOB: newDate });
+  }
 
   render() {
     return (
@@ -44,13 +56,26 @@ export default class RegisterWearer extends Component {
             </Item>
             <Item floatingLabellast>
               <Label>congenital disease</Label>
-              <Input 
-                value={this.state.DOB}
-                onChangeText={value => this.setState({ DOB: value })}
+              <Input
+                value={this.state.congenital_disease}
+                onChangeText={value => this.setState({ congenital_disease: value })}
               />
             </Item>
             <Label>Date of Birth</Label>
-              <Calender />
+            <DatePicker
+              defaultDate={new Date(2018, 4, 4)}
+              minimumDate={new Date(1900, 1, 1)}
+              maximumDate={new Date(2018, 12, 31)}
+              locale={'en'}
+              timeZoneOffsetInMinutes={undefined}
+              modalTransparent={false}
+              animationType={'fade'}
+              androidMode={'default'}
+              placeHolderText="Select date"
+              textStyle={{ color: 'green' }}
+              placeHolderTextStyle={{ color: '#d3d3d3' }}
+              onDateChange={this.setDate.bind(this)}
+            />
           </Form>
 
           <Button transparent info>
@@ -58,9 +83,9 @@ export default class RegisterWearer extends Component {
           </Button>
           <Button
             block
-            onPress={() => this.props.navigation.navigate('Home')}
+            onPress={() => console.log(this.state)}
           >
-            <Text>Login</Text>
+            <Text>Log</Text>
           </Button>
           <Text>OR</Text>
           <Button

@@ -9,31 +9,68 @@ features:
           sdk-generation-stage-name: Development
         paths:
           /WatchTable: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WatchTable-20180925112028.zip
+            codeFilename: uploads/WatchTable-20180925130052.zip
             description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: LLeqacSE5B9EuGWG5Z5U9ozTOtH1FL4LYs5gFhwCcLk=
+            hashcode: fc9KD2tWRmAU2jACiRS3ofvrwsBWejGp+aHSA9jvpP4=
             memorySize: '128'
-            modified: '2018-09-25T04:22:08.095+0000'
+            modified: '2018-09-25T06:01:54.477+0000'
             name: WatchTable
             runtime: nodejs6.10
             timeout: '3'
-            version: t8LeRAPunG_guWS_.Rzkos_Vp6WrGufV
+            version: 9XjvYaaWsfU.q6et.qA5ijhhLqkkHa.E
           '/WatchTable/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WatchTable-20180925112028.zip
+            codeFilename: uploads/WatchTable-20180925130052.zip
             description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: LLeqacSE5B9EuGWG5Z5U9ozTOtH1FL4LYs5gFhwCcLk=
+            hashcode: fc9KD2tWRmAU2jACiRS3ofvrwsBWejGp+aHSA9jvpP4=
             memorySize: '128'
-            modified: '2018-09-25T04:22:08.095+0000'
+            modified: '2018-09-25T06:01:54.477+0000'
             name: WatchTable
             runtime: nodejs6.10
             timeout: '3'
-            version: IAy_CZMFV0WhsVDrUGV29drx0P3SsFVG
+            version: NzVSJ6BzZb5UsBpuNq_7RpD3Js.pgn6W
+          /WatchTableCRUD-WatchTable-mobilehub-1345699887: !com.amazonaws.mobilehub.v0.Function 
+            description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
+            environment: {}
+            handler: lambda.handler
+            hashcode: fc9KD2tWRmAU2jACiRS3ofvrwsBWejGp+aHSA9jvpP4=
+            memorySize: '128'
+            modified: '2018-09-25T06:12:35.474+0000'
+            name: WatchTable
+            runtime: nodejs6.10
+            timeout: '3'
+            version: 49YOczi3T.GIRCpH1..b6e1flXFzuGNm
+          /items: !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/WatchTableCRUD-20180925130052.zip
+            description: 'Handler for calls to resource path : /items/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: //u6unPjcaIXVo5Mxw+sayv4dgVdQBvV63evE9LcWxU=
+            memorySize: '128'
+            modified: '2018-09-25T06:01:53.333+0000'
+            name: WatchTableCRUD
+            runtime: nodejs6.10
+            timeout: '3'
+            version: Tc.hw.sHI9HLFP6xTmGHUAQ4l6hILVED
+          '/items/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/WatchTableCRUD-20180925130052.zip
+            description: 'Handler for calls to resource path : /items/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: //u6unPjcaIXVo5Mxw+sayv4dgVdQBvV63evE9LcWxU=
+            memorySize: '128'
+            modified: '2018-09-25T06:01:53.333+0000'
+            name: WatchTableCRUD
+            runtime: nodejs6.10
+            timeout: '3'
+            version: 0Fxt.SIQ33QnxRFmEIQvB6d0.8Wloe61
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
     attributes:
       enabled: true

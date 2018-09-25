@@ -73,5 +73,6 @@ features:
   user-files: !com.amazonaws.mobilehub.v0.UserFiles 
     attributes:
       enabled: true
+      wildcard-cors-policy: true
 name: React-Native-Eldercare
 region: ap-southeast-1

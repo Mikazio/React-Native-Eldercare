@@ -7,7 +7,13 @@ import { Container,
         Label,
         Button,
         Text,
-        DatePicker }
+        DatePicker,
+        Radio,
+        ListItem,
+        Left,
+        Right,
+        Body
+      }
         from 'native-base';
 
 export default class RegisterWearer extends Component {
@@ -20,7 +26,7 @@ export default class RegisterWearer extends Component {
       name: '',
       lastname: '',
       congenital_disease: '',
-      gender: '',
+      gender: 'Male',
       DOB: ''
   };
 
@@ -47,13 +53,29 @@ export default class RegisterWearer extends Component {
                 onChangeText={value => this.setState({ lastname: value })}
               />
             </Item>
-            <Item floatingLabel last>
+
               <Label>gender</Label>
-              <Input
-                value={this.state.gender}
-                onChangeText={value => this.setState({ gender: value })}
-              />
-            </Item>
+              <ListItem>
+                <Left>
+                  <Text>Female</Text>
+                </Left>
+                <Body>
+                  <Radio
+                     onPress={() => this.setState({ gender: 'Female' })}
+                     selected={this.state.gender === 'Female'}
+                  />
+                </Body>
+                <Left>
+                  <Text>Male</Text>
+                </Left>
+                <Body>
+                  <Radio
+                  onPress={() => this.setState({ gender: 'Male' })}
+                  selected={this.state.gender === 'Male'}
+                  />
+                </Body>
+              </ListItem>
+
             <Item floatingLabellast>
               <Label>congenital disease</Label>
               <Input

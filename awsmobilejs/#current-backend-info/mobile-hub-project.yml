@@ -70,5 +70,8 @@ features:
       sign-in-user-pools: !com.amazonaws.mobilehub.v0.UserPoolsIdentityProvider
         attributes: 
           user-pool-id: ap-southeast-1_Efn1fiJS7
+  user-files: !com.amazonaws.mobilehub.v0.UserFiles
+    attributes: 
+      enabled: true
 name: React-Native-Eldercare
 region: ap-southeast-1

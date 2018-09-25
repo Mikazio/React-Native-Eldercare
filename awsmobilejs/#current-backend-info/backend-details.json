@@ -4,9 +4,31 @@
 	"region": "ap-southeast-1",
 	"state": "NORMAL",
 	"createdDate": "2018-09-25T15:00:59.237Z",
-	"lastUpdatedDate": "2018-09-25T15:59:08.593Z",
+	"lastUpdatedDate": "2018-09-25T16:08:08.605Z",
 	"consoleUrl": "https://console.aws.amazon.com/mobilehub/home#/bfc546f3-8b74-4662-a1f7-4720e4e07a89/build",
 	"resources": [
+		{
+			"type": "AWS::S3::Bucket",
+			"name": "reactnativeeldercare-userfiles-mobilehub-64077983",
+			"arn": null,
+			"feature": "user-data",
+			"attributes": {
+				"lastUpdateRequestID": "8170b3b1-1642-4be8-a2a8-8c0ea14e679e",
+				"region": "ap-southeast-1",
+				"s3-bucket-console-url": "https://s3.console.aws.amazon.com/s3/buckets/reactnativeeldercare-userfiles-mobilehub-64077983"
+			}
+		},
+		{
+			"type": "AWS::IAM::Policy",
+			"name": "reactnativeeldercare_userfiles_MOBILEHUB_64077983",
+			"arn": null,
+			"feature": "user-data",
+			"attributes": {
+				"authType": "authenticated",
+				"lastUpdateRequestID": "8170b3b1-1642-4be8-a2a8-8c0ea14e679e",
+				"role": "reactnativeeldercare_auth_MOBILEHUB_64077983"
+			}
+		},
 		{
 			"type": "AWS::IAM::Policy",
 			"name": "reactnativeeldercare_nosqldatabase_MOBILEHUB_64077983",

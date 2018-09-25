@@ -9,7 +9,7 @@ features:
           sdk-generation-stage-name: Development
         paths:
           /WatchTable: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WatchTable-20180925130052.zip
+            codeFilename: uploads/WatchTable-20180925144045.zip
             description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
             enableCORS: true
             environment: {}
@@ -22,7 +22,7 @@ features:
             timeout: '3'
             version: 9XjvYaaWsfU.q6et.qA5ijhhLqkkHa.E
           '/WatchTable/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WatchTable-20180925130052.zip
+            codeFilename: uploads/WatchTable-20180925144045.zip
             description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
             enableCORS: true
             environment: {}
@@ -45,8 +45,9 @@ features:
             runtime: nodejs6.10
             timeout: '3'
             version: 49YOczi3T.GIRCpH1..b6e1flXFzuGNm
+            codeFilename: uploads/WatchTable-20180925144045.zip
           /items: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WatchTableCRUD-20180925130052.zip
+            codeFilename: uploads/WatchTableCRUD-20180925144045.zip
             description: 'Handler for calls to resource path : /items/{proxy+}'
             enableCORS: true
             environment: {}
@@ -59,7 +60,7 @@ features:
             timeout: '3'
             version: Tc.hw.sHI9HLFP6xTmGHUAQ4l6hILVED
           '/items/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WatchTableCRUD-20180925130052.zip
+            codeFilename: uploads/WatchTableCRUD-20180925144045.zip
             description: 'Handler for calls to resource path : /items/{proxy+}'
             enableCORS: true
             environment: {}

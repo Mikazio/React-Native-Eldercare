@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import { Container } from 'native-base';
+import { Container, Button, Icon } from 'native-base';
 import CardWearer from '../component/CardWearer';
-import AddButton from '../component/common/AddButton';
 
 export default class Home extends Component {
 
@@ -28,9 +27,12 @@ export default class Home extends Component {
             </TouchableOpacity>
 
         </View>
-        <AddButton
-          onPress={() => this.props.navigation.navigate('SearchWearer')}
-        />
+          <Button
+            style={{ backgroundColor: 'blue', borderRadius: 100 }}
+            onPress={() => this.props.navigation.navigate('SearchWearer')}
+          >
+            <Icon type='EvilIcons' name='plus' />
+          </Button>
       </Container>
     );
   }

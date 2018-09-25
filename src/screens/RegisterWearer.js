@@ -7,7 +7,10 @@ import { Container,
         Label,
         Button,
         Text,
-        DatePicker }
+        Left,
+        Body,
+        Radio,
+        ListItem }
         from 'native-base';
 
 export default class RegisterWearer extends Component {
@@ -30,7 +33,7 @@ export default class RegisterWearer extends Component {
         <Content>
           <Form>
             <Item floatingLabel last>
-              <Label>Name</Label>
+              <Label>Firstname</Label>
               <Input
                 value={this.state.name}
                 onChangeText={value => this.setState({ name: value })}
@@ -65,16 +68,6 @@ export default class RegisterWearer extends Component {
                   />
                 </Body>
               </ListItem>
-
-            <Item floatingLabellast>
-              <Label>congenital disease</Label>
-              <Input 
-                value={this.state.DOB}
-                onChangeText={value => this.setState({ DOB: value })}
-              />
-            </Item>
-            <Label>Date of Birth</Label>
-              <Calender />
           </Form>
 
           <Button transparent info>

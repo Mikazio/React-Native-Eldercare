@@ -1,0 +1,62 @@
+--- !com.amazonaws.mobilehub.v0.Project 
+features:
+  cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic 
+    components:
+      WatchTableCRUD: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          name: WatchTableCRUD
+          requires-signin: false
+          sdk-generation-stage-name: Development
+        paths:
+          /WatchTable: !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/WatchTable-20180925112028.zip
+            description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: LLeqacSE5B9EuGWG5Z5U9ozTOtH1FL4LYs5gFhwCcLk=
+            memorySize: '128'
+            modified: '2018-09-25T04:22:08.095+0000'
+            name: WatchTable
+            runtime: nodejs6.10
+            timeout: '3'
+            version: t8LeRAPunG_guWS_.Rzkos_Vp6WrGufV
+          '/WatchTable/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/WatchTable-20180925112028.zip
+            description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: LLeqacSE5B9EuGWG5Z5U9ozTOtH1FL4LYs5gFhwCcLk=
+            memorySize: '128'
+            modified: '2018-09-25T04:22:08.095+0000'
+            name: WatchTable
+            runtime: nodejs6.10
+            timeout: '3'
+            version: IAy_CZMFV0WhsVDrUGV29drx0P3SsFVG
+  content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
+    attributes:
+      enabled: true
+      visibility: public-global
+    components:
+      release: !com.amazonaws.mobilehub.v0.Bucket {}
+  database: !com.amazonaws.mobilehub.v0.Database 
+    components:
+      database-nosql: !com.amazonaws.mobilehub.v0.NoSQLDatabase 
+        tables:
+          - !com.amazonaws.mobilehub.v0.NoSQLTable 
+            attributes:
+              WearerId: S
+              userId: S
+            hashKeyName: userId
+            hashKeyType: S
+            rangeKeyName: WearerId
+            rangeKeyType: S
+            tableName: ___DYNAMIC_PREFIX___-WatchTable
+            tablePrivacy: private
+  mobile-analytics: !com.amazonaws.mobilehub.v0.Pinpoint 
+    components:
+      analytics: !com.amazonaws.mobilehub.v0.PinpointAnalytics {}
+  sign-in: !com.amazonaws.mobilehub.v0.SignIn {}
+name: EldercareProject
+region: ap-southeast-1

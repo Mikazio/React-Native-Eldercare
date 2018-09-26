@@ -4,6 +4,38 @@ apps:
 features: 
   cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic
     components: 
+      ThingTableCRUD: !com.amazonaws.mobilehub.v0.API
+        attributes: 
+          name: ThingTableCRUD
+          requires-signin: true
+          sdk-generation-stage-name: Development
+        paths: 
+          /ThingTable: !com.amazonaws.mobilehub.v0.Function
+            codeFilename: uploads/ThingTable-20180926112032.zip
+            description: "Handler for calls to resource path : /ThingTable/{proxy+}"
+            enableCORS: true
+            environment:  {}
+            handler: lambda.handler
+            hashcode: VVApSPLqbKhBJSHZsXAqw0LMj0ACsHAxNF4oFKZPSeY=
+            memorySize: "128"
+            modified: "2018-09-26T04:22:51.722+0000"
+            name: ThingTable
+            runtime: nodejs6.10
+            timeout: "3"
+            version: gt4xUOzzU2sMb9UCOxZmvq3eR6C52rQs
+          "/ThingTable/{proxy+}": !com.amazonaws.mobilehub.v0.Function
+            codeFilename: uploads/ThingTable-20180926112032.zip
+            description: "Handler for calls to resource path : /ThingTable/{proxy+}"
+            enableCORS: true
+            environment:  {}
+            handler: lambda.handler
+            hashcode: VVApSPLqbKhBJSHZsXAqw0LMj0ACsHAxNF4oFKZPSeY=
+            memorySize: "128"
+            modified: "2018-09-26T04:22:51.722+0000"
+            name: ThingTable
+            runtime: nodejs6.10
+            timeout: "3"
+            version: domY4ENjaytnK5vbu.DfyoXmS9PFZZft
       WatchTableCRUD-MobileHub-1345699887: !com.amazonaws.mobilehub.v0.API
         attributes: 
           api-arn: "arn:aws:execute-api:ap-southeast-1:599222423694:p3lrf05st9"
@@ -16,6 +48,38 @@ features:
           /WatchTableCRUD-WatchTable-mobilehub-1345699887: !com.amazonaws.mobilehub.v0.Function {}
           /items: !com.amazonaws.mobilehub.v0.Function {}
           "/items/{proxy+}": !com.amazonaws.mobilehub.v0.Function {}
+      WearerTableCRUD: !com.amazonaws.mobilehub.v0.API
+        attributes: 
+          name: WearerTableCRUD
+          requires-signin: true
+          sdk-generation-stage-name: Development
+        paths: 
+          /WearerTable: !com.amazonaws.mobilehub.v0.Function
+            codeFilename: uploads/WearerTable-20180926112032.zip
+            description: "Handler for calls to resource path : /WearerTable/{proxy+}"
+            enableCORS: true
+            environment:  {}
+            handler: lambda.handler
+            hashcode: 0xscKgh9PJTRrRNPJUEbC7Tr3l6tQux5y7Q8HT6bkO8=
+            memorySize: "128"
+            modified: "2018-09-26T04:22:51.117+0000"
+            name: WearerTable
+            runtime: nodejs6.10
+            timeout: "3"
+            version: wsbzp23Qa1LamMjeaU26jkA3XOOW9pZw
+          "/WearerTable/{proxy+}": !com.amazonaws.mobilehub.v0.Function
+            codeFilename: uploads/WearerTable-20180926112032.zip
+            description: "Handler for calls to resource path : /WearerTable/{proxy+}"
+            enableCORS: true
+            environment:  {}
+            handler: lambda.handler
+            hashcode: 0xscKgh9PJTRrRNPJUEbC7Tr3l6tQux5y7Q8HT6bkO8=
+            memorySize: "128"
+            modified: "2018-09-26T04:22:51.117+0000"
+            name: WearerTable
+            runtime: nodejs6.10
+            timeout: "3"
+            version: Nyf_89_5STCh.wl3PNysDKxeY_hu6P4C
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery
     attributes: 
       enabled: true
@@ -65,7 +129,7 @@ features:
   sign-in: !com.amazonaws.mobilehub.v0.SignIn
     attributes: 
       enabled: true
-      optional-sign-in: false
+      optional-sign-in: true
     components: 
       sign-in-user-pools: !com.amazonaws.mobilehub.v0.UserPoolsIdentityProvider
         attributes: 

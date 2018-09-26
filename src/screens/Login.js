@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Container, Content, Form, Item, Input, Label, Button, Text, Footer } from 'native-base';
-import { Auth } from 'aws-amplify';
+import Amplify, { Auth } from 'aws-amplify';
+import awsmobile from '../../aws-exports';
+
+Amplify.configure(awsmobile);
 
 export default class Login extends Component {
 

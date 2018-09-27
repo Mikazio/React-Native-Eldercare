@@ -12,6 +12,7 @@
     "aws-amplify-react-native": "^2.0.3",
     "axios": "^0.18.0",
     "native-base": "^2.8.0",
+    "npm": "^6.4.1",
     "react": "16.2.0",
     "react-native": "^0.53.0",
     "react-native-svg": "^7.0.2",

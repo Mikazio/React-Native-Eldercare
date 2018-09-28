@@ -6,14 +6,14 @@
 	"LastNPMInstallTime": "",
 	"FrontendLastBuildTime": "",
 	"LastPublishTime": "",
-	"BackendLastSyncTime": "2018-09-26-12-17-54",
-	"BackendLastBuildTime": "2018-09-26-11-21-09",
-	"BackendLastPushTime": "2018-09-26-11-26-17",
+	"BackendLastSyncTime": "2018-09-28-13-33-07",
+	"BackendLastBuildTime": "2018-09-28-13-25-43",
+	"BackendLastPushTime": "2018-09-28-13-30-02",
 	"BackendProjectID": "bfc546f3-8b74-4662-a1f7-4720e4e07a89",
 	"BackendProjectName": "React-Native-Eldercare",
 	"BackendProjectConsoleUrl": "https://console.aws.amazon.com/mobilehub/home#/bfc546f3-8b74-4662-a1f7-4720e4e07a89/build",
 	"BackendProjectCreationTime": "2018-09-25T15:00:59.237Z",
-	"BackendProjectLastUpdatedTime": "2018-09-26T05:12:14.589Z",
+	"BackendProjectLastUpdatedTime": "2018-09-28T06:26:09.271Z",
 	"Framework": "react-native",
-	"BackendLastSyncToDevTime": "2018-09-26-12-21-45"
+	"BackendLastSyncToDevTime": "2018-09-28-13-34-36"
 }

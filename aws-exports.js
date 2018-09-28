@@ -8,7 +8,7 @@
 const awsmobile = {
     'aws_app_analytics': 'enable',
     'aws_cloud_logic': 'enable',
-    'aws_cloud_logic_custom': [{"id":"p3lrf05st9","name":"WatchTableCRUD-MobileHub-1345699887","description":"","endpoint":"https://p3lrf05st9.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/WatchTable","/WatchTable/123","/WatchTableCRUD-WatchTable-mobilehub-1345699887","/items","/items/123"]},{"id":"vslr4ua2pl","name":"ThingTableCRUD","description":"","endpoint":"https://vslr4ua2pl.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/ThingTable","/ThingTable/123"]},{"id":"rw483746vc","name":"WearerTableCRUD","description":"","endpoint":"https://rw483746vc.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/WearerTable","/WearerTable/123"]}],
+    'aws_cloud_logic_custom': [{"id":"vslr4ua2pl","name":"ThingTableCRUD","description":"","endpoint":"https://vslr4ua2pl.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/ThingTable","/ThingTable/123"]},{"id":"rw483746vc","name":"WearerTableCRUD","description":"","endpoint":"https://rw483746vc.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/WearerTable","/WearerTable/123"]},{"id":"1mdga55t3b","name":"WatchTableCRUD","description":"","endpoint":"https://1mdga55t3b.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/WatchTable","/WatchTable/123"]}],
     'aws_cognito_identity_pool_id': 'ap-southeast-1:7b57b441-8de2-465e-ad49-b10c6732bdaf',
     'aws_cognito_region': 'ap-southeast-1',
     'aws_content_delivery': 'enable',

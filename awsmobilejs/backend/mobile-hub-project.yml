@@ -35,19 +35,39 @@ features:
             name: ThingTable
             runtime: nodejs6.10
             timeout: '3'
-            version: domY4ENjaytnK5vbu.DfyoXmS9PFZZft
-      WatchTableCRUD-MobileHub-1345699887: !com.amazonaws.mobilehub.v0.API 
+            version: gt4xUOzzU2sMb9UCOxZmvq3eR6C52rQs
+      WatchTableCRUD: !com.amazonaws.mobilehub.v0.API 
         attributes:
-          api-arn: 'arn:aws:execute-api:ap-southeast-1:599222423694:p3lrf05st9'
-          name: WatchTableCRUD-MobileHub-1345699887
+          name: WatchTableCRUD
           requires-signin: true
           sdk-generation-stage-name: Development
         paths:
-          /WatchTable: !com.amazonaws.mobilehub.v0.Function {}
-          '/WatchTable/{proxy+}': !com.amazonaws.mobilehub.v0.Function {}
-          /WatchTableCRUD-WatchTable-mobilehub-1345699887: !com.amazonaws.mobilehub.v0.Function {}
-          /items: !com.amazonaws.mobilehub.v0.Function {}
-          '/items/{proxy+}': !com.amazonaws.mobilehub.v0.Function {}
+          /WatchTable: !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/WatchTable-20180928132512.zip
+            description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: gJzSfe7D1/pHFUuPRpCU0DNzsd9Y8JY3HuKKbpHnBEE=
+            memorySize: '128'
+            modified: '2018-09-28T06:26:23.301+0000'
+            name: WatchTable
+            runtime: nodejs6.10
+            timeout: '3'
+            version: Vx1yaIuiDwksovuVeMAaY8h2_KEjBXgd
+          '/WatchTable/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/WatchTable-20180928132512.zip
+            description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: gJzSfe7D1/pHFUuPRpCU0DNzsd9Y8JY3HuKKbpHnBEE=
+            memorySize: '128'
+            modified: '2018-09-28T06:26:23.301+0000'
+            name: WatchTable
+            runtime: nodejs6.10
+            timeout: '3'
+            version: ICg2pIFjvz56e4aVcPyEuHomNu6x3jR1
       WearerTableCRUD: !com.amazonaws.mobilehub.v0.API 
         attributes:
           name: WearerTableCRUD
@@ -55,31 +75,31 @@ features:
           sdk-generation-stage-name: Development
         paths:
           /WearerTable: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WearerTable-20180926112032.zip
+            codeFilename: uploads/WearerTable-20180928132512.zip
             description: 'Handler for calls to resource path : /WearerTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: 0xscKgh9PJTRrRNPJUEbC7Tr3l6tQux5y7Q8HT6bkO8=
+            hashcode: 1BjCDXXqidcrCFtaj7LeTHamVe6jGdiWeg3OfgNlbyI=
             memorySize: '128'
-            modified: '2018-09-26T04:22:51.117+0000'
+            modified: '2018-09-28T06:26:23.236+0000'
             name: WearerTable
             runtime: nodejs6.10
             timeout: '3'
-            version: wsbzp23Qa1LamMjeaU26jkA3XOOW9pZw
+            version: y5Mx_PhPVKuZFntBUdlsq7xQ1IlqzrBl
           '/WearerTable/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WearerTable-20180926112032.zip
+            codeFilename: uploads/WearerTable-20180928132512.zip
             description: 'Handler for calls to resource path : /WearerTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: 0xscKgh9PJTRrRNPJUEbC7Tr3l6tQux5y7Q8HT6bkO8=
+            hashcode: 1BjCDXXqidcrCFtaj7LeTHamVe6jGdiWeg3OfgNlbyI=
             memorySize: '128'
-            modified: '2018-09-26T04:22:51.117+0000'
+            modified: '2018-09-28T06:26:23.236+0000'
             name: WearerTable
             runtime: nodejs6.10
             timeout: '3'
-            version: Nyf_89_5STCh.wl3PNysDKxeY_hu6P4C
+            version: oigO_ZrZG1byAaVYiZyDJbxFRTNRmogu
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
     attributes:
       enabled: true

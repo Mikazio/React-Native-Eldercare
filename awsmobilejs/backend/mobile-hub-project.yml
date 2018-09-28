@@ -39,35 +39,35 @@ features:
       WatchTableCRUD: !com.amazonaws.mobilehub.v0.API 
         attributes:
           name: WatchTableCRUD
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: Development
         paths:
           /WatchTable: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WatchTable-20180928132512.zip
+            codeFilename: uploads/WatchTable-20180928153758.zip
             description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: gJzSfe7D1/pHFUuPRpCU0DNzsd9Y8JY3HuKKbpHnBEE=
+            hashcode: Za8z3Tqm8uCqtzbeqFpoIUh/vsQUtUKk+cIx3+1Gk7U=
             memorySize: '128'
-            modified: '2018-09-28T06:26:23.301+0000'
+            modified: '2018-09-28T08:38:58.883+0000'
             name: WatchTable
             runtime: nodejs6.10
             timeout: '3'
-            version: Vx1yaIuiDwksovuVeMAaY8h2_KEjBXgd
+            version: 2IY2EZspJhX4oVgPrc0fEkbdL4jUXq2u
           '/WatchTable/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WatchTable-20180928132512.zip
+            codeFilename: uploads/WatchTable-20180928153758.zip
             description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: gJzSfe7D1/pHFUuPRpCU0DNzsd9Y8JY3HuKKbpHnBEE=
+            hashcode: Za8z3Tqm8uCqtzbeqFpoIUh/vsQUtUKk+cIx3+1Gk7U=
             memorySize: '128'
-            modified: '2018-09-28T06:26:23.301+0000'
+            modified: '2018-09-28T08:38:58.883+0000'
             name: WatchTable
             runtime: nodejs6.10
             timeout: '3'
-            version: ICg2pIFjvz56e4aVcPyEuHomNu6x3jR1
+            version: ikKXo5NL3OqFp9zGwYyl_zbu3rss9Opl
       WearerTableCRUD: !com.amazonaws.mobilehub.v0.API 
         attributes:
           name: WearerTableCRUD
@@ -75,31 +75,31 @@ features:
           sdk-generation-stage-name: Development
         paths:
           /WearerTable: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WearerTable-20180928132512.zip
+            codeFilename: uploads/WearerTable-20180928175710.zip
             description: 'Handler for calls to resource path : /WearerTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: 1BjCDXXqidcrCFtaj7LeTHamVe6jGdiWeg3OfgNlbyI=
+            hashcode: 6ztGoTUDZpLxxMu/cCiO+Q+ZZcBmMKNrHNGq7aKxhEw=
             memorySize: '128'
-            modified: '2018-09-28T06:26:23.236+0000'
+            modified: '2018-09-28T10:58:04.697+0000'
             name: WearerTable
             runtime: nodejs6.10
             timeout: '3'
-            version: y5Mx_PhPVKuZFntBUdlsq7xQ1IlqzrBl
+            version: GiTGYJcmDBDRjz5kqSvb.G8Cg2wMgr84
           '/WearerTable/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WearerTable-20180928132512.zip
+            codeFilename: uploads/WearerTable-20180928175710.zip
             description: 'Handler for calls to resource path : /WearerTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: 1BjCDXXqidcrCFtaj7LeTHamVe6jGdiWeg3OfgNlbyI=
+            hashcode: 6ztGoTUDZpLxxMu/cCiO+Q+ZZcBmMKNrHNGq7aKxhEw=
             memorySize: '128'
-            modified: '2018-09-28T06:26:23.236+0000'
+            modified: '2018-09-28T10:58:04.697+0000'
             name: WearerTable
             runtime: nodejs6.10
             timeout: '3'
-            version: oigO_ZrZG1byAaVYiZyDJbxFRTNRmogu
+            version: MTDzQkfKfq0.gX8q.NHdB00QErjBqYYL
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
     attributes:
       enabled: true
@@ -143,9 +143,6 @@ features:
             rangeKeyType: ''
             tableName: ___DYNAMIC_PREFIX___-WearerTable
             tablePrivacy: private
-  mobile-analytics: !com.amazonaws.mobilehub.v0.Pinpoint 
-    components:
-      analytics: !com.amazonaws.mobilehub.v0.PinpointAnalytics {}
   sign-in: !com.amazonaws.mobilehub.v0.SignIn 
     attributes:
       enabled: true

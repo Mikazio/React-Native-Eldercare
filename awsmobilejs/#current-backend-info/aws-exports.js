@@ -6,7 +6,6 @@
 
 // AWS Mobile Hub Project Constants
 const awsmobile = {
-    'aws_app_analytics': 'enable',
     'aws_cloud_logic': 'enable',
     'aws_cloud_logic_custom': [{"id":"vslr4ua2pl","name":"ThingTableCRUD","description":"","endpoint":"https://vslr4ua2pl.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/ThingTable","/ThingTable/123"]},{"id":"rw483746vc","name":"WearerTableCRUD","description":"","endpoint":"https://rw483746vc.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/WearerTable","/WearerTable/123"]},{"id":"1mdga55t3b","name":"WatchTableCRUD","description":"","endpoint":"https://1mdga55t3b.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/WatchTable","/WatchTable/123"]}],
     'aws_cognito_identity_pool_id': 'ap-southeast-1:7b57b441-8de2-465e-ad49-b10c6732bdaf',
@@ -19,8 +18,6 @@ const awsmobile = {
     'aws_dynamodb': 'enable',
     'aws_dynamodb_all_tables_region': 'ap-southeast-1',
     'aws_dynamodb_table_schemas': [{"tableName":"reactnativeeldercare-mobilehub-64077983-WatchTable","attributes":[{"name":"userId","type":"S"},{"name":"WearerId","type":"S"},{"name":"Nickname","type":"S"}],"indexes":[],"region":"ap-southeast-1","hashKey":"userId","rangeKey":"WearerId"},{"tableName":"reactnativeeldercare-mobilehub-64077983-ThingTable","attributes":[{"name":"userId","type":"S"},{"name":"WearerId","type":"S"}],"indexes":[],"region":"ap-southeast-1","hashKey":"userId"},{"tableName":"reactnativeeldercare-mobilehub-64077983-WearerTable","attributes":[{"name":"userId","type":"S"},{"name":"Gender","type":"S"},{"name":"Lastname","type":"S"},{"name":"Name","type":"S"}],"indexes":[],"region":"ap-southeast-1","hashKey":"userId"}],
-    'aws_mobile_analytics_app_id': '11b7fa3e335b4e1592c7f29c235b55c2',
-    'aws_mobile_analytics_app_region': 'us-east-1',
     'aws_project_id': 'bfc546f3-8b74-4662-a1f7-4720e4e07a89',
     'aws_project_name': 'React-Native-Eldercare',
     'aws_project_region': 'ap-southeast-1',

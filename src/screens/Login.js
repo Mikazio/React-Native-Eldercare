@@ -80,7 +80,7 @@ export default class Login extends Component {
             </Item>
           </Form>
 
-          <View style={{ paddingBottom: '3%', width: 500 }}>
+          <View style={{ paddingBottom: 5, width: 500 }}>
             <Right>
               <Button
                 transparent info
@@ -99,7 +99,7 @@ export default class Login extends Component {
             <Text>Login</Text>
           </Button>
 
-          <View style={{ alignItems: 'center', padding: '3%' }}>
+          <View style={{ alignItems: 'center', padding: 5 }}>
             <Text style={{ color: '#979A9A' }}>OR</Text>
           </View>
 
@@ -139,7 +139,7 @@ const styles = {
     alignItems: 'center',
     height: 110,
     width: null,
-    marginTop: 35,
+    marginTop: 30,
   },
 
   photo: {

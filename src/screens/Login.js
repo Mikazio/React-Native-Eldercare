@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
-import { Container, Content, Form, Item, Input, Label, Button, Text, Footer, Right, Header, Left, Icon, Body, Title } from 'native-base';
+import { Container, Content, Form, Item, Input, Label, Button, Text, Footer, Right, Header, Body, Title } from 'native-base';
 import Amplify, { Auth } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
 
@@ -44,16 +44,15 @@ export default class Login extends Component {
   render() {
     return (
       <Container style={styles.container}>
-      <Header
-        androidStatusBarColor='#168297'
-        style={{ backgroundColor: '#16879E', width: '100%' }}
-      >
+        <Header
+          androidStatusBarColor='#168297'
+          style={{ backgroundColor: '#16879E', width: '100%' }}
+        >
 
-       <Body style={{ alignItems: 'center' }}>
-         <Title>Eldercare</Title>
-       </Body>
-
-     </Header>
+         <Body style={{ alignItems: 'center' }}>
+           <Title>Eldercare</Title>
+         </Body>
+       </Header>
         <Content style={styles.content}>
           <View style={styles.photo_container}>
             <Image
@@ -130,6 +129,7 @@ export default class Login extends Component {
 const styles = {
   container: {
     alignItems: 'center',
+    flex: 1
 
   },
   content: {

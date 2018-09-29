@@ -1,30 +1,19 @@
 import React, { Component } from 'react';
-import { Container,
-        Content,
-        Form,
-        Item,
-        Input,
-        Label,
-        Button,
-        Text,
-        Left,
-        Body,
-        Radio,
-        ListItem }
-        from 'native-base';
-
+import { Image, View } from 'react-native';
+import { Container, Content, Form, Item, Input, Label, Button, Text, Left, Body, Right, Radio, ListItem, Icon, Header, Title } from 'native-base';
 import { Auth, API } from 'aws-amplify';
 
 export default class RegisterWearer extends Component {
 
   static navigationOptions = {
     title: 'RegisterWearer',
+    header: null
   };
 
   state = {
       name: '',
       lastname: '',
-      gender: 'Male'
+      gender: 'Female'
   };
 
   postToWearerTable() {
@@ -40,62 +29,74 @@ export default class RegisterWearer extends Component {
   render() {
     return (
       <Container>
+        <Header
+          androidStatusBarColor='#168297'
+          style={{ backgroundColor: '#16879E', width: '100%' }}
+        >
+            <Left>
+              <Button
+                transparent
+                onPress={() => this.props.navigation.goBack()}
+              >
+                <Icon name='arrow-back' />
+              </Button>
+            </Left>
+            <Body>
+              <Title>RegisterWearer</Title>
+            </Body>
+            <Right />
+        </Header>
+
         <Content>
-          <Form>
-            <Item floatingLabel last>
-              <Label>Firstname</Label>
-              <Input
-                value={this.state.name}
-                onChangeText={value => this.setState({ name: value })}
-              />
-            </Item>
-            <Item floatingLabel last>
-              <Label>Lastname</Label>
-              <Input
-                value={this.state.lastname}
-                onChangeText={value => this.setState({ lastname: value })}
-              />
-            </Item>
-
-              <Label>gender</Label>
-              <ListItem>
+          <View style={{ alignItems: 'center' }}>
+            <Form style={{ width: '90%' }}>
+              <Item floatingLabel last>
+                <Label style={{ color: '#3C436A' }}>Firstname</Label>
+                <Input
+                  value={this.state.name}
+                  onChangeText={value => this.setState({ name: value })}
+                />
+              </Item>
+              <Item floatingLabel last>
+                <Label style={{ color: '#3C436A' }}>Lastname</Label>
+                <Input
+                  value={this.state.lastname}
+                  onChangeText={value => this.setState({ lastname: value })}
+                />
+              </Item>
+              <ListItem last>
                 <Left>
-                  <Text>Female</Text>
+                  <Label style={{ color: '#3C436A' }}>Gender</Label>
                 </Left>
-                <Body>
-                  <Radio
-                     onPress={() => this.setState({ gender: 'Female' })}
-                     selected={this.state.gender === 'Female'}
-                  />
-                </Body>
                 <Left>
-                  <Text>Male</Text>
+                    <Radio
+                      selectedColor={'#16879E'}
+                      onPress={() => this.setState({ gender: 'Female' })}
+                      selected={this.state.gender === 'Female'}
+                    />
+                    <Text> Female</Text>
                 </Left>
-                <Body>
-                  <Radio
-                  onPress={() => this.setState({ gender: 'Male' })}
-                  selected={this.state.gender === 'Male'}
-                  />
-                </Body>
+                <Left>
+                    <Radio
+                      selectedColor={'#16879E'}
+                      onPress={() => this.setState({ gender: 'Male' })}
+                      selected={this.state.gender === 'Male'}
+                    />
+                    <Text> Male</Text>
+                </Left>
               </ListItem>
-          </Form>
+            </Form>
 
-          <Button transparent info>
-            <Text>Back</Text>
-          </Button>
-          <Button
-            block
-            onPress={() => this.postToWearerTable()}
-          >
-            <Text>Login</Text>
-          </Button>
-          <Text>OR</Text>
-          <Button
-            block bordered
-            onPress={() => this.props.navigation.navigate('Login')}
-          >
-            <Text>Submit</Text>
-          </Button>
+            <View style={{ paddingTop: 20, paddingBottom: 15, width: '90%' }}>
+              <Button
+                block
+                style={{ backgroundColor: '#16879E' }}
+                onPress={() => this.postToWearerTable()}
+              >
+                <Text>Submit</Text>
+              </Button>
+            </View>
+          </View>
         </Content>
       </Container>
     );

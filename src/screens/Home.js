@@ -39,10 +39,11 @@ export default class Home extends Component {
             </Right>
           </Header>
         <View style={styles.layout_card}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Watch')}
+            >
               <CardWearer />
             </TouchableOpacity>
-
         </View>
       </Container>
     );

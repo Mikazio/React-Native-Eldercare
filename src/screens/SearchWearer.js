@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
+import { Auth, API } from 'aws-amplify';
 import { Container, Item, Input, Label, Button, Text, Card, CardItem, Form } from 'native-base';
 
 export default class SearchWearer extends Component {
@@ -7,6 +8,28 @@ export default class SearchWearer extends Component {
   static navigationOptions = {
     title: 'SearchWearer',
   };
+
+  postToWatchTable() {
+    API.post('WatchTableCRUD', '/WatchTable', { body: {
+      userId: Auth.currentAuthenticatedUser(),
+      UserSub: Auth.user.username,
+      WearerId: '1123'
+    } })
+      .then(data => console.log(data))
+      .catch(err => console.log('err', err.response.data));
+  }
+
+  async searchForWearer() {
+    let queryParams: {
+      KeyConditionExpression: 'userId = :userId',
+      ExpressionAttributeValues: {
+                ':userId': '123'
+            },
+    };
+    await API.get('WatchTableCRUD', '/WatchTable')
+      .then(data => console.log(data))
+      .catch(err => console.log('err', err.response.data));
+  }
 
   render() {
     return (
@@ -21,6 +44,7 @@ export default class SearchWearer extends Component {
             <View style={{ paddingTop: 16 }}>
               <Button
                 block
+                onPress={() => this.searchForWearer()}
               >
                 <Text>Check DeviceID</Text>
               </Button>
@@ -43,7 +67,7 @@ export default class SearchWearer extends Component {
           </CardItem>
           <CardItem>
             <Button
-              onPress={() => this.props.navigation.navigate('Home')}
+              onPress={() => this.postToWatchTable()}
             >
               <Text>Add</Text>
             </Button>

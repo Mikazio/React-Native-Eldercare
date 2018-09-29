@@ -7,7 +7,7 @@
 // AWS Mobile Hub Project Constants
 const awsmobile = {
     'aws_cloud_logic': 'enable',
-    'aws_cloud_logic_custom': [{"id":"vslr4ua2pl","name":"ThingTableCRUD","description":"","endpoint":"https://vslr4ua2pl.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/ThingTable","/ThingTable/123"]},{"id":"rw483746vc","name":"WearerTableCRUD","description":"","endpoint":"https://rw483746vc.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/WearerTable","/WearerTable/123"]},{"id":"1mdga55t3b","name":"WatchTableCRUD","description":"","endpoint":"https://1mdga55t3b.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/WatchTable","/WatchTable/123"]}],
+    'aws_cloud_logic_custom': [{"id":"t3hj182zx0","name":"ThingTableCRUD","description":"","endpoint":"https://t3hj182zx0.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/ThingTable","/ThingTable/123"]},{"id":"m26txigc8l","name":"WearerTableCRUD","description":"","endpoint":"https://m26txigc8l.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/WearerTable","/WearerTable/123"]},{"id":"fcxhmrkllj","name":"WatchTableCRUD","description":"","endpoint":"https://fcxhmrkllj.execute-api.ap-southeast-1.amazonaws.com/Development","region":"ap-southeast-1","paths":["/WatchTable","/WatchTable/123"]}],
     'aws_cognito_identity_pool_id': 'ap-southeast-1:7b57b441-8de2-465e-ad49-b10c6732bdaf',
     'aws_cognito_region': 'ap-southeast-1',
     'aws_content_delivery': 'enable',

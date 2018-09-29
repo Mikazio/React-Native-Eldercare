@@ -13,6 +13,8 @@ import { Container,
         ListItem }
         from 'native-base';
 
+import { Auth, API } from 'aws-amplify';
+
 export default class RegisterWearer extends Component {
 
   static navigationOptions = {
@@ -22,10 +24,18 @@ export default class RegisterWearer extends Component {
   state = {
       name: '',
       lastname: '',
-      congenital_disease: '',
-      gender: 'Male',
-      DOB: ''
+      gender: 'Male'
   };
+
+  postToWearerTable() {
+    API.post('WearerTableCRUD', '/WearerTable', { body: {
+      name: this.state.name,
+      lastname: this.state.lastname,
+      gender: this.state.gender,
+    } })
+      .then(data => console.log(data))
+      .catch(err => console.log('err', err.response.data));
+  }
 
   render() {
     return (
@@ -75,7 +85,7 @@ export default class RegisterWearer extends Component {
           </Button>
           <Button
             block
-            onPress={() => this.props.navigation.navigate('Home')}
+            onPress={() => this.postToWearerTable()}
           >
             <Text>Login</Text>
           </Button>

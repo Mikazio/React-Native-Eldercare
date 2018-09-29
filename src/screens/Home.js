@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { Container, Button, Icon, Header, Left, Body, Right, Title, Text } from 'native-base';
+import Amplify, { Auth, API } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
-import Amplify, { API } from 'aws-amplify';
 import CardWearer from '../component/CardWearer';
 
 Amplify.configure(awsmobile);
@@ -13,13 +13,6 @@ export default class Home extends Component {
     title: 'Home',
     header: null
   };
-
-testPostData() {
-  API.post('WatchTableCRUD', '/WatchTable', { body: {
-    userId: 'Mikaz',
-    WearerId: '1123'
-  } });
-}
 
   render() {
     return (
@@ -46,14 +39,7 @@ testPostData() {
             </Right>
           </Header>
         <View style={styles.layout_card}>
-            <Button
-              onPress={() => this.testPostData().then(console.log('Succ').catch(err => console.log('err ', err)))}
-            >
-              <Text>
-                Press ME!
-              </Text>
-            </Button>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Watch')}>
+            <TouchableOpacity>
               <CardWearer />
             </TouchableOpacity>
 

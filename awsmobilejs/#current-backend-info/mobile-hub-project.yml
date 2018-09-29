@@ -6,100 +6,103 @@ features:
     components: 
       ThingTableCRUD: !com.amazonaws.mobilehub.v0.API
         attributes: 
+          disable-aws-auth: false
           name: ThingTableCRUD
           requires-signin: true
           sdk-generation-stage-name: Development
         paths: 
           /ThingTable: !com.amazonaws.mobilehub.v0.Function
-            codeFilename: uploads/ThingTable-20180926112032.zip
+            codeFilename: uploads/ThingTable-20180929125705.zip
             description: "Handler for calls to resource path : /ThingTable/{proxy+}"
             enableCORS: true
             environment:  {}
             handler: lambda.handler
-            hashcode: VVApSPLqbKhBJSHZsXAqw0LMj0ACsHAxNF4oFKZPSeY=
+            hashcode: KF7oqwAHNejWIUGLFXcB+kADqFiZUMB1YK7Lpjck1RA=
             memorySize: "128"
-            modified: "2018-09-26T04:22:51.722+0000"
+            modified: "2018-09-29T05:59:05.699+0000"
             name: ThingTable
             runtime: nodejs6.10
             timeout: "3"
-            version: gt4xUOzzU2sMb9UCOxZmvq3eR6C52rQs
+            version: kd.tJnTyZkjdmA6zjqcDqHhw0uzX1lym
           "/ThingTable/{proxy+}": !com.amazonaws.mobilehub.v0.Function
-            codeFilename: uploads/ThingTable-20180926112032.zip
+            codeFilename: uploads/ThingTable-20180929125705.zip
             description: "Handler for calls to resource path : /ThingTable/{proxy+}"
             enableCORS: true
             environment:  {}
             handler: lambda.handler
-            hashcode: VVApSPLqbKhBJSHZsXAqw0LMj0ACsHAxNF4oFKZPSeY=
+            hashcode: KF7oqwAHNejWIUGLFXcB+kADqFiZUMB1YK7Lpjck1RA=
             memorySize: "128"
-            modified: "2018-09-26T04:22:51.722+0000"
+            modified: "2018-09-29T05:59:05.699+0000"
             name: ThingTable
             runtime: nodejs6.10
             timeout: "3"
-            version: gt4xUOzzU2sMb9UCOxZmvq3eR6C52rQs
+            version: kd.tJnTyZkjdmA6zjqcDqHhw0uzX1lym
       WatchTableCRUD: !com.amazonaws.mobilehub.v0.API
         attributes: 
+          disable-aws-auth: false
           name: WatchTableCRUD
-          requires-signin: false
+          requires-signin: true
           sdk-generation-stage-name: Development
         paths: 
           /WatchTable: !com.amazonaws.mobilehub.v0.Function
-            codeFilename: uploads/WatchTable-20180928153758.zip
+            codeFilename: uploads/WatchTable-20180929125705.zip
             description: "Handler for calls to resource path : /WatchTable/{proxy+}"
             enableCORS: true
             environment:  {}
             handler: lambda.handler
-            hashcode: Za8z3Tqm8uCqtzbeqFpoIUh/vsQUtUKk+cIx3+1Gk7U=
+            hashcode: 8FgBKOkpSaVf40sPlCgIabEbcpjDsgB5k9lI8G+NDQo=
             memorySize: "128"
-            modified: "2018-09-28T08:38:58.883+0000"
+            modified: "2018-09-29T05:59:05.706+0000"
             name: WatchTable
             runtime: nodejs6.10
             timeout: "3"
-            version: 2IY2EZspJhX4oVgPrc0fEkbdL4jUXq2u
+            version: kAwxS0a_DyEe.0Uh0W_LnzVO6URA7niJ
           "/WatchTable/{proxy+}": !com.amazonaws.mobilehub.v0.Function
-            codeFilename: uploads/WatchTable-20180928153758.zip
+            codeFilename: uploads/WatchTable-20180929125705.zip
             description: "Handler for calls to resource path : /WatchTable/{proxy+}"
             enableCORS: true
             environment:  {}
             handler: lambda.handler
-            hashcode: Za8z3Tqm8uCqtzbeqFpoIUh/vsQUtUKk+cIx3+1Gk7U=
+            hashcode: 8FgBKOkpSaVf40sPlCgIabEbcpjDsgB5k9lI8G+NDQo=
             memorySize: "128"
-            modified: "2018-09-28T08:38:58.883+0000"
+            modified: "2018-09-29T05:59:05.706+0000"
             name: WatchTable
             runtime: nodejs6.10
             timeout: "3"
-            version: ikKXo5NL3OqFp9zGwYyl_zbu3rss9Opl
+            version: kAwxS0a_DyEe.0Uh0W_LnzVO6URA7niJ
       WearerTableCRUD: !com.amazonaws.mobilehub.v0.API
         attributes: 
+          disable-aws-auth: false
           name: WearerTableCRUD
           requires-signin: true
           sdk-generation-stage-name: Development
         paths: 
           /WearerTable: !com.amazonaws.mobilehub.v0.Function
-            codeFilename: uploads/WearerTable-20180928175710.zip
+            codeFilename: uploads/WearerTable-20180929125705.zip
             description: "Handler for calls to resource path : /WearerTable/{proxy+}"
             enableCORS: true
             environment:  {}
             handler: lambda.handler
-            hashcode: 6ztGoTUDZpLxxMu/cCiO+Q+ZZcBmMKNrHNGq7aKxhEw=
+            hashcode: yFtkQgvpcaIYvlenkP8P3ceq/OV1I21sMLw/5nx1DKI=
             memorySize: "128"
-            modified: "2018-09-28T10:58:04.697+0000"
+            modified: "2018-09-29T05:59:18.368+0000"
             name: WearerTable
             runtime: nodejs6.10
             timeout: "3"
-            version: GiTGYJcmDBDRjz5kqSvb.G8Cg2wMgr84
+            version: dW_4E86mXPLG8aVj.EtCO6LGjilZkftQ
           "/WearerTable/{proxy+}": !com.amazonaws.mobilehub.v0.Function
-            codeFilename: uploads/WearerTable-20180928175710.zip
+            codeFilename: uploads/WearerTable-20180929125705.zip
             description: "Handler for calls to resource path : /WearerTable/{proxy+}"
             enableCORS: true
             environment:  {}
             handler: lambda.handler
-            hashcode: 6ztGoTUDZpLxxMu/cCiO+Q+ZZcBmMKNrHNGq7aKxhEw=
+            hashcode: yFtkQgvpcaIYvlenkP8P3ceq/OV1I21sMLw/5nx1DKI=
             memorySize: "128"
-            modified: "2018-09-28T10:58:04.697+0000"
+            modified: "2018-09-29T05:59:18.368+0000"
             name: WearerTable
             runtime: nodejs6.10
             timeout: "3"
-            version: MTDzQkfKfq0.gX8q.NHdB00QErjBqYYL
+            version: dW_4E86mXPLG8aVj.EtCO6LGjilZkftQ
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery
     attributes: 
       enabled: true
@@ -120,7 +123,7 @@ features:
             rangeKeyName: WearerId
             rangeKeyType: S
             tableName: ___DYNAMIC_PREFIX___-WatchTable
-            tablePrivacy: protected
+            tablePrivacy: public
           - !com.amazonaws.mobilehub.v0.NoSQLTable
             attributes: 
               WearerId: S
@@ -130,7 +133,7 @@ features:
             rangeKeyName: ""
             rangeKeyType: ""
             tableName: ___DYNAMIC_PREFIX___-ThingTable
-            tablePrivacy: private
+            tablePrivacy: public
           - !com.amazonaws.mobilehub.v0.NoSQLTable
             attributes: 
               Gender: S
@@ -142,7 +145,7 @@ features:
             rangeKeyName: ""
             rangeKeyType: ""
             tableName: ___DYNAMIC_PREFIX___-WearerTable
-            tablePrivacy: private
+            tablePrivacy: public
   sign-in: !com.amazonaws.mobilehub.v0.SignIn
     attributes: 
       enabled: true

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
 import { Auth, API } from 'aws-amplify';
-import { Container, Item, Input, Label, Button, Text, Card, CardItem, Form } from 'native-base';
+import { Container, Content, Item, Input, Label, Button, Text, Card, CardItem, Form, Icon, Header, Left, Body, Right, Title } from 'native-base';
 
 export default class SearchWearer extends Component {
 
   static navigationOptions = {
     title: 'SearchWearer',
+    header: null
   };
 
   postToWatchTable() {
@@ -34,27 +35,47 @@ export default class SearchWearer extends Component {
   render() {
     return (
       <Container style={{ alignItems: 'center' }}>
-        <View style={{ width: '90%' }}>
+        <Header
+          androidStatusBarColor='#168297'
+          style={{ backgroundColor: '#16879E', width: '100%' }}
+        >
+            <Left>
+              <Button
+                transparent
+                onPress={() => this.props.navigation.goBack()}
+              >
+                <Icon name='arrow-back' />
+              </Button>
+            </Left>
+            <Body>
+              <Title>Search Wearer</Title>
+            </Body>
+            <Right />
+        </Header>
+
+        <Content style={{ width: '90%' }}>
           <Form>
             <Item floatingLabel last>
-              <Label>Device ID</Label>
+              <Label style={{ color: '#3C436A' }}>Device ID</Label>
               <Input />
             </Item>
           </Form>
-            <View style={{ paddingTop: 16 }}>
+            <View style={{ paddingTop: 10 }}>
               <Button
                 block
+                style={{ backgroundColor: '#16879E' }}
                 onPress={() => this.searchForWearer()}
               >
                 <Text>Check DeviceID</Text>
               </Button>
-          </View>
-        </View>
+            </View>
 
-        <View style={{ paddingTop: 50 }}>
+
+        <View style={{ paddingTop: 50, alignItems: 'center' }}>
         <Card style={{ height: 280, width: 220, alignItems: 'center' }} >
           <CardItem header>
-            <Text>DeviceID 58130500026</Text>
+            <Text>DeviceID: </Text>
+            <Text>58130500026</Text>
           </CardItem>
           <CardItem style={{ paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0 }}>
               <Image
@@ -67,6 +88,7 @@ export default class SearchWearer extends Component {
           </CardItem>
           <CardItem>
             <Button
+              style={{ backgroundColor: '#16879E' }}
               onPress={() => this.postToWatchTable()}
             >
               <Text>Add</Text>
@@ -74,6 +96,7 @@ export default class SearchWearer extends Component {
           </CardItem>
         </Card>
         </View>
+        </Content>
       </Container>
     );
   }

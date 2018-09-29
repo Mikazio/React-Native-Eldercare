@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Image, Alert, Text, View } from 'react-native';
-import { Container, Content, Form, Item, Input, Label, Button } from 'native-base';
+import { Image, Alert, View } from 'react-native';
+import { Container, Content, Form, Item, Input, Label, Button, Icon, Header, Left, Body, Right, Title, Text } from 'native-base';
 import Amplify, { Auth } from 'aws-amplify';
 import aws from '../config/aws-exports';
 
@@ -10,6 +10,7 @@ export default class RegisterWatcher extends Component {
 
   static navigationOptions = {
     title: 'RegisterWatcher',
+    header: null
   };
 
     state = {
@@ -58,24 +59,42 @@ export default class RegisterWatcher extends Component {
   render() {
     return (
       <Container style={{ alignItems: 'center' }}>
-        <Content style={{ width: '90%' }}>
+        <Header
+          androidStatusBarColor='#168297'
+          style={{ backgroundColor: '#16879E', width: '100%' }}
+        >
+            <Left>
+              <Button
+                transparent
+                onPress={() => this.props.navigation.goBack()}
+              >
+                <Icon name='arrow-back' />
+              </Button>
+            </Left>
+            <Body>
+              <Title>RegisterWatcher</Title>
+            </Body>
+            <Right />
+        </Header>
+
+        <Content style={{ width: '100%' }}>
           <Container style={styles.photo_container}>
           <Image
             source={{ uri: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/10406994_854632824607247_2048936579886851496_n.jpg?_nc_cat=111&oh=3b759dad66550d6680db530e9ca5bc65&oe=5C34B546' }}
             style={styles.photo}
           />
           </Container>
-          <View style={{ paddingBottom: 16 }}>
-          <Form>
+          <View style={{ alignItems: 'center' }}>
+          <Form style={{ width: '90%' }}>
             <Item floatingLabel last >
-              <Label>Email</Label>
+              <Label style={styles.text_label}>Email</Label>
               <Input
                 value={this.state.email}
                 onChangeText={value => this.setState({ email: value })}
               />
             </Item>
             <Item floatingLabel last>
-              <Label>Password</Label>
+              <Label style={styles.text_label}>Password</Label>
               <Input
                 secureTextEntry
                 value={this.state.password}
@@ -83,46 +102,57 @@ export default class RegisterWatcher extends Component {
               />
             </Item>
             <Item floatingLabel last>
-              <Label>Name</Label>
+              <Label style={styles.text_label}>Name</Label>
               <Input
                 value={this.state.name}
                 onChangeText={value => this.setState({ name: value })}
               />
             </Item>
             <Item floatingLabel last>
-              <Label>Lastname</Label>
+              <Label style={styles.text_label}>Lastname</Label>
               <Input
                 value={this.state.lastname}
                 onChangeText={value => this.setState({ lastname: value })}
               />
             </Item>
             <Item floatingLabel last>
-              <Label>Phone</Label>
+              <Label style={styles.text_label}>Phone</Label>
               <Input
                 value={this.state.phone_number}
                 onChangeText={value => this.setState({ phone_number: value })}
               />
             </Item>
+
           </Form>
           </View>
+          <View style={{ alignItems: 'center' }}>
+            <View style={{ paddingTop: 15, paddingBottom: 15, width: '90%' }}>
+              <Button
+                block
+                onPress={this.signUp.bind(this)}
+                style={{ backgroundColor: '#16879E' }}
+              >
+                <Text>Submit</Text>
+              </Button>
+            </View>
+          </View>
+          <View style={{ backgroundColor: '#EEEE', margin: 15 }}>
+          <Item regular last>
+
+            <Input
+              placeholder='Get SMS Vertification'
+              value={this.state.confirmCode}
+              onChangeText={value => this.setState({ confirmCode: value })}
+            />
+          </Item>
           <Button
             block
-            onPress={this.signUp.bind(this)}
-          >
-            <Text>Submit</Text>
-          </Button>
-
-          <Input
-            value={this.state.confirmCode}
-            onChangeText={value => this.setState({ confirmCode: value })}
-          />
-
-          <Button
-            block
+            style={{ backgroundColor: '#3C436A' }}
             onPress={this.confirmSignUp.bind(this)}
           >
-            <Text>confirmSignUp</Text>
+            <Text style={{ color: '#FFFFFF' }}>Confirm SignUp</Text>
           </Button>
+          </View>
         </Content>
 
       </Container>
@@ -134,7 +164,7 @@ const styles = {
     alignItems: 'center',
     height: 110,
     width: null,
-    marginTop: 16,
+    marginTop: 30,
 
   },
 
@@ -143,5 +173,8 @@ const styles = {
     height: 100,
     width: 100,
     borderRadius: 100
+  },
+  text_label: {
+    color: '#3C436A'
   }
 };

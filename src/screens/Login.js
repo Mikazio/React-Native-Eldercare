@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
-import { Container, Content, Form, Item, Input, Label, Button, Text, Footer, Right, Header, Body, Title } from 'native-base';
+import { Container, Content, Form, Item, Input, Label, Button, Text, Footer, Right, Header, Left, Body, Title } from 'native-base';
 import Amplify, { Auth } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
 
@@ -53,6 +53,7 @@ export default class Login extends Component {
            <Title>Eldercare</Title>
          </Body>
        </Header>
+
         <Content style={styles.content}>
           <View style={styles.photo_container}>
             <Image
@@ -60,6 +61,7 @@ export default class Login extends Component {
               style={styles.photo}
             />
           </View>
+
           <Form>
             <Item floatingLabel last >
               <Label style={{ color: '#3C436A' }}>Email</Label>
@@ -79,7 +81,7 @@ export default class Login extends Component {
             </Item>
           </Form>
 
-          <View style={{ paddingBottom: 5, width: 500 }}>
+          <View style={{ paddingBottom: 5, width: '150%' }}>
             <Right>
               <Button
                 transparent info

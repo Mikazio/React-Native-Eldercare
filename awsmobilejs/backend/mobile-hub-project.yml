@@ -6,103 +6,132 @@ features:
     components:
       ThingTableCRUD: !com.amazonaws.mobilehub.v0.API 
         attributes:
-          disable-aws-auth: false
           name: ThingTableCRUD
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: Development
         paths:
           /ThingTable: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/ThingTable-20180929125705.zip
+            codeFilename: uploads/ThingTable-20180929171512.zip
             description: 'Handler for calls to resource path : /ThingTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: KF7oqwAHNejWIUGLFXcB+kADqFiZUMB1YK7Lpjck1RA=
+            hashcode: alwmX2EWo0crRo+ts2n9hCxeG/q/+6Cg4OIul+lMGJs=
             memorySize: '128'
-            modified: '2018-09-29T05:59:05.699+0000'
+            modified: '2018-09-29T10:16:46.823+0000'
             name: ThingTable
             runtime: nodejs6.10
             timeout: '3'
-            version: kd.tJnTyZkjdmA6zjqcDqHhw0uzX1lym
+            version: 0zj.BIR_4cGzSZE12y2CPTB2tvcKoUzH
           '/ThingTable/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/ThingTable-20180929125705.zip
+            codeFilename: uploads/ThingTable-20180929171512.zip
             description: 'Handler for calls to resource path : /ThingTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: KF7oqwAHNejWIUGLFXcB+kADqFiZUMB1YK7Lpjck1RA=
+            hashcode: alwmX2EWo0crRo+ts2n9hCxeG/q/+6Cg4OIul+lMGJs=
             memorySize: '128'
-            modified: '2018-09-29T05:59:05.699+0000'
+            modified: '2018-09-29T10:16:46.823+0000'
             name: ThingTable
             runtime: nodejs6.10
             timeout: '3'
-            version: kd.tJnTyZkjdmA6zjqcDqHhw0uzX1lym
+            version: MqtiGNghQ0QF7qM74.tuXiAd1hyuIDLJ
       WatchTableCRUD: !com.amazonaws.mobilehub.v0.API 
         attributes:
-          disable-aws-auth: false
           name: WatchTableCRUD
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: Development
         paths:
           /WatchTable: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WatchTable-20180929125705.zip
+            codeFilename: uploads/WatchTable-20180929213357.zip
             description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: 8FgBKOkpSaVf40sPlCgIabEbcpjDsgB5k9lI8G+NDQo=
+            hashcode: BnBnM58Mipb3bMgm8w2PVlBuCAxeGqmQ4s+0yLSWmu0=
             memorySize: '128'
-            modified: '2018-09-29T05:59:05.706+0000'
+            modified: '2018-09-29T14:43:33.749+0000'
             name: WatchTable
             runtime: nodejs6.10
             timeout: '3'
-            version: kAwxS0a_DyEe.0Uh0W_LnzVO6URA7niJ
+            version: W6y0oy0trSnmC7QATvMW5O4EtJ85DoVB
           '/WatchTable/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WatchTable-20180929125705.zip
+            codeFilename: uploads/WatchTable-20180929213357.zip
             description: 'Handler for calls to resource path : /WatchTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: 8FgBKOkpSaVf40sPlCgIabEbcpjDsgB5k9lI8G+NDQo=
+            hashcode: BnBnM58Mipb3bMgm8w2PVlBuCAxeGqmQ4s+0yLSWmu0=
             memorySize: '128'
-            modified: '2018-09-29T05:59:05.706+0000'
+            modified: '2018-09-29T14:43:33.749+0000'
             name: WatchTable
             runtime: nodejs6.10
             timeout: '3'
-            version: kAwxS0a_DyEe.0Uh0W_LnzVO6URA7niJ
+            version: wyygdjG7_hhVUoDrOWUcO.evFnJictFw
       WearerTableCRUD: !com.amazonaws.mobilehub.v0.API 
         attributes:
-          disable-aws-auth: false
           name: WearerTableCRUD
-          requires-signin: true
+          requires-signin: false
           sdk-generation-stage-name: Development
         paths:
           /WearerTable: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WearerTable-20180929125705.zip
+            codeFilename: uploads/WearerTable-20180929223452.zip
             description: 'Handler for calls to resource path : /WearerTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: yFtkQgvpcaIYvlenkP8P3ceq/OV1I21sMLw/5nx1DKI=
+            hashcode: pvu1cz8Rqm41VLPsOJFM0Ph+0xHnymKZYBXxdZRWHQw=
             memorySize: '128'
-            modified: '2018-09-29T05:59:18.368+0000'
+            modified: '2018-09-29T15:36:11.131+0000'
             name: WearerTable
             runtime: nodejs6.10
             timeout: '3'
-            version: dW_4E86mXPLG8aVj.EtCO6LGjilZkftQ
+            version: WUsn9Y20xVnIRDZ4BluykrTmB5lqFOPJ
           '/WearerTable/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/WearerTable-20180929125705.zip
+            codeFilename: uploads/WearerTable-20180929223452.zip
             description: 'Handler for calls to resource path : /WearerTable/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: yFtkQgvpcaIYvlenkP8P3ceq/OV1I21sMLw/5nx1DKI=
+            hashcode: pvu1cz8Rqm41VLPsOJFM0Ph+0xHnymKZYBXxdZRWHQw=
             memorySize: '128'
-            modified: '2018-09-29T05:59:18.368+0000'
+            modified: '2018-09-29T15:36:11.131+0000'
             name: WearerTable
             runtime: nodejs6.10
             timeout: '3'
-            version: dW_4E86mXPLG8aVj.EtCO6LGjilZkftQ
+            version: JPVrL7r25XMktEmKGy4Hy7E138RBZZS9
+      sampleCloudApi: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          name: sampleCloudApi
+          requires-signin: false
+          sdk-generation-stage-name: Development
+        paths:
+          /items: !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/sampleLambda-20180929170420.zip
+            description: 'Handler for calls to resource path : /items/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: D0wIs/5LNE5i9PwQGpjATEyaIRauIrh/iTmE7yRVoHM=
+            memorySize: '128'
+            modified: '2018-09-29T10:06:08.782+0000'
+            name: sampleLambda
+            runtime: nodejs6.10
+            timeout: '3'
+            version: Er6Hxla3lEjWMGst1VjQG9ErEYEhKiMh
+          '/items/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/sampleLambda-20180929170420.zip
+            description: 'Handler for calls to resource path : /items/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: D0wIs/5LNE5i9PwQGpjATEyaIRauIrh/iTmE7yRVoHM=
+            memorySize: '128'
+            modified: '2018-09-29T10:06:08.782+0000'
+            name: sampleLambda
+            runtime: nodejs6.10
+            timeout: '3'
+            version: FSV556X0mO5zeLJIjPOOOZRxBcNHRuYq
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
     attributes:
       enabled: true

@@ -14,22 +14,21 @@ export default class SearchWearer extends Component {
     API.post('WatchTableCRUD', '/WatchTable', { body: {
       userId: Auth.currentAuthenticatedUser(),
       UserSub: Auth.user.username,
-      WearerId: '1123'
+      WearerId: 'Mikazio Mikaza'
     } })
       .then(data => console.log(data))
       .catch(err => console.log('err', err.response.data));
   }
 
   async searchForWearer() {
-    let queryParams: {
-      KeyConditionExpression: 'userId = :userId',
-      ExpressionAttributeValues: {
-                ':userId': '123'
-            },
+    const queryParams = {
+      queryStringParameters: {
+        gender: 'Female'
+      }
     };
-    await API.get('WearerTable', '/WearerTable/object', queryParams)
-      .then(data => console.log(data))
-      .catch(err => console.log('err', err.response.data));
+    await API.get('WearerTableCRUD', '/WearerTable', queryParams)
+      .then(res => console.log(res))
+      .catch(err => console.log('err', err.response));
   }
 
   render() {

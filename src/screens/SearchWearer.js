@@ -26,7 +26,7 @@ export default class SearchWearer extends Component {
                 ':userId': '123'
             },
     };
-    await API.get('WatchTableCRUD', '/WatchTable')
+    await API.get('WearerTable', '/WearerTable/object', queryParams)
       .then(data => console.log(data))
       .catch(err => console.log('err', err.response.data));
   }

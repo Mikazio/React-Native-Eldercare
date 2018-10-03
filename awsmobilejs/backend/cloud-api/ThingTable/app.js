@@ -18,12 +18,12 @@ const mhprefix  = process.env.MOBILE_HUB_DYNAMIC_PREFIX;
 let tableName = "ThingTable";
 const hasDynamicPrefix = true;
 
-const userIdPresent = true;
-const partitionKeyName = "userId";
+const userIdPresent = false;
+const partitionKeyName = "ThingId";
 const partitionKeyType = "S"
-const sortKeyName = "";
-const sortKeyType = "";
-const hasSortKey = false;
+const sortKeyName = "WearerId";
+const sortKeyType = "S";
+const hasSortKey = true;
 const path = "/ThingTable";
 
 const awsmobile = {}
@@ -56,7 +56,7 @@ const convertUrlType = (param, type) => {
  * HTTP Get method for list objects *
  ********************************/
 
-app.get('/ThingTable', function(req, res) {
+app.get('/ThingTable/:ThingId', function(req, res) {
   var condition = {}
   condition[partitionKeyName] = {
     ComparisonOperator: 'EQ'
@@ -90,7 +90,7 @@ app.get('/ThingTable', function(req, res) {
  * HTTP Get method for get single object *
  *****************************************/
 
-app.get('/ThingTable/object', function(req, res) {
+app.get('/ThingTable/object/:ThingId/:WearerId', function(req, res) {
   var params = {};
   if (userIdPresent && req.apiGateway) {
     params[partitionKeyName] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
@@ -179,7 +179,7 @@ app.post(path, function(req, res) {
 * HTTP remove method to delete object *
 ***************************************/
 
-app.delete('/ThingTable/object', function(req, res) {
+app.delete('/ThingTable/object/:ThingId/:WearerId', function(req, res) {
   var params = {};
   if (userIdPresent && req.apiGateway) {
     params[partitionKeyName] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;

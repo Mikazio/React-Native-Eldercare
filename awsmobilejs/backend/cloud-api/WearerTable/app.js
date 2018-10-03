@@ -18,19 +18,19 @@ const mhprefix  = process.env.MOBILE_HUB_DYNAMIC_PREFIX;
 let tableName = "WearerTable";
 const hasDynamicPrefix = true;
 
-const userIdPresent = true;
-const partitionKeyName = "userId";
+const userIdPresent = false;
+const partitionKeyName = "WearerId";
 const partitionKeyType = "S"
-const sortKeyName = "";
-const sortKeyType = "";
-const hasSortKey = false;
+const sortKeyName = "DeviceId";
+const sortKeyType = "S";
+const hasSortKey = true;
 const path = "/WearerTable";
 
 const awsmobile = {}
 
 if (hasDynamicPrefix) {
   tableName = mhprefix + '-' + tableName;
-}
+} 
 
 const UNAUTH = 'UNAUTH';
 
@@ -56,12 +56,12 @@ const convertUrlType = (param, type) => {
  * HTTP Get method for list objects *
  ********************************/
 
-app.get('/WearerTable', function(req, res) {
+app.get('/WearerTable/:WearerId', function(req, res) {
   var condition = {}
   condition[partitionKeyName] = {
     ComparisonOperator: 'EQ'
   }
-
+  
   if (userIdPresent && req.apiGateway) {
     condition[partitionKeyName]['AttributeValueList'] = [req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH ];
   } else {
@@ -75,7 +75,7 @@ app.get('/WearerTable', function(req, res) {
   let queryParams = {
     TableName: tableName,
     KeyConditions: condition
-  }
+  } 
 
   dynamodb.query(queryParams, (err, data) => {
     if (err) {
@@ -90,7 +90,7 @@ app.get('/WearerTable', function(req, res) {
  * HTTP Get method for get single object *
  *****************************************/
 
-app.get('/WearerTable/object', function(req, res) {
+app.get('/WearerTable/object/:WearerId/:DeviceId', function(req, res) {
   var params = {};
   if (userIdPresent && req.apiGateway) {
     params[partitionKeyName] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
@@ -134,7 +134,7 @@ app.get('/WearerTable/object', function(req, res) {
 *************************************/
 
 app.put(path, function(req, res) {
-
+  
   if (userIdPresent) {
     req.body['userId'] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   }
@@ -157,7 +157,7 @@ app.put(path, function(req, res) {
 *************************************/
 
 app.post(path, function(req, res) {
-
+  
   if (userIdPresent) {
     req.body['userId'] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   }
@@ -179,7 +179,7 @@ app.post(path, function(req, res) {
 * HTTP remove method to delete object *
 ***************************************/
 
-app.delete('/WearerTable/object', function(req, res) {
+app.delete('/WearerTable/object/:WearerId/:DeviceId', function(req, res) {
   var params = {};
   if (userIdPresent && req.apiGateway) {
     params[partitionKeyName] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;

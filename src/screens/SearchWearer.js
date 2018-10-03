@@ -10,6 +10,10 @@ export default class SearchWearer extends Component {
     header: null
   };
 
+  state = {
+    WearerId: ''
+  }
+
   postToWatchTable() {
     API.post('WatchTableCRUD', '/WatchTable', { body: {
       userId: Auth.currentAuthenticatedUser(),
@@ -29,6 +33,20 @@ export default class SearchWearer extends Component {
     await API.get('WearerTableCRUD', '/WearerTable', queryParams)
       .then(res => console.log(res))
       .catch(err => console.log('err', err.response));
+  }
+
+  async testSearch() {
+    let apiName = 'NewWearerCRUD';
+    let path = '/NewWearer/object/' + this.state.WearerId;
+    let myInit = {
+      queryStringParameters: {
+        gender: 'Female'
+      }
+    }
+    console.log('current path ', path);
+    await API.get(apiName, path)
+      .then(response => console.log(response))
+      .catch(error => { console.log(error.response); });
   }
 
   render() {
@@ -56,14 +74,17 @@ export default class SearchWearer extends Component {
           <Form>
             <Item floatingLabel last>
               <Label style={{ color: '#3C436A' }}>Device ID</Label>
-              <Input />
+              <Input
+                value={this.state.WearerId}
+                onChangeText={value => this.setState({ WearerId: value })}
+              />
             </Item>
           </Form>
             <View style={{ paddingTop: 10 }}>
               <Button
                 block
                 style={{ backgroundColor: '#16879E' }}
-                onPress={() => this.searchForWearer()}
+                onPress={() => this.testSearch()}
               >
                 <Text>Check DeviceID</Text>
               </Button>

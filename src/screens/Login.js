@@ -24,7 +24,6 @@ export default class Login extends Component {
     Auth.currentUserInfo()
     .then(userAttributes => {
       this.setState({ userAttributes });
-      console.log('get user data: ', userAttributes);
     })
     .catch(err => console.log('err set data: ', err));
   }
@@ -34,7 +33,6 @@ export default class Login extends Component {
     Auth.signIn(username, password)
     .then(user => {
       this.setState({ user });
-      console.log(user);
       this.getUserInfo();
       this.props.navigation.navigate('Home', { userdata: this.userAttributes });
     })

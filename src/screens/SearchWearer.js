@@ -24,13 +24,8 @@ export default class SearchWearer extends Component {
       .catch(err => console.log('err', err.response.data));
   }
 
-  async searchForWearer() {
-    const queryParams = {
-      queryStringParameters: {
-        gender: 'Female'
-      }
-    };
-    await API.get('WearerTableCRUD', '/WearerTable', queryParams)
+  async searchForWearer(WearerId) {
+    await API.get('WearerTableCRUD', '/WearerTable/' + WearerId)
       .then(res => console.log(res))
       .catch(err => console.log('err', err.response));
   }
@@ -84,7 +79,7 @@ export default class SearchWearer extends Component {
               <Button
                 block
                 style={{ backgroundColor: '#16879E' }}
-                onPress={() => this.testSearch()}
+                onPress={() => this.searchForWearer(this.state.WearerId)}
               >
                 <Text>Check DeviceID</Text>
               </Button>

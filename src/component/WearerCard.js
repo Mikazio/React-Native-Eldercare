@@ -3,8 +3,8 @@ import { Image, View } from 'react-native';
 import { Card, CardItem, Text, Button } from 'native-base';
 import { Auth, API } from 'aws-amplify';
 
-function postToWatchTable(Wearer) {
-  API.post('WatchTableCRUD', '/WatchTable', { body: {
+async function postToWatchTable(Wearer) {
+ await API.post('WatchTableCRUD', '/WatchTable', { body: {
     userId: Auth.currentAuthenticatedUser(),
     UserSub: Auth.user.username,
     WearerId: Wearer

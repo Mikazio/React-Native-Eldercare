@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
-import { Container, Content, Form, Item, Input, Label, Button, Text, Footer, Right, Header, Left, Body, Title } from 'native-base';
+import { Container, 
+          Content,
+          Form,
+          Item,
+          Input,
+          Label,
+          Button,
+          Text,
+          Footer,
+          Right,
+          Header,
+          Body,
+          Title
+        } from 'native-base';
 import Amplify, { Auth } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
 

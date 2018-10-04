@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image } from 'react-native';
+import { Image } from 'react-native';
 import { Text, Card, CardItem, Body } from 'native-base';
 
 export default class CardWearer extends Component {
@@ -12,7 +12,9 @@ export default class CardWearer extends Component {
                 style={{ height: 175, width: null, flex: 1 }}
               />
           </CardItem>
-          <CardItem style={{ backgroundColor: '#16879E', justifyContent: 'center', paddingLeft: 5, flex: 1 }} >
+          <CardItem
+          style={{ backgroundColor: '#16879E', justifyContent: 'center', paddingLeft: 5, flex: 1 }} 
+          >
             <Body>
               <Text style={{ color: '#FFFFFF' }}>Name Lastname</Text>
             </Body>

@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Auth, API } from 'aws-amplify';
-import { Container, Content, Item, Input, Label, Button, Text, Form, Icon, Header, Left, Body, Right, Title } from 'native-base';
+import { API } from 'aws-amplify';
+import { Container,
+          Content,
+          Item,
+          Input,
+          Label,
+          Button,
+          Text,
+          Form,
+          Icon,
+          Header,
+          Left,
+          Body,
+          Right,
+          Title
+        } from 'native-base';
 import WearerCard from '../component/WearerCard';
 
 

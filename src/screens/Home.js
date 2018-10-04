@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { Container, Button, Icon, Header, Left, Body, Right, Title, Text } from 'native-base';
-import Amplify, { Auth, API } from 'aws-amplify';
+import Amplify from 'aws-amplify';
 import awsmobile from '../../aws-exports';
 import CardWearer from '../component/CardWearer';
 

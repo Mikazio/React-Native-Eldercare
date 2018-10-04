@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Image, View } from 'react-native';
 import { Card, CardItem, Text, Button } from 'native-base';
 
-export default class WearerCard extends Component {
-
-  render() {
+const WearerCard = ({ data }) => {
+    const { DeviceId, Name, lastname } = data;
     return (
       <View style={{ paddingTop: 50, alignItems: 'center' }}>
 
       <Card style={{ height: 280, width: 220, alignItems: 'center' }} >
         <CardItem header>
           <Text>DeviceID: </Text>
-          <Text>58130500026</Text>
+          <Text>{DeviceId}</Text>
         </CardItem>
         <CardItem style={{ paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0 }}>
             <Image
@@ -20,22 +19,21 @@ export default class WearerCard extends Component {
             />
         </CardItem>
         <CardItem>
-            <Text>Name Lastname</Text>
+            <Text>{Name} {lastname}</Text>
         </CardItem>
         <CardItem>
           <Button
             style={{ backgroundColor: '#16879E' }}
-            onPress={() => console.log(this.state.WearerData)}
+            onPress={() => console.log(data)}
           >
             <Text>Add</Text>
           </Button>
         </CardItem>
       </Card>
 
-    </View>)
-    ;
-  }
-}
+    </View>
+  );
+};
 
 const styles = {
   photo: {
@@ -45,3 +43,5 @@ const styles = {
     borderRadius: 100
   }
 };
+
+export default WearerCard;

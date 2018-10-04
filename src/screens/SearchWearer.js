@@ -17,16 +17,6 @@ export default class SearchWearer extends Component {
     WearerData: []
   }
 
-  postToWatchTable() {
-    API.post('WatchTableCRUD', '/WatchTable', { body: {
-      userId: Auth.currentAuthenticatedUser(),
-      UserSub: Auth.user.username,
-      WearerId: 'Mikazio Mikaza'
-    } })
-      .then(data => console.log(data))
-      .catch(err => console.log('err', err.response.data));
-  }
-
   async searchForWearer(WearerId) {
     await API.get('WearerTableCRUD', `/WearerTable/${WearerId}`)
       .then(data => this.setState({
@@ -37,7 +27,9 @@ export default class SearchWearer extends Component {
 
   displayCard() {
     if (this.state.WearerData.length > 0) {
-      return <WearerCard />;
+      return this.state.WearerData.map(Wearer =>
+        <WearerCard key={Wearer.DeviceId} data={Wearer} />
+      );
     }
   }
 

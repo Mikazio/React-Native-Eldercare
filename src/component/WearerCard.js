@@ -1,9 +1,20 @@
 import React from 'react';
 import { Image, View } from 'react-native';
 import { Card, CardItem, Text, Button } from 'native-base';
+import { Auth, API } from 'aws-amplify';
+
+function postToWatchTable(Wearer) {
+  API.post('WatchTableCRUD', '/WatchTable', { body: {
+    userId: Auth.currentAuthenticatedUser(),
+    UserSub: Auth.user.username,
+    WearerId: Wearer
+  } })
+    .then(data => console.log(data))
+    .catch(err => console.log('err', err.response.data));
+  }
 
 const WearerCard = ({ data }) => {
-    const { DeviceId, Name, lastname } = data;
+    const { DeviceId, Name, lastname, WearerId } = data;
     return (
       <View style={{ paddingTop: 50, alignItems: 'center' }}>
 
@@ -24,13 +35,12 @@ const WearerCard = ({ data }) => {
         <CardItem>
           <Button
             style={{ backgroundColor: '#16879E' }}
-            onPress={() => console.log(data)}
+            onPress={() => postToWatchTable(WearerId)}
           >
             <Text>Add</Text>
           </Button>
         </CardItem>
       </Card>
-
     </View>
   );
 };

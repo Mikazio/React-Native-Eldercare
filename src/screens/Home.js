@@ -14,10 +14,22 @@ export default class Home extends Component {
     header: null
   };
 
-  async getWatchData() {
-    await API.get('WatchTableCRUD', '/WatchTable/')
-      .then(data => console.log(data))
+  state = {
+    WatchData: []
+  }
+
+  componentWillMount() {
+    API.get('WatchTableCRUD', '/WatchTable/')
+      .then(data => this.setState({ WatchData: data }))
       .catch(err => console.log('err', err.response));
+  }
+
+  displayWatchCard() {
+    if (this.state.WatchData.length > 0) {
+      return this.state.WatchData.map(Watch =>
+        <CardWearer key={Watch.WearerId} data={Watch} />
+      );
+    }
   }
 
   render() {
@@ -46,9 +58,9 @@ export default class Home extends Component {
           </Header>
         <View style={styles.layout_card}>
             <TouchableOpacity
-              onPress={() => this.getWatchData()}
+              onPress={() => { console.log(this.state.WatchData); }}
             >
-              <CardWearer />
+              {this.displayWatchCard()}
             </TouchableOpacity>
         </View>
       </Container>

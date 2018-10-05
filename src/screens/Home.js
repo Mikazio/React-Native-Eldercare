@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { Container, Button, Icon, Header, Left, Body, Right, Title, Text } from 'native-base';
-import Amplify from 'aws-amplify';
+import Amplify, { API } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
 import CardWearer from '../component/CardWearer';
 
@@ -13,6 +13,12 @@ export default class Home extends Component {
     title: 'Home',
     header: null
   };
+
+  async getWatchData() {
+    await API.get('WatchTableCRUD', '/WatchTable/')
+      .then(data => console.log(data))
+      .catch(err => console.log('err', err.response));
+  }
 
   render() {
     return (
@@ -40,7 +46,7 @@ export default class Home extends Component {
           </Header>
         <View style={styles.layout_card}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Watch')}
+              onPress={() => this.getWatchData()}
             >
               <CardWearer />
             </TouchableOpacity>

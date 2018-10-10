@@ -7,8 +7,8 @@ import CardWearer from '../component/CardWearer';
 export default class Home extends Component {
 
     displayWatchCard() {
-      if (this.state.WatchData.length > 0) {
-        return this.state.WatchData.map(Watch =>
+      if (this.props.data.length > 0) {
+        return this.props.data.map(Watch =>
           <CardWearer key={Watch.WearerId} data={Watch} />
         );
       }
@@ -19,7 +19,7 @@ export default class Home extends Component {
     return (
       <View style={styles.layout_card}>
           <TouchableOpacity
-            onPress={() => { console.log(this.state.WatchData); }}
+            onPress={() => { console.log(this.props.data); }}
           >
             {this.displayWatchCard()}
           </TouchableOpacity>

@@ -4,6 +4,7 @@ import { Text, Card, CardItem, Body } from 'native-base';
 
 export default class CardWearer extends Component {
   render() {
+    console.log('this card prop ', this.props);
     return (
         <Card style={{ height: 228, width: 172 }} >
           <CardItem style={{ paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0 }}>
@@ -13,7 +14,7 @@ export default class CardWearer extends Component {
               />
           </CardItem>
           <CardItem
-          style={{ backgroundColor: '#16879E', justifyContent: 'center', paddingLeft: 5, flex: 1 }} 
+          style={{ backgroundColor: '#16879E', justifyContent: 'center', paddingLeft: 5, flex: 1 }}
           >
             <Body>
               <Text style={{ color: '#FFFFFF' }}>Name Lastname</Text>

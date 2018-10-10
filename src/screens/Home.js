@@ -3,7 +3,7 @@ import { TouchableOpacity, View } from 'react-native';
 import { Container, Button, Icon, Header, Left, Body, Right, Title, Text } from 'native-base';
 import Amplify, { API } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
-import CardWearer from '../component/CardWearer';
+import CardSection from '../component/CardSection';
 
 Amplify.configure(awsmobile);
 
@@ -22,14 +22,6 @@ export default class Home extends Component {
     API.get('WatchTableCRUD', '/WatchTable/')
       .then(data => this.setState({ WatchData: data }))
       .catch(err => console.log('err', err.response));
-  }
-
-  displayWatchCard() {
-    if (this.state.WatchData.length > 0) {
-      return this.state.WatchData.map(Watch =>
-        <CardWearer key={Watch.WearerId} data={Watch} />
-      );
-    }
   }
 
   render() {
@@ -56,13 +48,7 @@ export default class Home extends Component {
             </Button>
             </Right>
           </Header>
-        <View style={styles.layout_card}>
-            <TouchableOpacity
-              onPress={() => { console.log(this.state.WatchData); }}
-            >
-              {this.displayWatchCard()}
-            </TouchableOpacity>
-        </View>
+          <CardSection data={this.state.WatchData} />
       </Container>
     );
   }

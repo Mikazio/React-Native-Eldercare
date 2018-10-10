@@ -17,7 +17,7 @@ export default class CardWearer extends Component {
           style={{ backgroundColor: '#16879E', justifyContent: 'center', paddingLeft: 5, flex: 1 }}
           >
             <Body>
-              <Text style={{ color: '#FFFFFF' }}>Name Lastname</Text>
+              <Text style={{ color: '#FFFFFF' }}>{this.props.WearerId} Lastname</Text>
             </Body>
           </CardItem>
         </Card>

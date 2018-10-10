@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { Container, Button, Icon, Header, Left, Body, Right, Title, Text } from 'native-base';
-import Amplify from 'aws-amplify';
+import Amplify, { API } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
 import CardSection from '../component/CardSection';
 
@@ -56,13 +56,7 @@ export default class Home extends Component {
             </Button>
             </Right>
           </Header>
-        <View style={styles.layout_card}>
-            <TouchableOpacity
-              onPress={() => { console.log(this.state.WatchData); }}
-            >
-              {this.displayWatchCard()}
-            </TouchableOpacity>
-        </View>
+        <CardSection data={this.state.WatchData} />
       </Container>
     );
   }

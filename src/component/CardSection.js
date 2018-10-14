@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, View } from 'react-native';
-import { Container, Button, Icon, Header, Left, Body, Right, Title, Text } from 'native-base';
-import Amplify, { API } from 'aws-amplify';
+import { View } from 'react-native';
 import CardWearer from '../component/CardWearer';
 
 export default class Home extends Component {

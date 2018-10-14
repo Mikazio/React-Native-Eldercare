@@ -14,7 +14,7 @@ class CardList extends Component {
 
   renderData() {
     return this.state.datas.map(data =>
-      <CardDetails key={data.DeviceId} data={data} />
+      <CardDetails key={data.timestamp} data={data} />
     );
   }
 

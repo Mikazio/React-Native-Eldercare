@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
 import { Text, Card, CardItem, Body } from 'native-base';
 
 export default class CardWearer extends Component {
   render() {
     console.log('this card prop ', this.props.watch);
     return (
+      <TouchableOpacity
+        onPress={() => { console.log(this.props.data); }}
+      >
         <Card style={{ height: 228, width: 172 }} >
           <CardItem style={{ paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0 }}>
               <Image
@@ -17,10 +20,11 @@ export default class CardWearer extends Component {
           style={{ backgroundColor: '#16879E', justifyContent: 'center', paddingLeft: 5, flex: 1 }}
           >
             <Body>
-              <Text style={{ color: '#FFFFFF' }}>{this.props.data.WearerId} Lastname</Text>
+              <Text style={{ color: '#FFFFFF' }}>Device: {this.props.data.WearerId}</Text>
             </Body>
           </CardItem>
         </Card>
+      </TouchableOpacity>
     );
   }
 }

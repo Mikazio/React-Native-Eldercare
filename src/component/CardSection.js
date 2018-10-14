@@ -18,11 +18,7 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.layout_card}>
-          <TouchableOpacity
-            onPress={() => { console.log(this.props.data); }}
-          >
             {this.displayWatchCard()}
-          </TouchableOpacity>
       </View>
     );
   }

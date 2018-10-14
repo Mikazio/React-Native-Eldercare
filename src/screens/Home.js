@@ -56,7 +56,7 @@ export default class Home extends Component {
             </Button>
             </Right>
           </Header>
-        <CardSection data={this.state.WatchData} />
+        <CardSection data={this.state.WatchData} navigation={this.props.navigation} />
       </Container>
     );
   }

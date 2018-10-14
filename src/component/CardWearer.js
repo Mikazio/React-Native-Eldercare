@@ -4,10 +4,9 @@ import { Text, Card, CardItem, Body } from 'native-base';
 
 export default class CardWearer extends Component {
   render() {
-    console.log('this card prop ', this.props.watch);
     return (
       <TouchableOpacity
-        onPress={() => { console.log(this.props.data); }}
+        onPress={() => { this.props.navigation.navigate('Watch'); }}
       >
         <Card style={{ height: 228, width: 172 }} >
           <CardItem style={{ paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0 }}>
@@ -16,9 +15,9 @@ export default class CardWearer extends Component {
                 style={{ height: 175, width: null, flex: 1 }}
               />
           </CardItem>
-          <CardItem
+        <CardItem
           style={{ backgroundColor: '#16879E', justifyContent: 'center', paddingLeft: 5, flex: 1 }}
-          >
+        >
             <Body>
               <Text style={{ color: '#FFFFFF' }}>Device: {this.props.data.WearerId}</Text>
             </Body>

@@ -9,7 +9,7 @@ export default class Home extends Component {
     displayWatchCard() {
       if (this.props.data.length > 0) {
         return this.props.data.map(Watch =>
-          <CardWearer key={Watch.WearerId} data={Watch} />
+          <CardWearer key={Watch.WearerId} data={Watch} navigation={this.props.navigation} />
         );
       }
     }

@@ -11,6 +11,9 @@ export default class Watch extends Component {
   };
 
   render() {
+    const { navigation } = this.props;
+    const WearerId = navigation.getParam('WearerId', 'NO-ID');
+
     return (
       <Container>
         <Header
@@ -40,7 +43,7 @@ export default class Watch extends Component {
               source={{ uri: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/10406994_854632824607247_2048936579886851496_n.jpg?_nc_cat=111&oh=3b759dad66550d6680db530e9ca5bc65&oe=5C34B546' }}
               style={styles.photo}
             />
-            <Text style={{ color: '#FFFF' }}>Name Lastname</Text>
+            <Text style={{ color: '#FFFF' }}>Devices Id: {WearerId}</Text>
           </View>
         <Tabs>
           <Tab
@@ -57,7 +60,7 @@ export default class Watch extends Component {
                 <Text>Profile</Text>
               </TabHeading>}
           >
-            <Profile />
+            <Profile wear={WearerId} />
           </Tab>
         </Tabs>
       </Container>

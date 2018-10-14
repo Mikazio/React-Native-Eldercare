@@ -15,7 +15,7 @@ export default class Profile extends Component {
             <CardItem>
               <Body>
                 <Text>
-                   Profile
+                   Data is {this.props.data.WearerId}
                 </Text>
               </Body>
             </CardItem>

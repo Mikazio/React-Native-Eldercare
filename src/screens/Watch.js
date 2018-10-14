@@ -60,7 +60,7 @@ export default class Watch extends Component {
                 <Text>Profile</Text>
               </TabHeading>}
           >
-            <Profile wear={WearerId} />
+            <Profile data={WearerId} />
           </Tab>
         </Tabs>
       </Container>

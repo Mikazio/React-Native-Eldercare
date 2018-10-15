@@ -6,7 +6,11 @@ export default class CardWearer extends Component {
   render() {
     return (
       <TouchableOpacity
-        onPress={() => { this.props.navigation.navigate('Watch'); }}
+        onPress={() => {
+          this.props.navigation.navigate('Watch', {
+            WearerId: this.props.data.WearerId
+          });
+        }}
       >
         <Card style={{ height: 228, width: 172 }} >
           <CardItem style={{ paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0 }}>

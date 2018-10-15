@@ -24,14 +24,6 @@ export default class Home extends Component {
       .catch(err => console.log('err', err.response));
   }
 
-  displayWatchCard() {
-    if (this.state.WatchData.length > 0) {
-      return this.state.WatchData.map(Watch =>
-        <CardWearer key={Watch.WearerId} data={Watch} />
-      );
-    }
-  }
-
   render() {
     return (
       <Container style={styles.container}>

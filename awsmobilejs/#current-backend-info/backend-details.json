@@ -4,7 +4,7 @@
 	"region": "ap-southeast-1",
 	"state": "NORMAL",
 	"createdDate": "2018-10-03T13:00:48.720Z",
-	"lastUpdatedDate": "2018-10-03T13:40:57.778Z",
+	"lastUpdatedDate": "2018-10-16T15:45:13.040Z",
 	"consoleUrl": "https://console.aws.amazon.com/mobilehub/home#/f91452a8-9167-4877-80df-b367b09c1995/build",
 	"resources": [
 		{
@@ -25,7 +25,7 @@
 			"feature": "user-data",
 			"attributes": {
 				"authType": "authenticated",
-				"lastUpdateRequestID": "100ac96f-9d46-494a-895b-dbcd0704e845",
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a",
 				"role": "eldercarebackendv_auth_MOBILEHUB_797506409"
 			}
 		},
@@ -36,7 +36,7 @@
 			"feature": "user-data",
 			"attributes": {
 				"authType": "unauthenticated",
-				"lastUpdateRequestID": "100ac96f-9d46-494a-895b-dbcd0704e845",
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a",
 				"role": "eldercarebackendv_unauth_MOBILEHUB_797506409"
 			}
 		},
@@ -47,7 +47,7 @@
 			"feature": "database",
 			"attributes": {
 				"authType": "authenticated",
-				"lastUpdateRequestID": "100ac96f-9d46-494a-895b-dbcd0704e845",
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a",
 				"role": "eldercarebackendv_auth_MOBILEHUB_797506409"
 			}
 		},
@@ -58,7 +58,7 @@
 			"feature": "database",
 			"attributes": {
 				"authType": "unauthenticated",
-				"lastUpdateRequestID": "100ac96f-9d46-494a-895b-dbcd0704e845",
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a",
 				"role": "eldercarebackendv_unauth_MOBILEHUB_797506409"
 			}
 		},
@@ -78,6 +78,15 @@
 			"feature": "database",
 			"attributes": {
 				"lastUpdateRequestID": "e496965d-a151-4123-9528-3687f83114ff"
+			}
+		},
+		{
+			"type": "AWS::DynamoDB::Table",
+			"name": "eldercarebackendv-mobilehub-797506409-IoTDataTable",
+			"arn": "arn:aws:dynamodb:ap-southeast-1:599222423694:table/eldercarebackendv-mobilehub-797506409-IoTDataTable",
+			"feature": "database",
+			"attributes": {
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a"
 			}
 		},
 		{
@@ -174,7 +183,7 @@
 			"feature": "hosting",
 			"attributes": {
 				"authType": "authenticated",
-				"lastUpdateRequestID": "100ac96f-9d46-494a-895b-dbcd0704e845",
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a",
 				"role": "eldercarebackendv_auth_MOBILEHUB_797506409"
 			}
 		},
@@ -185,7 +194,7 @@
 			"feature": "hosting",
 			"attributes": {
 				"authType": "unauthenticated",
-				"lastUpdateRequestID": "100ac96f-9d46-494a-895b-dbcd0704e845",
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a",
 				"role": "eldercarebackendv_unauth_MOBILEHUB_797506409"
 			}
 		},
@@ -195,9 +204,9 @@
 			"arn": null,
 			"feature": "cloud-api",
 			"attributes": {
-				"eTag": "b06914b821afed5bbcb4d7f01ae0fc47",
-				"lastUpdateRequestID": "100ac96f-9d46-494a-895b-dbcd0704e845",
-				"versionID": "uQ3XqN4_zCchWuifOCjXlZ1H.K.z2_NR"
+				"eTag": "35bf70d57850a8317fcea9e91426b0f7",
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a",
+				"versionID": "CqkPbaqMXOJ7cMyO0o9w_6J_TyWcpfNO"
 			}
 		},
 		{
@@ -206,9 +215,9 @@
 			"arn": null,
 			"feature": "cloud-api",
 			"attributes": {
-				"eTag": "d22d3c99205275428d03efbc32557a1a",
-				"lastUpdateRequestID": "100ac96f-9d46-494a-895b-dbcd0704e845",
-				"versionID": "cmHP4yDPlzemjsR9HJ7wbOIOIneWJ4wy"
+				"eTag": "4548e00bce47eca2fb374304839320ed",
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a",
+				"versionID": "wqquCoCY1aT4dYny5P2X2DTifWEntjda"
 			}
 		},
 		{
@@ -217,42 +226,42 @@
 			"arn": null,
 			"feature": "cloud-api",
 			"attributes": {
-				"eTag": "e6e3b8bb70ab8763b7ba768b644f5798",
-				"lastUpdateRequestID": "100ac96f-9d46-494a-895b-dbcd0704e845",
-				"versionID": "YQ3OwZHoKT2FOvqB5dYD28vRYvi.uqtY"
+				"eTag": "2b77a8306cb8df2c92ce441de9cd6c3e",
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a",
+				"versionID": "pIu8AVuSRPt7Blyc4.CRVLWaR3OJtCAC"
 			}
 		},
 		{
 			"type": "AWS::S3::File",
-			"name": "uploads/ThingTable-20181003200102.zip",
+			"name": "uploads/ThingTable-20181016224307.zip",
 			"arn": null,
 			"feature": "cloud-api",
 			"attributes": {
-				"eTag": "88324dc30ce85d9b7b5f90e712d8d2ef-3",
-				"lastUpdateRequestID": "e496965d-a151-4123-9528-3687f83114ff",
-				"versionID": "_t0CZ8jASqYDNFjfI_3v16jG.GkwJfRs"
+				"eTag": "9d5855dd3680ec3e991b6551baeeeebb-3",
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a",
+				"versionID": "O1E4Nqkg4dX96ZXm5mKCUuUQ5GUZyObl"
 			}
 		},
 		{
 			"type": "AWS::S3::File",
-			"name": "uploads/WearerTable-20181003204000.zip",
+			"name": "uploads/WearerTable-20181016224307.zip",
 			"arn": null,
 			"feature": "cloud-api",
 			"attributes": {
-				"eTag": "743c7584e02e4ad27c51c7b2d139a525-3",
-				"lastUpdateRequestID": "100ac96f-9d46-494a-895b-dbcd0704e845",
-				"versionID": "Elkk2eIKCZnbQaLDL.WFU0SmbtiS__xw"
+				"eTag": "c68e2af28ce7e015a6ec33ee4ba90f43-3",
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a",
+				"versionID": "6nwDCwDnSvCuBFGflkH9b93iMEiuwPCG"
 			}
 		},
 		{
 			"type": "AWS::S3::File",
-			"name": "uploads/WatchTable-20181003200102.zip",
+			"name": "uploads/WatchTable-20181016224307.zip",
 			"arn": null,
 			"feature": "cloud-api",
 			"attributes": {
-				"eTag": "b3a81e35b07ecb37c052bf2f6629f19f-3",
-				"lastUpdateRequestID": "e496965d-a151-4123-9528-3687f83114ff",
-				"versionID": "X2WtkVbXN49hgoFWlaJhzRLfLHk0AeX3"
+				"eTag": "a2ad8090df0147291b7ae7d96ad7b028-3",
+				"lastUpdateRequestID": "2b28af69-edb6-4440-baf0-6b2ed342dd2a",
+				"versionID": "HJ5X79Slst9XxjtyP0HgENjs0LDTOnKD"
 			}
 		},
 		{
@@ -265,24 +274,10 @@
 				"cfPhysicalID": "3hni2ofd86",
 				"configApiName": "ThingTableCRUD",
 				"deeplinkURL": "https://console.aws.amazon.com/apigateway/home?region=ap-southeast-1#/apis/3hni2ofd86/resources",
-				"lastUpdateTimestamp": "1538574068744",
+				"lastUpdateTimestamp": "1539704722147",
 				"reason": "none",
 				"region": "ap-southeast-1",
 				"status": "UPDATE_COMPLETE"
-			}
-		},
-		{
-			"type": "AWS::ApiGateway::Deployment",
-			"name": "WearerTableCRUD-Developmentd22d3c9920527542-MobileHub-797506409",
-			"arn": null,
-			"feature": "cloud-api",
-			"attributes": {
-				"cfLogicalID": "WearerTableCRUDDevelopmentd22d3c9920527542MobileHub797506409",
-				"cfPhysicalID": "qspx3a",
-				"lastUpdateTimestamp": "1538574087937",
-				"reason": "none",
-				"region": "ap-southeast-1",
-				"status": "CREATE_COMPLETE"
 			}
 		},
 		{
@@ -296,7 +291,7 @@
 				"configApiName": "WearerTableCRUD",
 				"configHandlerName": "WearerTable",
 				"deeplinkURL": "https://console.aws.amazon.com/lambda/home?region=ap-southeast-1#/functions/WearerTableCRUD-WearerTable-mobilehub-797506409",
-				"lastUpdateTimestamp": "1538574076599",
+				"lastUpdateTimestamp": "1539704727056",
 				"reason": "none",
 				"region": "ap-southeast-1",
 				"status": "UPDATE_COMPLETE"
@@ -312,7 +307,7 @@
 				"cfPhysicalID": "2fvpuvbvuj",
 				"configApiName": "WatchTableCRUD",
 				"deeplinkURL": "https://console.aws.amazon.com/apigateway/home?region=ap-southeast-1#/apis/2fvpuvbvuj/resources",
-				"lastUpdateTimestamp": "1538574069296",
+				"lastUpdateTimestamp": "1539704722027",
 				"reason": "none",
 				"region": "ap-southeast-1",
 				"status": "UPDATE_COMPLETE"
@@ -341,7 +336,7 @@
 			"attributes": {
 				"cfLogicalID": "ThingTableCRUDDevelopmentMobileHub797506409",
 				"cfPhysicalID": "Development",
-				"lastUpdateTimestamp": "1538574075748",
+				"lastUpdateTimestamp": "1539704729347",
 				"reason": "none",
 				"region": "ap-southeast-1",
 				"status": "UPDATE_COMPLETE"
@@ -358,7 +353,7 @@
 				"configApiName": "ThingTableCRUD",
 				"configHandlerName": "ThingTable",
 				"deeplinkURL": "https://console.aws.amazon.com/lambda/home?region=ap-southeast-1#/functions/ThingTableCRUD-ThingTable-mobilehub-797506409",
-				"lastUpdateTimestamp": "1538574073276",
+				"lastUpdateTimestamp": "1539704726438",
 				"reason": "none",
 				"region": "ap-southeast-1",
 				"status": "UPDATE_COMPLETE"
@@ -403,7 +398,7 @@
 				"configApiName": "WatchTableCRUD",
 				"configHandlerName": "WatchTable",
 				"deeplinkURL": "https://console.aws.amazon.com/lambda/home?region=ap-southeast-1#/functions/WatchTableCRUD-WatchTable-mobilehub-797506409",
-				"lastUpdateTimestamp": "1538574073760",
+				"lastUpdateTimestamp": "1539704726138",
 				"reason": "none",
 				"region": "ap-southeast-1",
 				"status": "UPDATE_COMPLETE"
@@ -419,6 +414,20 @@
 				"cfPhysicalID": "arn:aws:lambda:ap-southeast-1:599222423694:function:ThingTableCRUD-ThingTable-mobilehub-797506409:Development",
 				"deeplinkURL": "https://console.aws.amazon.com/lambda/home?region=ap-southeast-1#/functions/ThingTableCRUD-ThingTable-mobilehub-797506409/Development",
 				"lastUpdateTimestamp": "1538571871582",
+				"reason": "none",
+				"region": "ap-southeast-1",
+				"status": "CREATE_COMPLETE"
+			}
+		},
+		{
+			"type": "AWS::ApiGateway::Deployment",
+			"name": "ThingTableCRUD-Development2b77a8306cb8df2c-MobileHub-797506409",
+			"arn": null,
+			"feature": "cloud-api",
+			"attributes": {
+				"cfLogicalID": "ThingTableCRUDDevelopment2b77a8306cb8df2cMobileHub797506409",
+				"cfPhysicalID": "gk9sd7",
+				"lastUpdateTimestamp": "1539704725381",
 				"reason": "none",
 				"region": "ap-southeast-1",
 				"status": "CREATE_COMPLETE"
@@ -448,38 +457,10 @@
 				"cfPhysicalID": "dlu9epmwy6",
 				"configApiName": "WearerTableCRUD",
 				"deeplinkURL": "https://console.aws.amazon.com/apigateway/home?region=ap-southeast-1#/apis/dlu9epmwy6/resources",
-				"lastUpdateTimestamp": "1538574072109",
+				"lastUpdateTimestamp": "1539704722064",
 				"reason": "none",
 				"region": "ap-southeast-1",
 				"status": "UPDATE_COMPLETE"
-			}
-		},
-		{
-			"type": "AWS::ApiGateway::Deployment",
-			"name": "WatchTableCRUD-Developmentb06914b821afed5b-MobileHub-797506409",
-			"arn": null,
-			"feature": "cloud-api",
-			"attributes": {
-				"cfLogicalID": "WatchTableCRUDDevelopmentb06914b821afed5bMobileHub797506409",
-				"cfPhysicalID": "8yw9bi",
-				"lastUpdateTimestamp": "1538574072926",
-				"reason": "none",
-				"region": "ap-southeast-1",
-				"status": "CREATE_COMPLETE"
-			}
-		},
-		{
-			"type": "AWS::ApiGateway::Deployment",
-			"name": "ThingTableCRUD-Developmente6e3b8bb70ab8763-MobileHub-797506409",
-			"arn": null,
-			"feature": "cloud-api",
-			"attributes": {
-				"cfLogicalID": "ThingTableCRUDDevelopmente6e3b8bb70ab8763MobileHub797506409",
-				"cfPhysicalID": "g0t7xt",
-				"lastUpdateTimestamp": "1538574072152",
-				"reason": "none",
-				"region": "ap-southeast-1",
-				"status": "CREATE_COMPLETE"
 			}
 		},
 		{
@@ -504,7 +485,7 @@
 			"attributes": {
 				"cfLogicalID": "WearerTableCRUDDevelopmentMobileHub797506409",
 				"cfPhysicalID": "Development",
-				"lastUpdateTimestamp": "1538574091515",
+				"lastUpdateTimestamp": "1539704728515",
 				"reason": "none",
 				"region": "ap-southeast-1",
 				"status": "UPDATE_COMPLETE"
@@ -534,10 +515,24 @@
 				"cfLogicalID": "CloudLogic",
 				"cfPhysicalID": "arn:aws:cloudformation:ap-southeast-1:599222423694:stack/MOBILEHUB-797506409-Development-CloudLogic-1UMPPTDRI6CWF/c3d325d0-c70c-11e8-94c2-503a138dba36",
 				"deeplinkURL": "https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stack/detail?stackId=arn:aws:cloudformation:ap-southeast-1:599222423694:stack/MOBILEHUB-797506409-Development-CloudLogic-1UMPPTDRI6CWF/c3d325d0-c70c-11e8-94c2-503a138dba36",
-				"lastUpdateTimestamp": "1538574113183",
+				"lastUpdateTimestamp": "1539704753957",
 				"reason": "none",
 				"region": "ap-southeast-1",
 				"status": "UPDATE_COMPLETE"
+			}
+		},
+		{
+			"type": "AWS::ApiGateway::Deployment",
+			"name": "WatchTableCRUD-Development35bf70d57850a831-MobileHub-797506409",
+			"arn": null,
+			"feature": "cloud-api",
+			"attributes": {
+				"cfLogicalID": "WatchTableCRUDDevelopment35bf70d57850a831MobileHub797506409",
+				"cfPhysicalID": "657roj",
+				"lastUpdateTimestamp": "1539704725133",
+				"reason": "none",
+				"region": "ap-southeast-1",
+				"status": "CREATE_COMPLETE"
 			}
 		},
 		{
@@ -556,6 +551,20 @@
 			}
 		},
 		{
+			"type": "AWS::ApiGateway::Deployment",
+			"name": "WearerTableCRUD-Development4548e00bce47eca2-MobileHub-797506409",
+			"arn": null,
+			"feature": "cloud-api",
+			"attributes": {
+				"cfLogicalID": "WearerTableCRUDDevelopment4548e00bce47eca2MobileHub797506409",
+				"cfPhysicalID": "9xfjn8",
+				"lastUpdateTimestamp": "1539704725448",
+				"reason": "none",
+				"region": "ap-southeast-1",
+				"status": "CREATE_COMPLETE"
+			}
+		},
+		{
 			"type": "AWS::ApiGateway::Stage",
 			"name": "WatchTableCRUD-Development-MobileHub-797506409",
 			"arn": null,
@@ -563,7 +572,7 @@
 			"attributes": {
 				"cfLogicalID": "WatchTableCRUDDevelopmentMobileHub797506409",
 				"cfPhysicalID": "Development",
-				"lastUpdateTimestamp": "1538574077341",
+				"lastUpdateTimestamp": "1539704728854",
 				"reason": "none",
 				"region": "ap-southeast-1",
 				"status": "UPDATE_COMPLETE"

@@ -73,31 +73,31 @@ features:
           sdk-generation-stage-name: Development
         paths: 
           /WearerTable: !com.amazonaws.mobilehub.v0.Function
-            codeFilename: uploads/WearerTable-20181016224307.zip
+            codeFilename: uploads/WearerTable-20181018205257.zip
             description: "Handler for calls to resource path : /WearerTable/{proxy+}"
             enableCORS: true
             environment:  {}
             handler: lambda.handler
-            hashcode: J5MDQVTYMIvOnDVQiFFRyhagNLRTr4dajuUvO3OL9Yo=
+            hashcode: i7yXIu634sX4KGpahrnPZpjY2tz3tpnen4ny95akKpM=
             memorySize: "128"
-            modified: "2018-10-16T15:45:26.801+0000"
+            modified: "2018-10-18T13:54:03.631+0000"
             name: WearerTable
             runtime: nodejs6.10
             timeout: "3"
-            version: n1z.99NLxFsujmSN4B_Pe0JRLJVidgrS
+            version: H6OKGeXUG8LtK3gDNnmJsBKSWcq8Q3_u
           "/WearerTable/{proxy+}": !com.amazonaws.mobilehub.v0.Function
-            codeFilename: uploads/WearerTable-20181016224307.zip
+            codeFilename: uploads/WearerTable-20181018205257.zip
             description: "Handler for calls to resource path : /WearerTable/{proxy+}"
             enableCORS: true
             environment:  {}
             handler: lambda.handler
-            hashcode: J5MDQVTYMIvOnDVQiFFRyhagNLRTr4dajuUvO3OL9Yo=
+            hashcode: i7yXIu634sX4KGpahrnPZpjY2tz3tpnen4ny95akKpM=
             memorySize: "128"
-            modified: "2018-10-16T15:45:26.801+0000"
+            modified: "2018-10-18T13:54:03.631+0000"
             name: WearerTable
             runtime: nodejs6.10
             timeout: "3"
-            version: 6nwDCwDnSvCuBFGflkH9b93iMEiuwPCG
+            version: CCk7pCzssSRarVcgxqbhQYo8PqaZrzLD
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery
     attributes: 
       enabled: true

@@ -2,6 +2,38 @@
 features: 
   cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic
     components: 
+      IoTDataTableCRUD: !com.amazonaws.mobilehub.v0.API
+        attributes: 
+          name: IoTDataTableCRUD
+          requires-signin: true
+          sdk-generation-stage-name: Development
+        paths: 
+          /IoTDataTable: !com.amazonaws.mobilehub.v0.Function
+            codeFilename: uploads/IoTDataTable-20181020212757.zip
+            description: "Handler for calls to resource path : /IoTDataTable/{proxy+}"
+            enableCORS: true
+            environment:  {}
+            handler: lambda.handler
+            hashcode: yC7dbdG9fq7pbGpxvvjA710qv5GxX30rKl/OvAn6vxY=
+            memorySize: "128"
+            modified: "2018-10-20T14:29:50.153+0000"
+            name: IoTDataTable
+            runtime: nodejs6.10
+            timeout: "3"
+            version: lmL6drgfnb7xz9N8dm9w9g.nN2yB_JQY
+          "/IoTDataTable/{proxy+}": !com.amazonaws.mobilehub.v0.Function
+            codeFilename: uploads/IoTDataTable-20181020212757.zip
+            description: "Handler for calls to resource path : /IoTDataTable/{proxy+}"
+            enableCORS: true
+            environment:  {}
+            handler: lambda.handler
+            hashcode: yC7dbdG9fq7pbGpxvvjA710qv5GxX30rKl/OvAn6vxY=
+            memorySize: "128"
+            modified: "2018-10-20T14:29:50.153+0000"
+            name: IoTDataTable
+            runtime: nodejs6.10
+            timeout: "3"
+            version: wZ4wrri9q_84kBJKE0hY9xSaWsf.EwVX
       ThingTableCRUD: !com.amazonaws.mobilehub.v0.API
         attributes: 
           name: ThingTableCRUD
@@ -73,31 +105,31 @@ features:
           sdk-generation-stage-name: Development
         paths: 
           /WearerTable: !com.amazonaws.mobilehub.v0.Function
-            codeFilename: uploads/WearerTable-20181018205257.zip
+            codeFilename: uploads/WearerTable-20181020212757.zip
             description: "Handler for calls to resource path : /WearerTable/{proxy+}"
             enableCORS: true
             environment:  {}
             handler: lambda.handler
-            hashcode: i7yXIu634sX4KGpahrnPZpjY2tz3tpnen4ny95akKpM=
+            hashcode: r6GS0EN7qvDKq2qDlKc0sTz89wncaaxe2aN2BJ8suHE=
             memorySize: "128"
-            modified: "2018-10-18T13:54:03.631+0000"
+            modified: "2018-10-20T14:29:50.073+0000"
             name: WearerTable
             runtime: nodejs6.10
             timeout: "3"
-            version: H6OKGeXUG8LtK3gDNnmJsBKSWcq8Q3_u
+            version: 0cXMN5mC05TxYu9YhjrS_AI0T9NA3h1f
           "/WearerTable/{proxy+}": !com.amazonaws.mobilehub.v0.Function
-            codeFilename: uploads/WearerTable-20181018205257.zip
+            codeFilename: uploads/WearerTable-20181020212757.zip
             description: "Handler for calls to resource path : /WearerTable/{proxy+}"
             enableCORS: true
             environment:  {}
             handler: lambda.handler
-            hashcode: i7yXIu634sX4KGpahrnPZpjY2tz3tpnen4ny95akKpM=
+            hashcode: r6GS0EN7qvDKq2qDlKc0sTz89wncaaxe2aN2BJ8suHE=
             memorySize: "128"
-            modified: "2018-10-18T13:54:03.631+0000"
+            modified: "2018-10-20T14:29:50.073+0000"
             name: WearerTable
             runtime: nodejs6.10
             timeout: "3"
-            version: CCk7pCzssSRarVcgxqbhQYo8PqaZrzLD
+            version: AJOslHhXyq1OBIsYXpb4hhBRmNLIB1XM
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery
     attributes: 
       enabled: true

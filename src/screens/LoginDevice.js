@@ -10,7 +10,8 @@ export default class LoginDevice extends Component {
 
   state = {
     deviceId: '',
-    gdata: ''
+    gdata: '',
+    inUsed: ''
   }
 
   async searchForDevices(DevicesId) {
@@ -21,9 +22,23 @@ export default class LoginDevice extends Component {
 
   checkdata(data) {
     if (data.length > 0) {
-      this.props.navigation.navigate('RegisterWearer');
+      this.searchForUse(this.state.deviceId).then(this.alertIfUsed(this.state.inUsed));
     } else {
       console.log('not found');
+    }
+  }
+
+  async searchForUse(DevicesId) {
+    await API.get('ThingTableCRUD', `/ThingTable/${DevicesId}`)
+      .then(data => this.setState({ inUsed: data }))
+      .catch(err => console.log('err', err.response));
+  }
+
+  alertIfUsed(data) {
+    if (data.length > 0) {
+      console.log('found');
+    } else {
+      this.props.navigation.navigate('RegisterWearer');
     }
   }
 

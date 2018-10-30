@@ -24,9 +24,6 @@ export default class Profile extends Component {
                    Gender: {this.props.data.gender}
                 </Text>
                 <Text>
-                   DeviceId: {this.props.data.DeviceId}
-                </Text>
-                <Text>
                    WearerId: {this.props.data.WearerId}
                 </Text>
               </Body>

@@ -12,7 +12,7 @@ import {
   Body,
   Right,
   Title,
-  Button 
+  Button
 } from 'native-base';
 import { API } from 'aws-amplify';
 import Dashboard from './Dashboard.js';
@@ -76,14 +76,6 @@ export default class Watch extends Component {
             </Text>
           </View>
         <Tabs>
-          <Tab
-            heading={
-              <TabHeading style={{ backgroundColor: '#16879E' }}>
-                <Text>Dashboard</Text>
-              </TabHeading>}
-          >
-            <Dashboard />
-          </Tab>
           <Tab
             heading={
               <TabHeading style={{ backgroundColor: '#16879E' }}>

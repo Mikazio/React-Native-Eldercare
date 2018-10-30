@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Content, Form, Item, Input, Label, Button, Text, Footer } from 'native-base';
-import { Auth } from 'aws-amplify';
+import { Auth, API } from 'aws-amplify';
 
 export default class LoginDevice extends Component {
 
@@ -10,7 +10,21 @@ export default class LoginDevice extends Component {
 
   state = {
     deviceId: '',
-    password: '',
+    gdata: ''
+  }
+
+  async searchForDevices(DevicesId) {
+    await API.get('IoTDataTableCRUD', `/IoTDataTable/${DevicesId}`)
+      .then(data => this.setState({ gdata: data }))
+      .catch(err => console.log('err', err.response));
+  }
+
+  checkdata(data) {
+    if (data.length > 0) {
+      this.props.navigation.navigate('RegisterWearer');
+    } else {
+      console.log('not found');
+    }
   }
 
   render() {
@@ -26,19 +40,11 @@ export default class LoginDevice extends Component {
                 onChangeText={value => this.setState({ deviceId: value })}
               />
             </Item>
-
-            <Item floatingLabel last>
-              <Label>Password</Label>
-              <Input
-              value={this.state.password}
-              onChangeText={value => this.setState({ password: value })}
-              />
-            </Item>
           </Form>
 
           <Button
             block
-            onPress={() => this.props.navigation.navigate('RegisterWearer')}
+            onPress={() => this.searchForDevices(this.state.deviceId).then(this.checkdata(this.state.gdata))}
           >
             <Text>Login</Text>
           </Button>

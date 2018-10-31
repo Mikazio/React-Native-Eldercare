@@ -15,7 +15,6 @@ import {
   Button
 } from 'native-base';
 import { API } from 'aws-amplify';
-import Dashboard from './Dashboard.js';
 import Profile from './Profile.js';
 
 export default class Watch extends Component {

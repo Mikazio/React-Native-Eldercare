@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
-import { Image, View } from 'react-native';
-import { Container, Content, Form, Item, Input, Label, Button, Text, Left, Body, Right, Radio, ListItem, Icon, Header, Title } from 'native-base';
-import { Auth, API } from 'aws-amplify';
+import { View } from 'react-native';
+import { Container,
+  Content,
+  Form,
+  Item,
+  Input,
+  Label,
+  Button,
+  Text,
+  Left,
+  Body, 
+  Right,
+  Radio,
+  ListItem,
+  Icon,
+  Header,
+  Title } from 'native-base';
+import { API } from 'aws-amplify';
 
 export default class RegisterWearer extends Component {
 

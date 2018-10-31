@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Content, Form, Item, Input, Label, Button, Text, Footer } from 'native-base';
-import { Auth, API } from 'aws-amplify';
+import { Container, Content, Form, Item, Input, Label, Button, Text } from 'native-base';
+import { API } from 'aws-amplify';
 
 export default class LoginDevice extends Component {
 
@@ -59,7 +59,8 @@ export default class LoginDevice extends Component {
 
           <Button
             block
-            onPress={() => this.searchForDevices(this.state.deviceId).then(this.checkdata(this.state.gdata))}
+            onPress={() => this.searchForDevices(this.state.deviceId)
+              .then(this.checkdata(this.state.gdata))}
           >
             <Text>Login</Text>
           </Button>

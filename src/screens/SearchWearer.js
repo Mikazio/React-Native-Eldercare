@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { API } from 'aws-amplify';
-import { Container,
-          Content,
-          Item,
-          Input,
-          Label,
-          Button,
-          Text,
-          Form,
-          Icon,
-          Header,
-          Left,
-          Body,
-          Right,
-          Title
-        } from 'native-base';
+import {
+  Container,
+  Content,
+  Item,
+  Input,
+  Label,
+  Button,
+  Text,
+  Form,
+  Icon,
+  Header,
+  Left,
+  Body,
+  Right,
+  Title
+} from 'native-base';
 import WearerCard from '../component/WearerCard';
+
+
 
 
 export default class SearchWearer extends Component {
@@ -47,6 +50,24 @@ export default class SearchWearer extends Component {
     }
   }
 
+  checkWearer=() =>{
+    const {WearerId} = this.state;
+    pattern = /^[a-zA-Z]+$/;
+    if(pattern.test(WearerId)){
+      alert('yes');
+
+      
+      
+    }else{
+      alert('please fill WearerId');
+    }
+    
+    
+
+  }
+
+ 
+
   render() {
     return (
       <Container style={{ alignItems: 'center' }}>
@@ -54,18 +75,18 @@ export default class SearchWearer extends Component {
           androidStatusBarColor='#168297'
           style={{ backgroundColor: '#16879E', width: '100%' }}
         >
-            <Left>
-              <Button
-                transparent
-                onPress={() => this.props.navigation.goBack()}
-              >
-                <Icon name='arrow-back' />
-              </Button>
-            </Left>
-            <Body>
-              <Title>Search Wearer</Title>
-            </Body>
-            <Right />
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.goBack()}
+            >
+              <Icon name='arrow-back' />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Search Wearer</Title>
+          </Body>
+          <Right />
         </Header>
 
         <Content style={{ width: '90%' }}>
@@ -78,18 +99,18 @@ export default class SearchWearer extends Component {
               />
             </Item>
           </Form>
-            <View style={{ paddingTop: 10 }}>
-              <Button
-                block
-                style={{ backgroundColor: '#16879E' }}
-                onPress={() => this.searchForWearer(this.state.WearerId)}
-              >
-                <Text>Check DeviceID</Text>
-              </Button>
-            </View>
-            <View>
-              {this.displayCard()}
-            </View>
+          <View style={{ paddingTop: 10 }}>
+            <Button
+              block
+              style={{ backgroundColor: '#16879E' }}
+              onPress={this.checkWearer}
+            >
+              <Text>Check DeviceID</Text>
+            </Button>
+          </View>
+          <View>
+            {this.displayCard()}
+          </View>
         </Content>
       </Container>
     );

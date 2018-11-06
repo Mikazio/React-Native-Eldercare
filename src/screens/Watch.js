@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
-import { Container, Tab, Tabs, TabHeading, Text, Icon, Header, Left, Body, Right, Title, Button } from 'native-base';
+import {
+  Container,
+  Tab,
+  Tabs,
+  TabHeading,
+  Text,
+  Icon,
+  Header,
+  Left,
+  Body,
+  Right,
+  Title,
+  Button
+} from 'native-base';
 import { API } from 'aws-amplify';
-import Dashboard from './Dashboard.js';
 import Profile from './Profile.js';
 
 export default class Watch extends Component {
@@ -56,17 +68,13 @@ export default class Watch extends Component {
               source={{ uri: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/10406994_854632824607247_2048936579886851496_n.jpg?_nc_cat=111&oh=3b759dad66550d6680db530e9ca5bc65&oe=5C34B546' }}
               style={styles.photo}
             />
-            <Text style={{ color: '#FFFF' }}>{this.state.WearerData.Name} {this.state.WearerData.lastname}</Text>
+            <Text
+              style={{ color: '#FFFF' }}
+            >
+              {this.state.WearerData.Name} {this.state.WearerData.lastname}
+            </Text>
           </View>
         <Tabs>
-          <Tab
-            heading={
-              <TabHeading style={{ backgroundColor: '#16879E' }}>
-                <Text>Dashboard</Text>
-              </TabHeading>}
-          >
-            <Dashboard />
-          </Tab>
           <Tab
             heading={
               <TabHeading style={{ backgroundColor: '#16879E' }}>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
-import { Container, 
+import { Container,
           Content,
           Form,
           Item,
@@ -142,7 +142,7 @@ export default class Login extends Component {
 
           <Button
             block bordered
-            onPress={() => this.props.navigation.navigate('RegisterWearer')}
+            onPress={() => this.props.navigation.navigate('LoginDevice')}
             style={{ borderColor: '#16879E' }}
           >
             <Text style={{ color: '#16879E' }}>Register device</Text>

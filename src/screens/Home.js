@@ -24,9 +24,13 @@ export default class Home extends Component {
       .catch(err => console.log('err', err.response));
   }
 
+  shouldComponentUpdate() {
+    return true;
+  }
+
   render() {
     return (
-      <Container style={styles.container}>
+      <Container style={styles.container} >
         <Header
           androidStatusBarColor='#168297'
           style={{ backgroundColor: '#16879E' }}

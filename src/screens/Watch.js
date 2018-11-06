@@ -35,6 +35,12 @@ export default class Watch extends Component {
       .catch(err => console.log('err', err.response));
   }
 
+  deleteWearer(WearerId) {
+      API.del('WatchTableCRUD', `/WatchTable/object/${WearerId}`)
+      .then(data => console.log(data))
+      .catch(err => console.log('err', err.response));
+  }
+
   render() {
     const { navigation } = this.props;
     const WearerId = navigation.getParam('WearerId', 'NO-ID');
@@ -58,7 +64,10 @@ export default class Watch extends Component {
               <Title>Eldercare</Title>
             </Body>
             <Right>
-              <Button transparent>
+              <Button
+                transparent
+                onPress={() => this.deleteWearer(WearerId)}
+              >
               <Icon name='more' />
             </Button>
             </Right>

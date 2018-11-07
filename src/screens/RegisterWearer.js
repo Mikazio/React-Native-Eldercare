@@ -9,14 +9,17 @@ import { Container,
   Button,
   Text,
   Left,
-  Body, 
+  Body,
   Right,
   Radio,
   ListItem,
   Icon,
   Header,
   Title } from 'native-base';
-import { API } from 'aws-amplify';
+import Amplify, { API, Storage } from 'aws-amplify';
+import awsmobile from '../../aws-exports';
+
+Amplify.configure(awsmobile);
 
 export default class RegisterWearer extends Component {
 

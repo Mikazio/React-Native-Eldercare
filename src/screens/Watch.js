@@ -68,7 +68,7 @@ export default class Watch extends Component {
                 transparent
                 onPress={() => this.deleteWearer(WearerId)}
               >
-              <Icon name='more' />
+              <Icon name='trash-o' type="FontAwesome" />
             </Button>
             </Right>
           </Header>

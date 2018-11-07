@@ -36,7 +36,7 @@ export default class SearchWearer extends Component {
       .then(data => this.setState({
         WearerData: data
       }))
-      .catch(err => console.log('err', err.response));
+      .catch(err => alert(err.message));
   }
 
   displayCard() {
@@ -50,7 +50,7 @@ export default class SearchWearer extends Component {
   checkWearer=() => {
     const { WearerId } = this.state;
       if (WearerId === '') {
-        alert('Not found!');
+        alert('It is Empty isn\' t is? ');
       } else {
             this.searchForWearer(WearerId);
       }

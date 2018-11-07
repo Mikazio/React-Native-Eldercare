@@ -41,17 +41,6 @@ export default class Login extends Component {
     .catch(err => console.log('err set data: ', err));
   }
 
-  // signIn() {
-  //   const { username, password } = this.state;
-  //   Auth.signIn(username, password)
-  //   .then(user => {
-  //     this.setState({ user });
-  //     this.getUserInfo();
-  //     this.props.navigation.navigate('Home', { userdata: this.userAttributes });
-  //   })
-  //   .catch(err => console.log('err signing in: ', err));
-  // }
-
   checkUser =() => {
     const { username, password } = this.state;
     // pattern = /^[a-zA-Z]+$/;

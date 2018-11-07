@@ -14,6 +14,7 @@ import {
   Title,
   Button
 } from 'native-base';
+import { Alert } from 'react-native';
 import { API } from 'aws-amplify';
 import Profile from './Profile.js';
 
@@ -36,9 +37,18 @@ export default class Watch extends Component {
   }
 
   deleteWearer(WearerId) {
-      API.del('WatchTableCRUD', `/WatchTable/object/${WearerId}`)
-      .then(data => console.log(data))
-      .catch(err => console.log('err', err.response));
+      Alert.alert(
+        'Are you Sure?',
+        'This is delete na kup',
+        [
+          { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+          { text: 'OK',
+              onPress: () => API.del('WatchTableCRUD', `/WatchTable/object/${WearerId}`)
+              .then(data => console.log(data))
+              .catch(err => console.log('err', err.response)) },
+        ],
+        { cancelable: false }
+      );
   }
 
   render() {

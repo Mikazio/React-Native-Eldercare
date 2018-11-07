@@ -19,9 +19,6 @@ import {
 } from 'native-base';
 import WearerCard from '../component/WearerCard';
 
-
-
-
 export default class SearchWearer extends Component {
 
   static navigationOptions = {
@@ -50,23 +47,14 @@ export default class SearchWearer extends Component {
     }
   }
 
-  checkWearer=() =>{
-    const {WearerId} = this.state;
-    pattern = /^[a-zA-Z]+$/;
-    if(pattern.test(WearerId)){
-      alert('yes');
-
-      
-      
-    }else{
-      alert('please fill WearerId');
-    }
-    
-    
-
+  checkWearer=() => {
+    const { WearerId } = this.state;
+      if (WearerId === '') {
+        alert('Not found!');
+      } else {
+            this.searchForWearer(WearerId);
+      }
   }
-
- 
 
   render() {
     return (

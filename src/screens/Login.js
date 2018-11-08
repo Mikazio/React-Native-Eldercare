@@ -124,7 +124,7 @@ export default class Login extends Component {
 
           <Button
             block bordered
-            onPress={() => this.props.navigation.navigate('LoginDevice')}
+            onPress={() => this.props.navigation.navigate('RegisterWearer')}
             style={{ borderColor: '#16879E' }}
           >
             <Text style={{ color: '#16879E' }}>Register device</Text>

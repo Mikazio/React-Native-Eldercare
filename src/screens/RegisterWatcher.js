@@ -34,7 +34,7 @@ export default class RegisterWatcher extends Component {
       .catch(err => console.log('error confirm sing Up! ', err));
   }
 
-  
+
   _handleButtonSubmit = () => {
     Alert.alert(
       'SUCCESSED!',
@@ -45,7 +45,6 @@ export default class RegisterWatcher extends Component {
 
   checkWatcher = () => {
     const { name, lastname, email, password, phone_number } = this.state;
-
     pattern = /^[a-zA-Z]+$/;
     pattern1 = /^[0-9]+$/;
     pattern2 = /^[0-9a-zA-z]+$/;
@@ -55,7 +54,7 @@ export default class RegisterWatcher extends Component {
         if (pattern.test(name)) {
           if (pattern.test(lastname)) {
             if (phone_number.length==10) {
-             
+
                 Auth.signUp({
                   username: this.state.email,
                   password: this.state.password,
@@ -67,8 +66,6 @@ export default class RegisterWatcher extends Component {
                 })
                   .then(() => alert('Success'))
                   .catch(err => alert(err.message));
-
-            
             }
             else {
               alert('Invalid Phone number');
@@ -88,9 +85,6 @@ export default class RegisterWatcher extends Component {
     } else {
       alert('please fill email');
     }
-
-
-
   }
 
   render() {

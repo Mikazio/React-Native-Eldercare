@@ -41,28 +41,14 @@ export default class Login extends Component {
     .catch(err => console.log('err set data: ', err));
   }
 
-  // signIn() {
-  //   const { username, password } = this.state;
-  //   Auth.signIn(username, password)
-  //   .then(user => {
-  //     this.setState({ user });
-  //     this.getUserInfo();
-  //     this.props.navigation.navigate('Home', { userdata: this.userAttributes });
-  //   })
-  //   .catch(err => console.log('err signing in: ', err));
-  // }
-
-  checkUser =() =>{
-    const {username, password} = this.state;
+  checkUser =() => {
+    const { username, password } = this.state;
     // pattern = /^[a-zA-Z]+$/;
-    if(username==""){
+    if (username === '') {
       alert('please fill Username');
-
-    }else if(password==""){
+    } else if (password === '') {
       alert('please fill Password');
-      
-    }else{
-     
+    } else {
           Auth.signIn(username, password)
           .then(user => {
             this.setState({ user });
@@ -70,11 +56,7 @@ export default class Login extends Component {
             this.props.navigation.navigate('Home', { userdata: this.userAttributes });
           })
           .catch(err => alert(err.message));
-        
     }
-    
-    
-
   }
 
   render() {
@@ -142,7 +124,7 @@ export default class Login extends Component {
 
           <Button
             block bordered
-            onPress={() => this.props.navigation.navigate('LoginDevice')}
+            onPress={() => this.props.navigation.navigate('RegisterWearer')}
             style={{ borderColor: '#16879E' }}
           >
             <Text style={{ color: '#16879E' }}>Register device</Text>

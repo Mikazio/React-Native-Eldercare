@@ -19,9 +19,6 @@ import {
 } from 'native-base';
 import WearerCard from '../component/WearerCard';
 
-
-
-
 export default class SearchWearer extends Component {
 
   static navigationOptions = {
@@ -39,7 +36,7 @@ export default class SearchWearer extends Component {
       .then(data => this.setState({
         WearerData: data
       }))
-      .catch(err => console.log('err', err.response));
+      .catch(err => alert(err.message));
   }
 
   displayCard() {
@@ -50,23 +47,14 @@ export default class SearchWearer extends Component {
     }
   }
 
-  checkWearer=() =>{
-    const {WearerId} = this.state;
-    pattern = /^[a-zA-Z]+$/;
-    if(pattern.test(WearerId)){
-      alert('yes');
-
-      
-      
-    }else{
-      alert('please fill WearerId');
-    }
-    
-    
-
+  checkWearer=() => {
+    const { WearerId } = this.state;
+      if (WearerId === '') {
+        alert('It is Empty isn\' t is? ');
+      } else {
+            this.searchForWearer(WearerId);
+      }
   }
-
- 
 
   render() {
     return (

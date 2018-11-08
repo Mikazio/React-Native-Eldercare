@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, View } from 'react-native';
 import { Container, Button, Icon, Header, Left, Body, Right, Title, Text } from 'native-base';
-import Amplify from 'aws-amplify';
+import Amplify, { API } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
-import CardWearer from '../component/CardWearer';
+import CardSection from '../component/CardSection';
 
 Amplify.configure(awsmobile);
 
@@ -14,9 +13,23 @@ export default class Home extends Component {
     header: null
   };
 
+  state = {
+    WatchData: []
+  }
+
+  componentWillMount() {
+    API.get('WatchTableCRUD', '/WatchTable/')
+      .then(data => this.setState({ WatchData: data }))
+      .catch(err => console.log('err', err.response));
+  }
+
+  shouldComponentUpdate() {
+    return true;
+  }
+
   render() {
     return (
-      <Container style={styles.container}>
+      <Container style={styles.container} >
         <Header
           androidStatusBarColor='#168297'
           style={{ backgroundColor: '#16879E' }}
@@ -38,13 +51,7 @@ export default class Home extends Component {
             </Button>
             </Right>
           </Header>
-        <View style={styles.layout_card}>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Watch')}
-            >
-              <CardWearer />
-            </TouchableOpacity>
-        </View>
+        <CardSection data={this.state.WatchData} navigation={this.props.navigation} />
       </Container>
     );
   }

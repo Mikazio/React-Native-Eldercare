@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
-import { Container, 
+import { Container,
           Content,
           Form,
           Item,
@@ -41,15 +41,22 @@ export default class Login extends Component {
     .catch(err => console.log('err set data: ', err));
   }
 
-  signIn() {
+  checkUser =() => {
     const { username, password } = this.state;
-    Auth.signIn(username, password)
-    .then(user => {
-      this.setState({ user });
-      this.getUserInfo();
-      this.props.navigation.navigate('Home', { userdata: this.userAttributes });
-    })
-    .catch(err => console.log('err signing in: ', err));
+    // pattern = /^[a-zA-Z]+$/;
+    if (username === '') {
+      alert('please fill Username');
+    } else if (password === '') {
+      alert('please fill Password');
+    } else {
+          Auth.signIn(username, password)
+          .then(user => {
+            this.setState({ user });
+            this.getUserInfo();
+            this.props.navigation.navigate('Home', { userdata: this.userAttributes });
+          })
+          .catch(err => alert(err.message));
+    }
   }
 
   render() {
@@ -105,7 +112,7 @@ export default class Login extends Component {
 
           <Button
             block
-            onPress={this.signIn.bind(this)}
+            onPress={this.checkUser}//this.signIn.bind(this)
             style={{ backgroundColor: '#16879E' }}
           >
             <Text>Login</Text>

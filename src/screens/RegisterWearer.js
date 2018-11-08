@@ -1,7 +1,26 @@
 import React, { Component } from 'react';
-import { Image, View } from 'react-native';
-import { Container, Content, Form, Item, Input, Label, Button, Text, Left, Body, Right, Radio, ListItem, Icon, Header, Title } from 'native-base';
-import { Auth, API } from 'aws-amplify';
+import { View, TouchableOpacity } from 'react-native';
+import { Container,
+  Content,
+  Form,
+  Item,
+  Input,
+  Label,
+  Button,
+  Text,
+  Left,
+  Body,
+  Right,
+  Radio,
+  ListItem,
+  Icon,
+  Header,
+  Title } from 'native-base';
+import ImagePicker from 'react-native-image-crop-picker';
+import Amplify, { API } from 'aws-amplify';
+import awsmobile from '../../aws-exports';
+
+Amplify.configure(awsmobile);
 
 export default class RegisterWearer extends Component {
 
@@ -13,8 +32,24 @@ export default class RegisterWearer extends Component {
   state = {
       name: '',
       lastname: '',
-      gender: 'Female'
+      gender: 'Female',
+      image: null
   };
+
+pickSingleWithCamera(cropping) {
+     ImagePicker.openCamera({
+       cropping: cropping,
+       width: 500,
+       height: 500,
+       includeExif: true,
+     }).then(image => {
+       console.log('received image', image);
+       this.setState({
+         image: { uri: image.path, width: image.width, height: image.height},
+         images: null
+       });
+     }).catch(e => alert(e));
+   }
 
   postToWearerTable() {
     API.post('WearerTableCRUD', '/WearerTable', { body: {
@@ -85,6 +120,11 @@ export default class RegisterWearer extends Component {
                     <Text> Male</Text>
                 </Left>
               </ListItem>
+              <TouchableOpacity
+                onPress={() => this.pickSingleWithCamera(true)}
+              >
+                <Text>Select Single With Camera With Cropping</Text>
+              </TouchableOpacity>
             </Form>
 
             <View style={{ paddingTop: 20, paddingBottom: 15, width: '90%' }}>

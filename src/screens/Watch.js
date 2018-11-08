@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
-import { Container, Tab, Tabs, TabHeading, Text, Icon, Header, Left, Body, Right, Title, Button } from 'native-base';
-import Dashboard from './Dashboard.js';
+import {
+  Container,
+  Tab,
+  Tabs,
+  TabHeading,
+  Text,
+  Icon,
+  Header,
+  Left,
+  Body,
+  Right,
+  Title,
+  Button
+} from 'native-base';
+import { Alert } from 'react-native';
+import { API } from 'aws-amplify';
 import Profile from './Profile.js';
 
 export default class Watch extends Component {
@@ -10,7 +24,37 @@ export default class Watch extends Component {
     header: null,
   };
 
+  state = {
+    WearerData: {}
+  }
+
+  async searchForWearer(WearerId) {
+    await API.get('WearerTableCRUD', `/WearerTable/${WearerId}`)
+      .then(data => this.setState({
+        WearerData: data[0]
+      }))
+      .catch(err => console.log('err', err.response));
+  }
+
+  deleteWearer(WearerId) {
+      Alert.alert(
+        'Are you Sure?',
+        'This is delete na kup',
+        [
+          { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+          { text: 'OK',
+              onPress: () => API.del('WatchTableCRUD', `/WatchTable/object/${WearerId}`)
+              .then(data => console.log(data))
+              .catch(err => console.log('err', err.response)) },
+        ],
+        { cancelable: false }
+      );
+  }
+
   render() {
+    const { navigation } = this.props;
+    const WearerId = navigation.getParam('WearerId', 'NO-ID');
+    this.searchForWearer(WearerId);
     return (
       <Container>
         <Header
@@ -30,8 +74,11 @@ export default class Watch extends Component {
               <Title>Eldercare</Title>
             </Body>
             <Right>
-              <Button transparent>
-              <Icon name='more' />
+              <Button
+                transparent
+                onPress={() => this.deleteWearer(WearerId)}
+              >
+              <Icon name='trash-o' type="FontAwesome" />
             </Button>
             </Right>
           </Header>
@@ -40,24 +87,20 @@ export default class Watch extends Component {
               source={{ uri: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/10406994_854632824607247_2048936579886851496_n.jpg?_nc_cat=111&oh=3b759dad66550d6680db530e9ca5bc65&oe=5C34B546' }}
               style={styles.photo}
             />
-            <Text style={{ color: '#FFFF' }}>Name Lastname</Text>
+            <Text
+              style={{ color: '#FFFF' }}
+            >
+              {this.state.WearerData.Name} {this.state.WearerData.lastname}
+            </Text>
           </View>
         <Tabs>
-          <Tab
-            heading={
-              <TabHeading style={{ backgroundColor: '#16879E' }}>
-                <Text>Dashboard</Text>
-              </TabHeading>}
-          >
-            <Dashboard />
-          </Tab>
           <Tab
             heading={
               <TabHeading style={{ backgroundColor: '#16879E' }}>
                 <Text>Profile</Text>
               </TabHeading>}
           >
-            <Profile />
+            <Profile data={this.state.WearerData} />
           </Tab>
         </Tabs>
       </Container>

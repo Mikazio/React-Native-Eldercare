@@ -17,7 +17,7 @@ import { Container,
   Header,
   Title } from 'native-base';
 import ImagePicker from 'react-native-image-crop-picker';
-import Amplify, { API } from 'aws-amplify';
+import Amplify, { API, Storage } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
 
 Amplify.configure(awsmobile);
@@ -50,6 +50,16 @@ pickSingleWithCamera(cropping) {
        });
      }).catch(e => alert(e));
    }
+
+   pickSingleInGallery() {
+     ImagePicker.openPicker({
+     width: 500,
+     height: 500,
+     cropping: true
+   }).then(image => {
+     console.log(image);
+   });
+}
 
   postToWearerTable() {
     API.post('WearerTableCRUD', '/WearerTable', { body: {
@@ -124,6 +134,11 @@ pickSingleWithCamera(cropping) {
                 onPress={() => this.pickSingleWithCamera(true)}
               >
                 <Text>Select Single With Camera With Cropping</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.pickSingleInGallery()}
+              >
+                <Text>Select Single With Camera With gallery</Text>
               </TouchableOpacity>
             </Form>
 

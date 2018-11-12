@@ -1,6 +1,24 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Container, Item, Text, Button, Input, Label, Form, Icon, Header, Left, Body, Right, Title } from 'native-base';
+import { Container,
+          Item,
+          Text,
+          Button,
+          Input,
+          Label,
+          Form,
+          Icon,
+          Header,
+          Left,
+          Body,
+          Right,
+          Title
+        } from 'native-base';
+
+import Amplify, { Auth } from 'aws-amplify';
+import awsmobile from '../../aws-exports';
+
+Amplify.configure(awsmobile);
 
 export default class ForgetPassword extends Component {
 
@@ -8,6 +26,16 @@ export default class ForgetPassword extends Component {
     title: 'ForgetPassword',
     header: null
   };
+
+  state = {
+    username: ''
+  }
+
+sendCheckPassword(username) {
+  Auth.forgotPassword(username)
+    .then(() => this.props.navigation.navigate('ResetPassword'))
+    .catch(err => console.log(err));
+}
 
   render() {
     return (
@@ -34,7 +62,10 @@ export default class ForgetPassword extends Component {
               <Form>
                 <Item floatingLabel last>
                   <Label style={{ color: '#3C436A' }}>Enter your email address</Label>
-                  <Input />
+                  <Input
+                    value={this.state.username}
+                    onChangeText={value => this.setState({ username: value })}
+                  />
                 </Item>
               </Form>
             </View>
@@ -42,7 +73,7 @@ export default class ForgetPassword extends Component {
               <Button
                 block
                 style={{ backgroundColor: '#16879E' }}
-                onPress={() => this.props.navigation.navigate('ResetPassword')}
+                onPress={() => this.sendCheckPassword(this.state.username)}
               >
                 <Text>Send Login Link</Text>
               </Button>

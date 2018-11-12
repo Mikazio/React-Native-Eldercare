@@ -1,5 +1,23 @@
 import React, { Component } from 'react';
-import { Container, Form, Item, Input, Label, Button, Text, Icon, Header, Left, Body, Right, Title } from 'native-base';
+import { Container,
+          Form,
+          Item,
+          Input,
+          Label,
+          Button,
+          Text,
+          Icon,
+          Header,
+          Left,
+          Body,
+          Right,
+          Title
+        } from 'native-base';
+import Amplify, { Auth } from 'aws-amplify';
+
+import awsmobile from '../../aws-exports';
+
+Amplify.configure(awsmobile);
 
 export default class ResetPassword extends Component {
 
@@ -7,6 +25,13 @@ export default class ResetPassword extends Component {
     title: 'ResetPassword',
     header: null
   };
+
+
+  confirmForgetPassword(username, code, newPassword) {
+    Auth.forgotPasswordSubmit(username, code, newPassword)
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
+  }
 
   render() {
     return (

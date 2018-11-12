@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity, Image } from 'react-native';
 import { Container,
   Content,
   Form,
@@ -95,6 +95,33 @@ pickSingleWithCamera(cropping) {
         <Content>
           <View style={{ alignItems: 'center' }}>
             <Form style={{ width: '90%' }}>
+
+            <Container style={styles.photo_container}>
+              <Image
+                source={{ uri: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/10406994_854632824607247_2048936579886851496_n.jpg?_nc_cat=111&oh=3b759dad66550d6680db530e9ca5bc65&oe=5C34B546' }}
+                style={styles.photo}
+              />
+              <Text style={{ color: '#979A9A', marginTop: 10 }}>Upload Picture</Text>
+            </Container>
+
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <Button
+                bordered
+                style={{ borderColor: '#16879E' }}
+                onPress={() => this.pickSingleWithCamera(true)}
+              >
+                <Icon style={{ color: '#16879E' }} name="camera" type="Entypo" />
+                <Text style={{ color: '#16879E' }}> Camera</Text>
+              </Button>
+              <Button
+                bordered
+                style={{ borderColor: '#16879E' }}
+                onPress={() => this.pickSingleInGallery()}
+              >
+                <Icon style={{ color: '#16879E' }} name="image" type="MaterialIcons" />
+                <Text style={{ color: '#16879E' }}>Gallery</Text>
+              </Button>
+            </View>
               <Item floatingLabel last>
                 <Label style={{ color: '#3C436A' }}>Firstname</Label>
                 <Input
@@ -130,16 +157,6 @@ pickSingleWithCamera(cropping) {
                     <Text> Male</Text>
                 </Left>
               </ListItem>
-              <TouchableOpacity
-                onPress={() => this.pickSingleWithCamera(true)}
-              >
-                <Text>Select Single With Camera With Cropping</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.pickSingleInGallery()}
-              >
-                <Text>Select Single With Camera With gallery</Text>
-              </TouchableOpacity>
             </Form>
 
             <View style={{ paddingTop: 20, paddingBottom: 15, width: '90%' }}>
@@ -157,3 +174,21 @@ pickSingleWithCamera(cropping) {
     );
   }
 }
+const styles = {
+  photo_container: {
+    alignItems: 'center',
+    height: 135,
+    width: null,
+    marginTop: 30,
+    marginBottom: 10,
+
+  },
+
+  photo: {
+    alignItems: 'center',
+    height: 100,
+    width: 100,
+    borderRadius: 100
+  },
+
+};

@@ -11,6 +11,7 @@ import ForgetPassword from '../screens/ForgetPassword';
 import ResetPassword from '../screens/ResetPassword';
 import LoginDevice from '../screens/LoginDevice';
 import ConfirmSignUp from '../screens/ConfirmSignUp';
+import SideBar from '../screens/SideBar';
 
 const Nav = createStackNavigator({
   Login: { screen: Login },
@@ -25,6 +26,7 @@ const Nav = createStackNavigator({
   ResetPassword: { screen: ResetPassword },
   LoginDevice: { screen: LoginDevice },
   ConfirmSignUp: { screen: ConfirmSignUp },
+  SideBar: { screen: SideBar },
 });
 
 export default Nav;

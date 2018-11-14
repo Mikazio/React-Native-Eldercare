@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
-import { Container, Button, Text, List, ListItem, Icon, Left, Body, Right } from 'native-base';
+import { Container, Button, Text, Icon, Body, Right } from 'native-base';
+import { Auth } from 'aws-amplify';
 
 export default class SideBar extends Component {
+
+logout() {
+  Auth.signOut()
+    .then(this.props.navigator.navigate('Login'))
+    .catch(err => console.log(err));
+}
 
   render() {
     return (
@@ -23,7 +30,10 @@ export default class SideBar extends Component {
             email
           </Text>
         </View>
-        <Button transparent full>
+        <Button
+          transparent full
+          onPress={() => this.logout()}
+        >
             <Icon style={{ color: '#979A9A' }} name="power" />
             <Body>
                 <Text style={{ color: '#979A9A' }}>Logout</Text>

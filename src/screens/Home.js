@@ -22,14 +22,10 @@ export default class Home extends Component {
     this.updateUserWatch();
   }
 
-  updateUserWatch() {
-    API.get('WatchTableCRUD', '/WatchTable/')
+  async updateUserWatch() {
+    await API.get('WatchTableCRUD', '/WatchTable/')
       .then(data => this.setState({ WatchData: data }))
       .catch(err => console.log('err', err.response));
-  }
-
-  shouldComponentUpdate() {
-    return true;
   }
 
   closeDrawer() {
@@ -43,7 +39,7 @@ export default class Home extends Component {
     return (
       <Drawer
         ref={(ref) => { this.drawer = ref; }}
-        content={<SideBar navigator={this.navigator} />}
+        content={<SideBar navigator={this.props.navigation} />}
         onClose={() => this.closeDrawer()}
       >
       <Container style={styles.container} >

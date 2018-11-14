@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, View } from 'react-native';
+import { Image, View, Alert } from 'react-native';
 import {
   Container,
   Tab,
@@ -14,7 +14,6 @@ import {
   Title,
   Button
 } from 'native-base';
-import { Alert } from 'react-native';
 import { API } from 'aws-amplify';
 import Profile from './Profile.js';
 

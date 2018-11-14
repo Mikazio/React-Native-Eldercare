@@ -33,7 +33,8 @@ export default class ForgetPassword extends Component {
 
 sendCheckPassword(username) {
   Auth.forgotPassword(username)
-    .then(() => this.props.navigation.navigate('ResetPassword'))
+    .then(
+      this.props.navigation.navigate('ResetPassword', { username: this.props.data.username }))
     .catch(err => console.log(err));
 }
 

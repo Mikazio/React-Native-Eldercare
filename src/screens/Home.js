@@ -18,13 +18,13 @@ export default class Home extends Component {
   }
 
   componentWillMount() {
+    this.updateUserWatch();
+  }
+
+  updateUserWatch() {
     API.get('WatchTableCRUD', '/WatchTable/')
       .then(data => this.setState({ WatchData: data }))
       .catch(err => console.log('err', err.response));
-  }
-
-  shouldComponentUpdate() {
-    return true;
   }
 
   render() {

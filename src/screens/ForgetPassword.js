@@ -28,14 +28,24 @@ export default class ForgetPassword extends Component {
   };
 
   state = {
-    username: ''
+    username: '',
+    isUser: false
   }
 
+  checkNull =() => {
+    const { username } = this.state;
+    // pattern = /^[a-zA-Z]+$/;
+    if (username === '') {
+      alert('please fill E-mail');
+    } else {
+          this.sendCheckPassword(this.state.username);
+          }
+    }
+
 sendCheckPassword(username) {
-  Auth.forgotPassword(username)
-    .then(
-      this.props.navigation.navigate('ResetPassword', { username: this.props.data.username }))
-    .catch(err => console.log(err));
+   Auth.forgotPassword(username)
+    .then(this.props.navigation.navigate('ResetPassword', { username: this.state.username }))
+    .catch(err => alert(err.message));
 }
 
   render() {
@@ -74,7 +84,7 @@ sendCheckPassword(username) {
               <Button
                 block
                 style={{ backgroundColor: '#16879E' }}
-                onPress={() => this.sendCheckPassword(this.state.username)}
+                onPress={this.checkNull}
               >
                 <Text>Send Login Link</Text>
               </Button>

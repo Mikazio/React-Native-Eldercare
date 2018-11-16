@@ -32,7 +32,7 @@ export default class Watch extends Component {
       .then(data => this.setState({
         WearerData: data[0]
       }))
-      .catch(err => console.log('err', err.response));
+      .catch(err => alert(err.message));
   }
 
   deleteWearer(WearerId) {
@@ -44,7 +44,7 @@ export default class Watch extends Component {
           { text: 'OK',
               onPress: () => API.del('WatchTableCRUD', `/WatchTable/object/${WearerId}`)
               .then(data => console.log(data))
-              .catch(err => console.log('err', err.response)) },
+              .catch(err => alert(err.message)) },
         ],
         { cancelable: false }
       );

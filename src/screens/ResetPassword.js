@@ -33,6 +33,19 @@ export default class ResetPassword extends Component {
     OTP: ''
   }
 
+  checkEqual =() => {
+    const { newPassword, confirmPassword, username, OTP } = this.state;
+    // pattern = /^[a-zA-Z]+$/;
+    if (newPassword === '') {
+      alert('Please type new Password');
+    } else if (confirmPassword === '') {
+      alert('Please type re-password');
+    } else if (confirmPassword === newPassword) {
+        alert('Password & Re-password mismatch!');
+    } else {
+        this.confirmForgetPassword(username, OTP, newPassword)
+        }
+    }
 
 confirmForgetPassword(username, code, newPassword) {
     Auth.forgotPasswordSubmit(username, code, newPassword)
@@ -42,7 +55,8 @@ confirmForgetPassword(username, code, newPassword) {
 
   render() {
     const { navigation } = this.props;
-    const username = navigation.getParam('username', 'NO-ID');
+    const Pusername = navigation.getParam('username', 'NO-ID');
+    this.setState({ username: Pusername });
     return (
       <Container style={{ alignItems: 'center' }}>
         <Header
@@ -90,8 +104,7 @@ confirmForgetPassword(username, code, newPassword) {
             <Button
               block
               style={{ backgroundColor: '#16879E' }}
-              onPress={() =>
-                this.confirmForgetPassword(username, this.state.OTP, this.state.newPassword)}
+              onPress={this.checkEqual}
             >
               <Text>Submit</Text>
             </Button>

@@ -16,6 +16,7 @@ import { Container,
         } from 'native-base';
 import Amplify, { Auth } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
+import logo from '../component/common/Icon.png';
 
 Amplify.configure(awsmobile);
 
@@ -75,7 +76,7 @@ export default class Login extends Component {
         <Content style={styles.content}>
           <View style={styles.photo_container}>
             <Image
-              source={{ uri: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/10406994_854632824607247_2048936579886851496_n.jpg?_nc_cat=111&oh=3b759dad66550d6680db530e9ca5bc65&oe=5C34B546' }}
+              source={logo}
               style={styles.photo}
             />
           </View>
@@ -164,8 +165,8 @@ const styles = {
 
   photo: {
     alignItems: 'center',
-    height: 100,
-    width: 100,
+    height: 150,
+    width: 150,
     borderRadius: 100
   },
   footer: {

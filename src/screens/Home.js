@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Container, Button, Icon, Header, Left, Body, Right, Title, Text } from 'native-base';
+import { Container, Button, Icon, Header, Left, Body, Right, Title, Text, Drawer } from 'native-base';
 import Amplify, { API } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
 import CardSection from '../component/CardSection';
+import SideBar from './SideBar';
 
 Amplify.configure(awsmobile);
 
@@ -18,24 +19,39 @@ export default class Home extends Component {
   }
 
   componentWillMount() {
-    API.get('WatchTableCRUD', '/WatchTable/')
+    this.updateUserWatch();
+  }
+
+  async updateUserWatch() {
+    await API.get('WatchTableCRUD', '/WatchTable/')
       .then(data => this.setState({ WatchData: data }))
       .catch(err => console.log('err', err.response));
   }
 
-  shouldComponentUpdate() {
-    return true;
+  closeDrawer() {
+      this.drawer._root.close();
+  }
+    openDrawer() {
+      this.drawer._root.open();
   }
 
   render() {
     return (
+      <Drawer
+        ref={(ref) => { this.drawer = ref; }}
+        content={<SideBar navigator={this.props.navigation} />}
+        onClose={() => this.closeDrawer()}
+      >
       <Container style={styles.container} >
         <Header
           androidStatusBarColor='#168297'
           style={{ backgroundColor: '#16879E' }}
         >
             <Left>
-              <Button transparent>
+              <Button
+              transparent
+              onPress={() => this.openDrawer()}
+              >
                 <Icon name="menu" />
               </Button>
             </Left>
@@ -53,6 +69,7 @@ export default class Home extends Component {
           </Header>
         <CardSection data={this.state.WatchData} navigation={this.props.navigation} />
       </Container>
+      </Drawer>
     );
   }
 }

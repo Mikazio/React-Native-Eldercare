@@ -1,6 +1,24 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Container, Item, Text, Button, Input, Label, Form, Icon, Header, Left, Body, Right, Title } from 'native-base';
+import { Container,
+          Item,
+          Text,
+          Button,
+          Input,
+          Label,
+          Form,
+          Icon,
+          Header,
+          Left,
+          Body,
+          Right,
+          Title
+        } from 'native-base';
+
+import Amplify, { Auth } from 'aws-amplify';
+import awsmobile from '../../aws-exports';
+
+Amplify.configure(awsmobile);
 
 export default class ForgetPassword extends Component {
 
@@ -8,6 +26,27 @@ export default class ForgetPassword extends Component {
     title: 'ForgetPassword',
     header: null
   };
+
+  state = {
+    username: '',
+    isUser: false
+  }
+
+  checkNull =() => {
+    const { username } = this.state;
+    // pattern = /^[a-zA-Z]+$/;
+    if (username === '') {
+      alert('please fill E-mail');
+    } else {
+          this.sendCheckPassword(this.state.username);
+          }
+    }
+
+sendCheckPassword(username) {
+   Auth.forgotPassword(username)
+    .then(this.props.navigation.navigate('ResetPassword', { username: this.state.username }))
+    .catch(err => alert(err.message));
+}
 
   render() {
     return (
@@ -34,7 +73,10 @@ export default class ForgetPassword extends Component {
               <Form>
                 <Item floatingLabel last>
                   <Label style={{ color: '#3C436A' }}>Enter your email address</Label>
-                  <Input />
+                  <Input
+                    value={this.state.username}
+                    onChangeText={value => this.setState({ username: value })}
+                  />
                 </Item>
               </Form>
             </View>
@@ -42,7 +84,7 @@ export default class ForgetPassword extends Component {
               <Button
                 block
                 style={{ backgroundColor: '#16879E' }}
-                onPress={() => this.props.navigation.navigate('ResetPassword')}
+                onPress={this.checkNull}
               >
                 <Text>Send Login Link</Text>
               </Button>

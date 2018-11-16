@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, View } from 'react-native';
+import { Image, View, Alert } from 'react-native';
 import {
   Container,
   Tab,
@@ -14,7 +14,6 @@ import {
   Title,
   Button
 } from 'native-base';
-import { Alert } from 'react-native';
 import { API } from 'aws-amplify';
 import Profile from './Profile.js';
 
@@ -33,19 +32,19 @@ export default class Watch extends Component {
       .then(data => this.setState({
         WearerData: data[0]
       }))
-      .catch(err => console.log('err', err.response));
+      .catch(err => alert(err.message));
   }
 
   deleteWearer(WearerId) {
       Alert.alert(
         'Are you Sure?',
-        'This is delete na kup',
+        'to delete this wearer',
         [
           { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
           { text: 'OK',
               onPress: () => API.del('WatchTableCRUD', `/WatchTable/object/${WearerId}`)
               .then(data => console.log(data))
-              .catch(err => console.log('err', err.response)) },
+              .catch(err => alert(err.message)) },
         ],
         { cancelable: false }
       );

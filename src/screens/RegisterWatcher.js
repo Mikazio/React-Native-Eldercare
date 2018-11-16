@@ -109,14 +109,34 @@ export default class RegisterWatcher extends Component {
         </Header>
 
         <Content style={{ width: '100%' }}>
-          <Container style={styles.photo_container}>
-            <Image
-              source={{ uri: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/10406994_854632824607247_2048936579886851496_n.jpg?_nc_cat=111&oh=3b759dad66550d6680db530e9ca5bc65&oe=5C34B546' }}
-              style={styles.photo}
-            />
-          </Container>
           <View style={{ alignItems: 'center' }}>
             <Form style={{ width: '90%' }}>
+            <Container style={styles.photo_container}>
+              <Image
+                source={{ uri: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/10406994_854632824607247_2048936579886851496_n.jpg?_nc_cat=111&oh=3b759dad66550d6680db530e9ca5bc65&oe=5C34B546' }}
+                style={styles.photo}
+              />
+              <Text style={{ color: '#979A9A', marginTop: 10 }}>Upload Picture</Text>
+            </Container>
+
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <Button
+                bordered
+                style={{ borderColor: '#16879E' }}
+                onPress={() => this.pickSingleWithCamera(true)}
+              >
+                <Icon style={{ color: '#16879E' }} name="camera" type="Entypo" />
+                <Text style={{ color: '#16879E' }}> Camera</Text>
+              </Button>
+              <Button
+                bordered
+                style={{ borderColor: '#16879E' }}
+                onPress={() => this.pickSingleInGallery()}
+              >
+                <Icon style={{ color: '#16879E' }} name="image" type="MaterialIcons" />
+                <Text style={{ color: '#16879E' }}>Gallery</Text>
+              </Button>
+            </View>
               <Item floatingLabel last >
                 <Label style={styles.text_label}>Email</Label>
                 <Input
@@ -167,6 +187,8 @@ export default class RegisterWatcher extends Component {
               </Button>
             </View>
           </View>
+
+
           <View style={{ backgroundColor: '#EEEE', margin: 15 }}>
             <Item regular last>
 
@@ -193,9 +215,10 @@ export default class RegisterWatcher extends Component {
 const styles = {
   photo_container: {
     alignItems: 'center',
-    height: 110,
+    height: 135,
     width: null,
     marginTop: 30,
+    marginBottom: 10,
 
   },
 
@@ -205,6 +228,7 @@ const styles = {
     width: 100,
     borderRadius: 100
   },
+
   text_label: {
     color: '#3C436A'
   }

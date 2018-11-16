@@ -33,8 +33,12 @@ export default class ResetPassword extends Component {
     OTP: ''
   }
 
+
+
   checkEqual =() => {
-    const { newPassword, confirmPassword, username, OTP } = this.state;
+    const { newPassword, confirmPassword, OTP } = this.state;
+    const { navigation } = this.props;
+    const username = navigation.getParam('username', 'NO-ID');
     // pattern = /^[a-zA-Z]+$/;
     if (newPassword === '') {
       alert('Please type new Password');
@@ -54,9 +58,6 @@ confirmForgetPassword(username, code, newPassword) {
   }
 
   render() {
-    const { navigation } = this.props;
-    const Pusername = navigation.getParam('username', 'NO-ID');
-    this.setState({ username: Pusername });
     return (
       <Container style={{ alignItems: 'center' }}>
         <Header

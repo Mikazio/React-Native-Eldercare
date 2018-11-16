@@ -38,7 +38,7 @@ export default class Watch extends Component {
   deleteWearer(WearerId) {
       Alert.alert(
         'Are you Sure?',
-        'This is delete na kup',
+        'to delete this wearer',
         [
           { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
           { text: 'OK',

@@ -2,7 +2,6 @@ import React from 'react';
 import { Image, View } from 'react-native';
 import { Card, CardItem, Text, Button } from 'native-base';
 import { Auth, API } from 'aws-amplify';
-import { withNavigation } from 'react-navigation';
 
 function postToWatchTable(Wearer) {
     API.post('WatchTableCRUD', '/WatchTable', { body: {
@@ -10,8 +9,8 @@ function postToWatchTable(Wearer) {
     UserSub: Auth.user.username,
     WearerId: Wearer
   } })
-    .then(data => console.log(data))
-    .catch(err => console.log('err', err.response.data));
+    .then(() => alert('Add Sucessful!'))
+    .catch(err => alert(err.message));
 }
 
 const WearerCard = ({ data }) => {
@@ -55,4 +54,4 @@ const styles = {
   }
 };
 
-export default withNavigation(WearerCard);
+export default WearerCard;

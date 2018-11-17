@@ -16,7 +16,7 @@ import { Container,
         } from 'native-base';
 import Amplify, { Auth } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
-import logo from '../component/common/Icon.png';
+import logo from '../component/common/Icon2.png';
 
 Amplify.configure(awsmobile);
 

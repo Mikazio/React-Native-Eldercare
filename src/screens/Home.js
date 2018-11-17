@@ -22,6 +22,14 @@ export default class Home extends Component {
     this.updateUserWatch();
   }
 
+  componentDidUpdate() {
+    const { navigation } = this.props;
+    const shouldRefresh = navigation.getParam('shouldRefresh', false);
+    if (shouldRefresh) {
+      this.updateUserWatch().then(this.props.navigation.setParams({ shouldRefresh: false }));
+    }
+  }
+
   async updateUserWatch() {
     await API.get('WatchTableCRUD', '/WatchTable/')
       .then(data => this.setState({ WatchData: data }))

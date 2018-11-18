@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
-import { Container, Button, Icon, Header, Left, Body, Right, Title, Text, Drawer } from 'native-base';
+import { Container,
+          Button,
+          Icon,
+          Header,
+          Left,
+          Body,
+          Right,
+          Title,
+          Text,
+          Drawer } from 'native-base';
 import Amplify, { API } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
 import CardSection from '../component/CardSection';
@@ -20,6 +29,14 @@ export default class Home extends Component {
 
   componentWillMount() {
     this.updateUserWatch();
+  }
+
+  componentDidUpdate() {
+    const { navigation } = this.props;
+    const shouldRefresh = navigation.getParam('shouldRefresh', false);
+    if (shouldRefresh) {
+      this.updateUserWatch().then(this.props.navigation.setParams({ shouldRefresh: false }));
+    }
   }
 
   async updateUserWatch() {

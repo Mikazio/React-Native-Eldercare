@@ -5,6 +5,24 @@ import { Auth } from 'aws-amplify';
 
 export default class SideBar extends Component {
 
+  state = {
+    userAttributes: {
+      name: ''
+    }
+  }
+
+  componentWillMount() {
+    this.getUserInfo();
+  }
+
+  async getUserInfo() {
+    await Auth.currentUserInfo()
+    .then(userAttributes => {
+      this.setState({ userAttributes });
+    })
+    .catch(err => console.log('err set data: ', err));
+  }
+
 logout() {
   Auth.signOut()
     .then(this.props.navigator.navigate('Login'))
@@ -22,12 +40,12 @@ logout() {
           <Text
             style={{ color: '#FFFF' }}
           >
-            name watcher
+            Welcome
           </Text>
           <Text
             style={{ color: '#FFFF' }}
           >
-            email
+            Eldercare
           </Text>
         </View>
         <Button
@@ -40,6 +58,18 @@ logout() {
             </Body>
             <Right />
         </Button>
+
+        <Button
+          transparent full
+          onPress={() => console.log(this.state.userAttributes)}
+        >
+            <Icon style={{ color: '#979A9A' }} name="power" />
+            <Body>
+                <Text style={{ color: '#979A9A' }}>UserDetails</Text>
+            </Body>
+            <Right />
+        </Button>
+
         </Container>
     );
   }

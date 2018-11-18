@@ -43,7 +43,9 @@ export default class Watch extends Component {
           { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
           { text: 'OK',
               onPress: () => API.del('WatchTableCRUD', `/WatchTable/object/${WearerId}`)
-              .then(data => console.log(data))
+              .then(() => this.props.navigation.navigate('Home', {
+                shouldRefresh: true
+              }))
               .catch(err => alert(err.message)) },
         ],
         { cancelable: false }

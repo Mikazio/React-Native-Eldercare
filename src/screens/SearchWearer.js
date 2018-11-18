@@ -66,7 +66,7 @@ export default class SearchWearer extends Component {
           <Left>
             <Button
               transparent
-              onPress={() => this.props.navigation.goBack()}
+              onPress={() => this.props.navigation.navigate('Home', { shouldRefresh: true })}
             >
               <Icon name='arrow-back' />
             </Button>

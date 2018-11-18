@@ -16,7 +16,7 @@ import { Container,
         } from 'native-base';
 import Amplify, { Auth } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
-import logo from '../component/common/Icon.png';
+import logo from '../component/common/Icon2.png';
 
 Amplify.configure(awsmobile);
 
@@ -34,14 +34,6 @@ export default class Login extends Component {
     userAttributes: {}
   }
 
-  getUserInfo() {
-    Auth.currentUserInfo()
-    .then(userAttributes => {
-      this.setState({ userAttributes });
-    })
-    .catch(err => console.log('err set data: ', err));
-  }
-
   checkUser =() => {
     const { username, password } = this.state;
     // pattern = /^[a-zA-Z]+$/;
@@ -50,11 +42,10 @@ export default class Login extends Component {
     } else if (password === '') {
       alert('please fill Password');
     } else {
-          Auth.signIn(username, password)
+         Auth.signIn(username, password)
           .then(user => {
             this.setState({ user });
-            this.getUserInfo();
-            this.props.navigation.navigate('Home', { userdata: this.userAttributes });
+            this.props.navigation.navigate('Home');
           })
           .catch(err => alert(err.message));
     }
